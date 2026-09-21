@@ -1,0 +1,61 @@
+# ARCHI-AI: Configuration Expérimentale QLoRA pour Qwen2-VL-7B-Instruct
+# Conçue pour GPU cible 24 Go (ex. RTX 3090 / 4090 / A10G Cloud)
+# Validée et testable en dry-run local (RTX 4060 Ti 8 Go)
+
+model:
+  name_or_path: "Qwen/Qwen2-VL-7B-Instruct"
+  torch_dtype: "bfloat16"
+  low_cpu_mem_usage: true
+  device_map: "auto"
+
+quantization:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_compute_dtype: "bfloat16"
+
+lora:
+  r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  # Target only LLM attention and MLP projection layers (preserves vision tower)
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  freeze_vision_tower: true
+
+dataset:
+  train_file: "ARCHI_AI/dataset/train.jsonl"
+  validation_file: "ARCHI_AI/dataset/validation.jsonl"
+  images_base_dir: "ARCHI_AI/dataset"
+  # Image resolution limits (512x512 pixels maximum)
+  min_pixels: 200704     # 256 * 28 * 28
+  max_pixels: 262144     # 512 * 512 = 262,144 pixels (~400-500 vision tokens)
+  max_seq_length: 1536   # Prompt + vision patches + assistant response
+
+training:
+  output_dir: "ARCHI_AI/outputs/qlora_adapter"
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 8  # Effective batch size = 8
+  num_train_epochs: 3
+  learning_rate: 1.0e-4
+  lr_scheduler_type: "cosine"
+  warmup_ratio: 0.05
+  optim: "paged_adamw_8bit"
+  gradient_checkpointing: true
+  bf16: true
+  fp16: false
+  logging_steps: 1
+  eval_strategy: "epoch"
+  save_strategy: "epoch"
+  save_total_limit: 2
+  dataloader_num_workers: 0
+  report_to: "none"

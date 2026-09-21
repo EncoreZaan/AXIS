@@ -1,0 +1,759 @@
+{
+  "model_name": "Qwen2-VL-7B-Instruct",
+  "checkpoint_or_tag": "baseline_zero_shot",
+  "dataset_version": "v0.1-micro-baseline",
+  "axis_scores": {
+    "Vision": 6.6,
+    "Spatial": 6.4,
+    "Ergonomie": 6.6,
+    "Matériaux": 6.2,
+    "Lumière": 6.8,
+    "Couleur": 5.8,
+    "Style": 5.0,
+    "Circulation": 4.8,
+    "Critique": 4.4,
+    "Recommandation": 4.6,
+    "Plan 2D": 6.4,
+    "Pédagogie": 4.0,
+    "Anti-hallucination": 6.5
+  },
+  "global_score": 5.7,
+  "sample_evaluations": [
+    {
+      "id": "archi_005",
+      "axes": {
+        "Vision": {
+          "axis": "Vision",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['fenêtre']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Spatial": {
+          "axis": "Spatial",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['espace']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Ergonomie": {
+          "axis": "Ergonomie",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['confort', 'usage']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Matériaux": {
+          "axis": "Matériaux",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Lumière": {
+          "axis": "Lumière",
+          "score": 8.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['lumière', 'naturelle', 'suspension']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Couleur": {
+          "axis": "Couleur",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['blanc']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Style": {
+          "axis": "Style",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Circulation": {
+          "axis": "Circulation",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Critique": {
+          "axis": "Critique",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Recommandation": {
+          "axis": "Recommandation",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Plan 2D": {
+          "axis": "Plan 2D",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['plan']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Pédagogie": {
+          "axis": "Pédagogie",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Anti-hallucination": {
+          "axis": "Anti-hallucination",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "archi_010",
+      "axes": {
+        "Vision": {
+          "axis": "Vision",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['façade', 'présente']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Spatial": {
+          "axis": "Spatial",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['espace']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Ergonomie": {
+          "axis": "Ergonomie",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['confort']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Matériaux": {
+          "axis": "Matériaux",
+          "score": 10.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['bois', 'marbre', 'pierre']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Lumière": {
+          "axis": "Lumière",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['naturelle', 'éclairage']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Couleur": {
+          "axis": "Couleur",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['blanc', 'ton']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Style": {
+          "axis": "Style",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['contemporain', 'classique']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Circulation": {
+          "axis": "Circulation",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Critique": {
+          "axis": "Critique",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Recommandation": {
+          "axis": "Recommandation",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Plan 2D": {
+          "axis": "Plan 2D",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['plan', 'surface']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Pédagogie": {
+          "axis": "Pédagogie",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Anti-hallucination": {
+          "axis": "Anti-hallucination",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "archi_015",
+      "axes": {
+        "Vision": {
+          "axis": "Vision",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['fenêtre', 'présente']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Spatial": {
+          "axis": "Spatial",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['espace']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Ergonomie": {
+          "axis": "Ergonomie",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['circulation', 'confort']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Matériaux": {
+          "axis": "Matériaux",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['bois', 'cuir']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Lumière": {
+          "axis": "Lumière",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['lumière', 'éclairage']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Couleur": {
+          "axis": "Couleur",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['gris']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Style": {
+          "axis": "Style",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Circulation": {
+          "axis": "Circulation",
+          "score": 8.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['circulation', 'flux', 'accès']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Critique": {
+          "axis": "Critique",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['atout']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Recommandation": {
+          "axis": "Recommandation",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Plan 2D": {
+          "axis": "Plan 2D",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['plan', 'surface']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Pédagogie": {
+          "axis": "Pédagogie",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Anti-hallucination": {
+          "axis": "Anti-hallucination",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "archi_020",
+      "axes": {
+        "Vision": {
+          "axis": "Vision",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['présente']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Spatial": {
+          "axis": "Spatial",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['volume', 'espace']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Ergonomie": {
+          "axis": "Ergonomie",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['confort']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Matériaux": {
+          "axis": "Matériaux",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['bois']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Lumière": {
+          "axis": "Lumière",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Couleur": {
+          "axis": "Couleur",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Style": {
+          "axis": "Style",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['classique']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Circulation": {
+          "axis": "Circulation",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Critique": {
+          "axis": "Critique",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Recommandation": {
+          "axis": "Recommandation",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Plan 2D": {
+          "axis": "Plan 2D",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['échelle']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Pédagogie": {
+          "axis": "Pédagogie",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Anti-hallucination": {
+          "axis": "Anti-hallucination",
+          "score": 8.5,
+          "confidence": 1.0,
+          "strengths": [
+            "Reconnaissance explicite des limites du support visuel"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": true,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "archi_025",
+      "axes": {
+        "Vision": {
+          "axis": "Vision",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['armoire', 'fenêtre']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Spatial": {
+          "axis": "Spatial",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['espace', 'hauteur']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Ergonomie": {
+          "axis": "Ergonomie",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['hauteur', 'confort']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Matériaux": {
+          "axis": "Matériaux",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Lumière": {
+          "axis": "Lumière",
+          "score": 8.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['lumière', 'naturelle', 'éclairage']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Couleur": {
+          "axis": "Couleur",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['blanc']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Style": {
+          "axis": "Style",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Circulation": {
+          "axis": "Circulation",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Critique": {
+          "axis": "Critique",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Recommandation": {
+          "axis": "Recommandation",
+          "score": 7.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['optimiser', 'ajouter']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Plan 2D": {
+          "axis": "Plan 2D",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [
+            "Mobilisation du vocabulaire clé : ['plan']"
+          ],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Pédagogie": {
+          "axis": "Pédagogie",
+          "score": 4.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [
+            "Peu de références explicites à cet axe"
+          ],
+          "epistemic_caution_detected": false,
+          "notes": null
+        },
+        "Anti-hallucination": {
+          "axis": "Anti-hallucination",
+          "score": 6.0,
+          "confidence": 1.0,
+          "strengths": [],
+          "weaknesses": [],
+          "epistemic_caution_detected": false,
+          "notes": null
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "source_file": "C:\\Users\\encor\\Documents\\Devs\\AEON-RWKV\\ARCHI_AI\\evaluation\\baseline\\baseline_results.json",
+    "samples_count": 5
+  }
+}

@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axis-ai"
+version = "0.1.0"
+description = "AXIS — Architectural eXpert Intelligence System: Specializing in Spatial, Geometric, and Architectural Reasoning"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "TBD — Research Preview Only (All Rights Reserved pending formal license selection)" }
+authors = [
+    { name = "EncoreZaan", email = "teobarreau7@gmail.com" }
+]
+keywords = [
+    "architecture",
+    "spatial-reasoning",
+    "geometric-deep-learning",
+    "bim",
+    "ifc",
+    "floorplan-analysis",
+    "computational-design",
+    "artificial-intelligence"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent"
+]
+
+dependencies = [
+    "torch>=2.4.0",
+    "numpy>=1.24.0",
+    "pillow>=10.0.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.66.0",
+    "requests>=2.31.0",
+    "pytest>=8.0.0"
+]
+
+[project.optional-dependencies]
+vlm = [
+    "transformers>=4.45.0",
+    "peft>=0.14.0",
+    "accelerate>=0.30.0",
+    "bitsandbytes>=0.43.0",
+    "qwen-vl-utils"
+]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "black>=24.0.0",
+    "ruff>=0.4.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/EncoreZaan/AXIS"
+"Bug Tracker" = "https://github.com/EncoreZaan/AXIS/issues"
+"Documentation" = "https://github.com/EncoreZaan/AXIS/tree/main/docs"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v"
