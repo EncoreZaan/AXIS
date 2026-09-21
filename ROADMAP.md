@@ -2,6 +2,8 @@
 
 This roadmap details the progression of the **AXIS (Architectural eXpert Intelligence System)** research initiative. It distinguishes what has been empirically demonstrated, what is currently underway, and prospective milestones.
 
+**Status legend:** ✅ Done · 🟡 In progress / experimental · 🔴 Blocked · 🔵 Planned (not started). These map directly onto the `DONE` / `IN PROGRESS` / `BLOCKED` / `PLANNED` descriptors used throughout [`PROJECT_STATUS.md`](PROJECT_STATUS.md). A `🔵 Planned` item is never described as done elsewhere in this repository, and this roadmap is updated whenever a milestone's real status changes — never the reverse.
+
 ---
 
 ## Roadmap Phases
@@ -43,7 +45,7 @@ flowchart TD
 
 ## Detailed Milestone Descriptions
 
-### 1. COMPLETED
+### 1. COMPLETED ✅
 - [x] **Master Dataset v2 Closure:** Consolidated 65,342 unique assets across 19 sources with zero SHA256 and zero project leakage (`DATASET_SPLIT_REPORT.md`).
 - [x] **Red-Team Quality & Harm Audit:** Identified and quarantined 41 harmful instances (pixel-as-m² confusion, fake multimodal dependencies).
 - [x] **RAW Corpus Forensic Discovery:** Exhaustive scan of 66,847 files proving exactly 10 genuine 2D/3D pairs exist in RAW (`CORE_RESBIM_PAIRED`).
@@ -57,27 +59,28 @@ flowchart TD
 
 ---
 
-### 2. CURRENT
-- [x] **Official Nomenclature Migration:** Formal transition from `ARCHI-AI` codename to `AXIS` while preserving unbroken scientific provenance.
-- [ ] **Public Community Launch:** Presenting AXIS to AI research communities (including Renaud Dékode, OpenBIM practitioners, CAD researchers) to onboard contributors.
-- [ ] **Open Governance & Working Groups:** Establishing working tracks for ML researchers, BIM engineers, and architects.
+### 2. CURRENT 🟡
+- [x] ✅ **Official Nomenclature Migration:** Formal transition from `ARCHI-AI` codename to `AXIS` while preserving unbroken scientific provenance.
+- [x] ✅ **MIT License Adoption:** AXIS original code and documentation published under the MIT License; third-party dataset/checkpoint licenses kept explicitly separate (see [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md)).
+- [ ] 🟡 **Public Community Launch:** Presenting AXIS to AI research communities (including Renaud Dékode, OpenBIM practitioners, CAD researchers) to onboard contributors.
+- [ ] 🟡 **Open Governance & Working Groups:** Establishing working tracks for ML researchers, BIM engineers, and architects.
 
 ---
 
-### 3. NEXT
-- [ ] **Path Portability for the Micro-Pilot Pipeline:** Parameterize the hardcoded `ARCHI_AI/`-prefixed paths in `dataset_tools/experiments/micro_pilot/` and the standalone Wave-1 audit scripts (`gold_set_builder.py`, `audit_calculator.py`, `decision_classifier.py`, `deep_audit.py`, `audit_diagnostics.py`) to resolve relative to the repository root, matching the convention already used in `dataset_tools/master_pipeline/config.py`. See `DATASET.md` §6 for the current documented workaround.
-- [ ] **Corpus Gap Remediation (P0):** Acquire 50 to 100 permissive OpenBIM IFC models (MIT, Apache 2.0, CC-BY) with paired architectural elevations and floorplans.
-- [ ] **Deterministic CAD Plan Derivation (P1):** Build an automated pipeline extracting millimeter-accurate vector plans from `IfcSpace` / `IfcWall` geometries, permanently solving the metric scale issue without relying on uncalibrated pixels.
-- [ ] **2D Vision Benchmark Execution:** Train and evaluate a dedicated 2D vision backbone on `ROOM_TOPOLOGY` and `FLOORPLAN_READING` tasks from Dataset A.
-- [ ] **Pre-Training Gate Unlocking:** Resolve the conditionality requirements defined in `SCIENTIFIC_READINESS_REPORT.md` to transition the gate from `RED/CONDITIONAL` to `GREEN`.
+### 3. NEXT 🔵
+- [ ] 🔵 **Path Portability for the Micro-Pilot Pipeline:** Parameterize the hardcoded `ARCHI_AI/`-prefixed paths in `dataset_tools/experiments/micro_pilot/` and the standalone Wave-1 audit scripts (`gold_set_builder.py`, `audit_calculator.py`, `decision_classifier.py`, `deep_audit.py`, `audit_diagnostics.py`) to resolve relative to the repository root, matching the convention already used in `dataset_tools/master_pipeline/config.py`. See `DATASET.md` §6 for the current documented workaround.
+- [ ] 🔴 **Corpus Gap Remediation (P0):** Acquire 50 to 100 permissive OpenBIM IFC models (MIT, Apache 2.0, CC-BY) with paired architectural elevations and floorplans. Blocked on data acquisition.
+- [ ] 🔵 **Deterministic CAD Plan Derivation (P1):** Build an automated pipeline extracting millimeter-accurate vector plans from `IfcSpace` / `IfcWall` geometries, permanently solving the metric scale issue without relying on uncalibrated pixels.
+- [ ] 🔵 **2D Vision Benchmark Execution:** Train and evaluate a dedicated 2D vision backbone on `ROOM_TOPOLOGY` and `FLOORPLAN_READING` tasks from Dataset A.
+- [ ] 🔴 **Pre-Training Gate Unlocking:** Resolve the conditionality requirements defined in `docs/research/SCIENTIFIC_READINESS_REPORT.md` to transition the gate from `CONDITIONAL` to `GREEN`. Currently blocked (`TRAINING_ALLOWED: NO`).
 
 ---
 
-### 4. FUTURE
-- [ ] **Specialized Pre-Training:** Large-scale unimodal and multimodal pre-training over certified architectural representations.
-- [ ] **Normative & Regulatory Engine:** Deep reasoning across building codes (French accessibility / ERP, Neufert standards, IBC).
-- [ ] **Inference Optimization:**
+### 4. FUTURE 🔵
+- [ ] 🔵 **Specialized Pre-Training:** Large-scale unimodal and multimodal pre-training over certified architectural representations.
+- [ ] 🔵 **Normative & Regulatory Engine:** Deep reasoning across building codes (French accessibility / ERP, Neufert standards, IBC).
+- [ ] 🔵 **Inference Optimization:**
   - Quantization studies (NF4, AWQ, FP8 for sub-10 GB local workstations).
   - Custom geometric distance kernels (Triton/CUDA).
-- [ ] **DSpark Acceleration Track:** Prospective investigation into DSpark for inference optimization and execution acceleration (pending physical benchmarks; no claims until verified).
-- [ ] **Public Model Checkpoints & Comprehensive Benchmark Suite:** Open release of trained weights with standardized architectural evaluation harness.
+- [ ] 🔵 **DSpark Acceleration Track:** Prospective investigation into DSpark for inference optimization and execution acceleration (pending physical benchmarks; no claims until verified). Purely planned — no implementation exists yet.
+- [ ] 🔵 **Public Model Checkpoints & Comprehensive Benchmark Suite:** Open release of trained weights with standardized architectural evaluation harness. License for any released checkpoint will be decided and stated at release time.

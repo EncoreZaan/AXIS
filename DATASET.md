@@ -81,7 +81,7 @@ $$\text{Gold Set V3} \cap \text{Dataset A} = \emptyset$$
 
 ## 5. Data Access Policy
 
-In compliance with the individual licensing terms of each upstream academic/research dataset listed in §1 (AXIS's own code license, currently TBD, does not modify or supersede these third-party terms — see `GOVERNANCE.md`):
+In compliance with the individual licensing terms of each upstream academic/research dataset listed in §1 (AXIS's own code is MIT-licensed, but that grant does not modify or supersede these third-party terms — see [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) and `GOVERNANCE.md`):
 - **No Third-Party Raw Assets are Redistributed:** This repository contains ingestion scripts, validation manifests, metadata schemas, and benchmark definitions.
 - **Reproduction:** Contributors can download public source datasets directly from their official upstream repositories and run `dataset_tools/acquisition/` to reconstruct the Master Dataset v2 locally.
 

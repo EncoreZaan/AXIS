@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use AXIS in your work, please cite it using the metadata below. No academic paper has been published for this project yet; cite the software/repository directly."
+type: software
+title: "AXIS: Architectural eXpert Intelligence System"
+abstract: >-
+  AXIS is an open-source research project developing specialized artificial
+  intelligence for spatial, geometric, and architectural reasoning, including
+  2D floorplan reading, 3D BIM/IFC understanding, and normative clearance
+  compliance checking. AXIS is the public continuation of research previously
+  conducted under the internal codename ARCHI-AI.
+authors:
+  - name: "EncoreZaan"
+    email: "teobarreau7@gmail.com"
+repository-code: "https://github.com/EncoreZaan/AXIS"
+url: "https://github.com/EncoreZaan/AXIS"
+license: MIT
+version: 0.1.0
+date-released: "2026-09-21"
+keywords:
+  - architecture
+  - spatial-reasoning
+  - geometric-deep-learning
+  - bim
+  - ifc
+  - floorplan-analysis
+  - computational-design
+  - artificial-intelligence

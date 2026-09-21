@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased] - 2026-09-21
+
+### Open Source Finalization
+- **MIT License Adopted:** AXIS original code and documentation are now licensed under the MIT License (see `LICENSE`), replacing the prior `TBD` status. Selected and confirmed by the project owner.
+- **Third-Party License Separation:** Added `THIRD_PARTY_LICENSES.md`, explicitly separating the MIT-licensed AXIS code from third-party datasets, checkpoints, and dependencies, none of which are relicensed by this change.
+- **Bilingual README:** `README.md` is now the primary French-language overview; `README_EN.md` provides a complete, independently-written English version. Both cross-link and stay in sync.
+- **New Contributor Onboarding:** Added `START_HERE.md`, `docs/CONTRIBUTOR_GUIDE.md`, and `docs/RESEARCH_CONTRIBUTION_PROTOCOL.md`.
+- **Academic Citation:** Added `CITATION.cff`.
+- **Packaging Fix:** Removed a `License ::` classifier in `pyproject.toml` that was incompatible with the new SPDX `license = "MIT"` expression and broke `pip install -e .` under current `setuptools` — caught by actually re-running the install on a fresh clone, not just by reading the config.
+- **Verified Fresh-Clone Numbers:** Re-ran `pip install -e .` and `pytest tests/` on a clean virtual environment as part of this pass; confirmed the previously documented fresh-clone test breakdown (35 passed / 19 failed / 38 errored / 1 skipped out of 93 collected, 9/9 on the private-data-independent CI subset) still holds.
+
+---
+
 ## [0.1.0] - 2026-09-21
 
 ### Official Renaming & Public Transition

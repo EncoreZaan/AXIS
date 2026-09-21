@@ -1,269 +1,316 @@
-# AXIS
+# 🏛️ AXIS
 
-## Architectural eXpert Intelligence System
+### Architectural eXpert Intelligence System
+
+**🇫🇷 Français** | [🇬🇧 English](README_EN.md)
 
 [![Python 3.10 | 3.11](https://img.shields.io/badge/Python-3.10%20%7C%203.11-blue.svg)](https://www.python.org/)
-[![Tests](https://img.shields.io/badge/Tests-99%20in%20maintainer%20env%20%7C%20~35%2F99%20on%20fresh%20clone-yellow.svg)](REPRODUCIBILITY.md#4-automated-test-suite-what-actually-runs-on-a-fresh-clone)
-[![Master Dataset v2](https://img.shields.io/badge/Master%20Dataset%20v2-65%2C342%20Assets-blueviolet.svg)](DATASET.md)
-[![Gold Set V3 Certified](https://img.shields.io/badge/Gold%20Set%20V3-Certified%200.0517m%20MAE-success.svg)](EVALUATION.md)
-[![License: TBD](https://img.shields.io/badge/License-TBD%20(Research%20Preview)-yellow.svg)](GOVERNANCE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Tests: 9/9 CI gate](https://img.shields.io/badge/CI%20gate-9%2F9%20passing-brightgreen.svg)](REPRODUCIBILITY.md#4-automated-test-suite-what-actually-runs-on-a-fresh-clone)
+[![Master Dataset v2](https://img.shields.io/badge/Master%20Dataset%20v2-65%2C342%20assets-blueviolet.svg)](DATASET.md)
+[![Gold Set V3](https://img.shields.io/badge/Gold%20Set%20V3-0.0517m%20MAE-informational.svg)](EVALUATION.md)
+[![Research Status](https://img.shields.io/badge/Statut-Recherche%20en%20cours-yellow.svg)](PROJECT_STATUS.md)
 
-> **Official Repository:** [https://github.com/EncoreZaan/AXIS.git](https://github.com/EncoreZaan/AXIS.git)  
-> **Publication Readiness:** See [`PUBLICATION_READINESS_AUDIT.md`](PUBLICATION_READINESS_AUDIT.md) for the record of what was audited, what was fixed, and what remains an open, explicitly-stated limitation.  
-> **Evolution Note:** AXIS is the publicly-released research evolution of the project historically codenamed `ARCHI-AI`. "Publicly released" refers to the repository's visibility, not to its software license — see [License Status](#license-status) below, which is currently **TBD**. All scientific provenance and historical identifiers (`ARCHI-AI-P4-005`, hashes, run logs) remain preserved and fully traceable. See [`docs/history/project-history.md`](docs/history/project-history.md).
+> Projet de recherche open source visant à développer une intelligence artificielle spécialisée dans le raisonnement spatial, géométrique et architectural — publié sous licence MIT.
 
----
-
-## Table of Contents
-
-- [What is AXIS?](#what-is-axis)
-- [Why AXIS?](#why-axis)
-- [Current Status](#current-status)
-- [Research Foundations & Philosophy](#research-foundations--philosophy)
-- [Validated Empirical Results](#validated-empirical-results)
-- [Master Dataset v2 Overview](#master-dataset-v2-overview)
-- [System Architecture](#system-architecture)
-- [Repository Structure](#repository-structure)
-- [Reproducibility](#reproducibility)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [Scientific Limitations & Known Blockers](#scientific-limitations--known-blockers)
-- [License Status](#license-status)
-- [Community & Contact](#community--contact)
+> **Dépôt officiel :** [github.com/EncoreZaan/AXIS](https://github.com/EncoreZaan/AXIS)
+> **Évolution du projet :** AXIS est la suite publique du travail de recherche mené précédemment sous le nom de code `ARCHI-AI`. Toute la traçabilité scientifique historique (identifiants, hashs, journaux d'expériences) est conservée intégralement — voir [`docs/history/project-history.md`](docs/history/project-history.md).
+> **Nouveau sur le projet ?** Commencez par [`START_HERE.md`](START_HERE.md).
 
 ---
 
-## What is AXIS?
+## ⚠️ Statut
 
-**AXIS (Architectural eXpert Intelligence System)** is a publicly-visible, open scientific research initiative aimed at developing specialized artificial intelligence for:
-
-1. **Spatial Reasoning:** Understanding relative coordinate relationships, 3D Euclidean distances, clearance zones, and orientation in complex interior spaces.
-2. **Geometric Reasoning:** Reading, decoding, and validating 2D architectural drawings (floorplans) and 3D Building Information Models (BIM / IFC).
-3. **Architectural Understanding & Normative Compliance:** Evaluating designs against professional building standards and ergonomic regulations (e.g., Neufert standards, French accessibility/PMR thresholds).
-4. **Grounded Multimodal Synthesis:** Bridging the gap between 2D floorplans, 3D spatial models, and structured textual specifications without hallucinating physical scale.
+**AXIS est actuellement un projet de recherche en développement actif.** Certaines capacités sont validées expérimentalement sur un périmètre étroit et précisément défini (voir [Résultats actuels](#-résultats-actuels)). Plusieurs axes majeurs restent expérimentaux, bloqués par la disponibilité ou la licence des données, ou simplement non commencés. AXIS n'est **pas** un modèle de production, et un seul résultat positif sur un benchmark restreint ne doit jamais être lu comme une preuve de compréhension générale de l'architecture. Voir [État actuel de la recherche](#-état-actuel-de-la-recherche) pour le détail complet, sans filtre.
 
 ---
 
-## Why AXIS?
+## Table des matières
 
-General-purpose Large Language Models (LLMs) and Vision-Language Models (VLMs) demonstrate remarkable linguistic and generic perceptual abilities. However, in architectural domains, they consistently fail at fundamental physical tasks:
-
-* **The Metric Hallucination Problem:** Models routinely invent metric surface areas ($m^2$) or wall thicknesses from uncalibrated 2D pixel rasters where no ground physical scale exists.
-* **Topological Incoherence:** They fail to preserve partition graphs, confusing non-bearing partitions with structural walls or generating discontinuous circulation routes.
-* **Normative & Clearance Blindness:** They cannot reliably evaluate safety and ergonomics, often failing to detect that an 85 cm passage violates wheelchair accessibility regulations.
-* **Dataset Artifact Shortcuts:** Standard models exploit metadata shortcuts (memorizing typical room dimensions or file names) rather than learning true spatial geometry.
-
-**AXIS does not attempt to clone generalist chat models.** Instead, AXIS is built from the ground up to explore specialized, mathematically grounded architectural intelligence—relying on falsifiable target contracts, multi-dimensional data audits, zero-leakage splits, and immutable benchmarks.
+- [Qu'est-ce que AXIS ?](#-quest-ce-que-axis-)
+- [Pourquoi AXIS ?](#-pourquoi-axis-)
+- [Vision](#-vision)
+- [État actuel de la recherche](#-état-actuel-de-la-recherche)
+- [Résultats actuels](#-résultats-actuels)
+- [Master Dataset v2](#-master-dataset-v2)
+- [Architecture du système](#-architecture-du-système)
+- [Structure du dépôt](#-structure-du-dépôt)
+- [Reproduire les expériences](#-reproduire-les-expériences)
+- [Roadmap](#-roadmap)
+- [Contribuer](#-contribuer)
+- [Limites scientifiques](#-limites-scientifiques)
+- [Licence](#-licence)
+- [Communauté & contact](#-communauté--contact)
 
 ---
 
-## Current Status
+## ✨ Qu'est-ce que AXIS ?
 
-We adhere to strict, transparent status descriptors across the entire project:
+**AXIS (Architectural eXpert Intelligence System)** est une initiative de recherche scientifique ouverte visant à développer une intelligence artificielle spécialisée pour :
 
-| Subsystem / Milestone | Status | Description & Verifiable Grounding |
+1. **Le raisonnement spatial** — comprendre les relations de coordonnées relatives, les distances euclidiennes 3D, les zones de dégagement et l'orientation dans des espaces intérieurs complexes.
+2. **Le raisonnement géométrique** — lire, décoder et valider des plans architecturaux 2D et des modèles BIM (Building Information Modeling / IFC) en 3D.
+3. **La compréhension architecturale et la conformité normative** — évaluer des conceptions au regard de standards professionnels et de réglementations ergonomiques (normes Neufert, seuils d'accessibilité PMR français).
+4. **La synthèse multimodale ancrée** — relier plans 2D, modèles spatiaux 3D et spécifications textuelles structurées sans halluciner d'échelle physique.
+
+Le code et la documentation originaux d'AXIS sont publiés sous **licence MIT**. Les jeux de données tiers utilisés ou référencés conservent leurs propres licences — voir [Licence](#-licence).
+
+---
+
+## 🎯 Pourquoi AXIS ?
+
+Les grands modèles de langage (LLM) et modèles vision-langage (VLM) génralistes démontrent des capacités linguistiques et perceptives remarquables. Pourtant, dans le domaine architectural, ils échouent de façon récurrente sur des tâches physiques fondamentales :
+
+* **Hallucination métrique :** les modèles inventent régulièrement des surfaces (m²) ou des épaisseurs de murs à partir de rasters 2D non calibrés, sans échelle physique de référence.
+* **Incohérence topologique :** ils échouent à préserver les graphes de cloisonnement, confondant partitions non porteuses et murs structurels, ou générant des circulations discontinues.
+* **Aveuglement normatif :** ils ne détectent pas de façon fiable qu'un passage de 85 cm viole une réglementation d'accessibilité PMR.
+* **Raccourcis d'artefacts de dataset :** les modèles standards exploitent des raccourcis de métadonnées (dimensions typiques de pièces, noms de fichiers) plutôt que d'apprendre une véritable géométrie spatiale.
+
+**AXIS ne cherche pas à cloner un chatbot généraliste.** Le projet est construit depuis zéro pour explorer une intelligence architecturale spécialisée et mathématiquement fondée — s'appuyant sur des contrats de cibles falsifiables, des audits de données multi-dimensionnels, des découpages sans fuite (« zero-leakage splits ») et des benchmarks immuables.
+
+---
+
+## 🗺️ Vision
+
+AXIS vise à terme un système capable d'assister la conception, la vérification et la compréhension architecturale de façon fiable et vérifiable — pas en imitant le langage de l'architecture, mais en raisonnant réellement sur sa géométrie, ses contraintes physiques et ses normes. C'est un objectif à long terme, poursuivi étape par étape, chaque capacité devant être prouvée sur un benchmark adversarial avant d'être déclarée acquise (voir [Fondements scientifiques](RESEARCH.md)). Le projet privilégie explicitement l'honnêteté scientifique à la vitesse d'annonce : une capacité non démontrée est documentée comme telle, jamais présentée comme acquise.
+
+---
+
+## 🔬 État actuel de la recherche
+
+Le projet distingue strictement ce qui est validé, expérimental, bloqué ou simplement planifié :
+
+| Sous-système / Jalon | Statut | Description |
 | :--- | :---: | :--- |
-| **Master Dataset v2** | `DONE` | **65,342 unique assets** across 19 sources (`DATASET_SPLIT_REPORT.md`). 0 SHA256 leaks, 0 project leaks. |
-| **Data Partitioning** | `DONE` | 53,720 train / 5,724 val / 5,898 test (= 65,342 total) + 1,563 held in a separate, isolated review queue (not summed into the 65,342). Seed = 42. See [`DATASET.md`](DATASET.md#2-dataset-partitions--anti-leakage-guarantees). |
-| **Automated Test Suite** | `DONE` (maintainer environment) | **99 tests** in `tests/`; **99/99 passing requires the private RAW dataset corpus**, which is not redistributed in this repository. See [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md#4-automated-test-suite-what-actually-runs-on-a-fresh-clone) for what actually runs on a fresh clone (~35/99 out of the box). |
-| **Phase 4 Task Gating** | `DONE` | 4/69 tasks approved (`FLOORPLAN_READING`, `ROOM_TOPOLOGY`, `OBJECT_RELATION`, `CLEARANCE_CHECK`). 65 excluded. |
-| **Gold Set V3 Sanctuary** | `DONE` | 200 certified instances + 200 hard negatives. Manifest SHA256: `81561fae5b524fa26622e5fac27d612f7d75a11e6ff0be774448fef04b9f2aca`. Immutable & read-only. **Not publicly downloadable** — see [`EVALUATION.md`](EVALUATION.md#4-artifact-availability). |
-| **Clearance Benchmark** | `DONE` | **0.0517 m MAE** on Gold Set (vs Baseline 0: **2.7739 m**), a **98.14%** relative MAE reduction (arithmetic, see [`EVALUATION.md`](EVALUATION.md)). 100% Pass/Fail accuracy on a 99-positive/1-negative set of 100 — see caveat in [`EVALUATION.md`](EVALUATION.md#32-why-100-accuracy-is-not-a-robustness-proof). |
-| **ResPlan Metric Scale** | `BLOCKED` | Forensic audit proved scale distortion on 17k plans. **Quarantined** for all metric ($m^2$) tasks. |
-| **FloorPlanCAD Legal** | `BLOCKED` | 741 CAD vector drawings quarantined under `LEGAL_REVIEW_REQUIRED`. |
-| **2D Vision Model (`ROOM_TOPOLOGY`)** | `NOT YET VALIDATED` | Baseline 0 calibrated (34% exact match). Model training scheduled for upcoming phase. |
-| **VLM QLoRA Feasibility** | `EXPERIMENTAL` | Dry-run and 6-step proof-of-concept on Qwen2-VL-7B (loss $1.893 \to 1.769$, 0 OOM). **Not a final model.** |
-| **Multimodal 2D $\leftrightarrow$ 3D Reasoning**| `NOT YET VALIDATED` | Synthetic cross-modal training rejected due to raw rarity (only 10 true pairs in RAW). |
-| **Pre-Training Gate** | `BLOCKED` | Status `CONDITIONAL` (`TRAINING_ALLOWED: NO`) until 50-100 open-licensed OpenBIM IFC pairs are acquired. |
-| **DSpark Acceleration** | `PLANNED` | Prospective research track; no claims before physical benchmarks. |
+| **Master Dataset v2** | ✅ `DONE` | **65 342 assets uniques** sur 19 sources. 0 fuite SHA256, 0 fuite de projet. |
+| **Partitionnement des données** | ✅ `DONE` | 53 720 train / 5 724 val / 5 898 test (= 65 342) + 1 563 en file de revue isolée (non comptée dans le total). Seed = 42. |
+| **Suite de tests automatisés** | 🟡 `PARTIEL` | 93 tests collectés sur un clone neuf sans données privées : **35 passent, 19 échouent, 38 erreurs, 1 ignoré** — tous les échecs/erreurs proviennent de données privées non redistribuées. Le sous-ensemble indépendant des données (9 tests) passe à 9/9 en CI. |
+| **Sélection des tâches Phase 4** | ✅ `DONE` | 4/69 tâches approuvées (`FLOORPLAN_READING`, `ROOM_TOPOLOGY`, `OBJECT_RELATION`, `CLEARANCE_CHECK`). 65 exclues. |
+| **Gold Set V3** | ✅ `DONE` | 200 instances certifiées + 200 négatifs adverses. Immuable, lecture seule. **Non téléchargeable publiquement.** |
+| **Benchmark Clearance** | ✅ `DONE` | **MAE 0.0517 m** sur le Gold Set (vs Baseline 0 : 2,7739 m), réduction relative de **98,14 %**. Voir les réserves statistiques ci-dessous. |
+| **ResPlan (échelle métrique)** | 🔴 `BLOQUÉ` | Distorsion d'échelle prouvée sur 17k plans. Mis en quarantaine pour toute tâche métrique (m²). |
+| **FloorPlanCAD** | 🔴 `BLOQUÉ` | 741 dessins vectoriels CAO en quarantaine, revue légale requise. |
+| **Modèle vision 2D (`ROOM_TOPOLOGY`)** | 🟡 `NON ÉVALUÉ` | Baseline 0 calibrée (34 % exact match). Entraînement du modèle prévu pour une phase ultérieure. |
+| **Preuve de concept VLM QLoRA** | 🟡 `EXPÉRIMENTAL` | Dry-run et 6 pas sur Qwen2-VL-7B (perte 1,893 → 1,769, 0 OOM). **N'est pas un modèle final.** |
+| **Raisonnement multimodal 2D↔3D** | 🟡 `NON ÉVALUÉ` | Entraînement synthétique rejeté faute de paires réelles suffisantes (10 paires vraies dans le corpus brut). |
+| **Pre-Training Gate** | 🔴 `BLOQUÉ` | Statut `CONDITIONAL` (`TRAINING_ALLOWED: NO`) tant que 50 à 100 paires IFC OpenBIM sous licence ouverte n'ont pas été acquises. |
+| **Accélération DSpark** | 🔵 `PLANIFIÉ` | Piste de recherche prospective ; aucune affirmation avant benchmarks physiques réels. |
+
+Détail complet et sources vérifiables : [`PROJECT_STATUS.md`](PROJECT_STATUS.md).
 
 ---
 
-## Research Foundations & Philosophy
+## 📊 Résultats actuels
 
-The AXIS project operates under three foundational scientific rules:
+Lors de la **Phase 4 (étape 6)**, le checkpoint sélectionné **`ARCHI-AI-P4-005`** (entraîné sur Dataset A-Full, seed 42) a été évalué sur le Gold Set V3 sanctuarisé.
 
-1. **Rule of Truth:** No capability is declared acquired without an adversarial benchmark comparing against Baseline 0.
-2. **Rule of Isolation:** The Gold Set V3 is strictly read-only. Post-hoc fine-tuning on evaluation sets is prohibited.
-3. **Anti-Shortcut Ablations:** All tasks undergo three ablation conditions:
-   - **Condition A (Clean):** Full inputs without extraneous file metadata.
-   - **Condition B (Metadata Sanitization):** Complete expulsion of all asset names, hashes, and source hints.
-   - **Condition C (Scrambled Inputs):** Permuted coordinates or masked tokens. Performance must collapse to Baseline 0 to prove that the model relies on true spatial signal.
-
----
-
-## Validated Empirical Results
-
-During **Phase 4 Step 6**, the selected checkpoint **`ARCHI-AI-P4-005`** (trained on Dataset A-Full, seed 42) was evaluated on the sanctified Gold Set V3:
-
-### Task: `CLEARANCE_CHECK` ($n = 100$)
+### Tâche `CLEARANCE_CHECK` (n = 100)
 
 ```text
 ========================================================================================
-MODEL / CONFIGURATION             MAE (m)       MEDIAN (m)    RMSE (m)      GAIN VS B0
+MODÈLE / CONFIGURATION            MAE (m)       MÉDIANE (m)   RMSE (m)      GAIN VS B0
 ========================================================================================
-Baseline 0 (Trivial Constant)     2.7739 m      1.2200 m      3.8649 m      Reference
-Model A-Small (001)               0.4663 m      0.2609 m      0.7887 m      +83.19%
-Model A-Medium (004)              0.1699 m      0.1082 m      0.2712 m      +93.87%
-Selected Checkpoint A-Full (005)  0.0517 m      0.0412 m      0.0703 m      +98.14%
+Baseline 0 (constante triviale)   2,7739 m      1,2200 m      3,8649 m      Référence
+Modèle A-Small (001)              0,4663 m      0,2609 m      0,7887 m      +83,19%
+Modèle A-Medium (004)             0,1699 m      0,1082 m      0,2712 m      +93,87%
+Checkpoint sélectionné A-Full(005)0,0517 m      0,0412 m      0,0703 m      +98,14%
 ========================================================================================
 ```
 
-* **Absolute Error Reduction:** **$-2.7222$ m** relative to Baseline 0.
-* **Validation → Gold Set MAE Difference:** **$+0.0036$ m** (Validation MAE $0.0481$ m $\to$ Gold MAE $0.0517$ m). This is the difference between two independently-constructed held-out sets, not a classical train-vs-test generalization gap — see [`EVALUATION.md`](EVALUATION.md#31-task-1-clearance_check-n--100) for the distinction.
-* **Normative Verdict Classification Accuracy:** **100.00%** ($99\text{ TP} / 0\text{ FP} / 1\text{ TN} / 0\text{ FN}$ on $n=100$). **This is not a general robustness claim** — the set is 99 positives / 1 negative, so a trivial "always PASS" strategy would already score 99%. See [`EVALUATION.md`](EVALUATION.md#32-why-100-accuracy-is-not-a-robustness-proof) for the full statistical context.
-* **Certified Checkpoint SHA256:** `69f00c211e1db63181bf7c6f4ae624c3aa312856f7d8b2191bc9c8b84a680d54` — **checkpoint file itself is not publicly available**; see [`EVALUATION.md`](EVALUATION.md#4-artifact-availability).
+* **Réduction d'erreur absolue :** −2,7222 m par rapport à Baseline 0.
+* **Écart Validation → Gold Set :** +0,0036 m (MAE validation 0,0481 m → MAE Gold 0,0517 m). Il s'agit de l'écart entre deux ensembles indépendants tenus à l'écart de l'entraînement, pas d'un « generalization gap » classique train/test — voir [`EVALUATION.md`](EVALUATION.md#31-task-1-clearance_check-n--100).
+* **Précision de classification normative (Pass/Fail) : 100,00 %** (99 TP / 0 FP / 1 TN / 0 FN sur n = 100).
 
-See [`EVALUATION.md`](EVALUATION.md) for full error distribution curves and case studies.
+> ⚠️ **Ce chiffre de 100 % doit être lu avec prudence.** L'ensemble de test comporte 99 positifs pour 1 seul négatif : une stratégie triviale consistant à toujours répondre « PASS » obtiendrait déjà 99 % de précision. Ce résultat ne constitue donc **pas** une preuve de robustesse générale du classifieur, et encore moins une preuve d'une quelconque « compréhension de l'architecture » par le modèle. Il démontre une régression spatiale précise sur une tâche étroite et bien définie (`CLEARANCE_CHECK`), rien de plus. Détail statistique complet : [`EVALUATION.md` §3.2](EVALUATION.md#32-why-100-accuracy-is-not-a-robustness-proof).
 
----
-
-## Master Dataset v2 Overview
-
-The Master Dataset v2 is compiled from **19 independent physical repositories** and comprises **65,342 unique assets**:
-
-* **Splits:**
-  - `train`: **53,720** assets
-  - `validation`: **5,724** assets
-  - `test`: **5,898** assets
-  - `review`: **1,563** assets
-* **Leakage Guarantee:** Zero SHA256 leakage and zero project-group leakage across splits.
-* **Corpus Gaps & Quarantines:**
-  - `CORE_RESPLAN`: 17,000 vector plans quarantined from metric calculations due to non-uniform canvas scaling.
-  - `CORE_FLOORPLANCAD`: 741 vector drawings quarantined pending legal review.
-  - `CORE_RESBIM_PAIRED`: Only 10 genuine 2D floorplan $\leftrightarrow$ 3D BIM pairs exist in the RAW corpus.
-
-See [`DATASET.md`](DATASET.md) for complete source registry, schemas, and acquisition matrices.
+Le checkpoint entraîné n'est **pas publiquement disponible** (voir [`EVALUATION.md` §4](EVALUATION.md#4-artifact-availability)). Le hash SHA256 est documenté pour la traçabilité scientifique uniquement.
 
 ---
 
-## System Architecture
+## 📦 Master Dataset v2
+
+Le Master Dataset v2 est compilé à partir de **19 dépôts physiques indépendants** et comprend **65 342 assets uniques** :
+
+* **Splits :** train 53 720 / validation 5 724 / test 5 898 / revue (isolée) 1 563.
+* **Garantie anti-fuite :** zéro fuite SHA256, zéro fuite de projet entre splits.
+* **Quarantaines connues :**
+  - `CORE_RESPLAN` : 17 000 plans vectoriels mis en quarantaine pour tout calcul métrique (échelle de canevas non uniforme).
+  - `CORE_FLOORPLANCAD` : 741 dessins vectoriels en attente de revue légale.
+  - `CORE_RESBIM_PAIRED` : seulement 10 paires 2D↔3D réellement appariées existent dans le corpus brut.
+
+Registre complet des sources, schémas et licences : [`DATASET.md`](DATASET.md). Séparation licence code / licence données : [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md).
+
+---
+
+## 🏗️ Architecture du système
 
 ```mermaid
 flowchart LR
-    A["Raw CAD / BIM / Rasters<br/>(19 Sources)"] --> B["Master Pipeline<br/>(Forensic Audits & Deduplication)"]
-    B --> C["Master Dataset v2<br/>(65,342 Assets)"]
-    C --> D["Task Gating & Supervision<br/>(Deterministic Targets)"]
+    A["Données brutes CAO / BIM / rasters<br/>(19 sources)"] --> B["Pipeline Master<br/>(audits forensiques & déduplication)"]
+    B --> C["Master Dataset v2<br/>(65 342 assets)"]
+    C --> D["Contrôle des tâches & supervision<br/>(cibles déterministes)"]
     D --> E["Dataset A<br/>(Small / Medium / Full)"]
-    E --> F["SpatialRelationMLP<br/>(3D Coordinate Regressor)"]
-    F --> G["Gold Set V3 Evaluation<br/>(MAE 0.0517 m / 100% Accuracy)"]
+    E --> F["SpatialRelationMLP<br/>(régresseur de coordonnées 3D)"]
+    F --> G["Évaluation Gold Set V3<br/>(MAE 0,0517 m / 100% accuracy)"]
 ```
 
-See [`ARCHITECTURE.md`](ARCHITECTURE.md) for comprehensive subsystem diagrams.
+Diagrammes de sous-systèmes détaillés : [`ARCHITECTURE.md`](ARCHITECTURE.md).
 
 ---
 
-## Repository Structure
+## 📁 Structure du dépôt
 
 ```text
 AXIS/
-├── README.md                          # Project overview and entrypoint
-├── ROADMAP.md                         # Milestone tracking (Completed, Current, Next, Future)
-├── CONTRIBUTING.md                    # Contributor guide, profiles, and workflow
-├── CODE_OF_CONDUCT.md                 # Contributor Covenant 2.1
-├── SECURITY.md                        # Vulnerability reporting policy
-├── GOVERNANCE.md                      # Governance model and decision-making
-├── CHANGELOG.md                       # Release history and traceability
-├── RESEARCH.md                        # Scientific methodology, falsifiability, research log
-├── ARCHITECTURE.md                    # System architecture and data pipeline specifications
-├── DATASET.md                         # Master Dataset v2 documentation and source registry
-├── EVALUATION.md                      # Gold Set V3 benchmark protocol and certified metrics
-├── EXPERIMENTS.md                     # Registry of runs, ablations, and micro-experiments
-├── DEVELOPMENT.md                     # Developer guide, setup, and coding standards
-├── REPRODUCIBILITY.md                 # Bit-exact reproduction guide and hardware profiles
-├── PROJECT_STATUS.md                  # Granular status matrix (DONE, IN PROGRESS, BLOCKED, etc.)
-├── pyproject.toml                     # Python packaging configuration
-├── requirements.txt                   # Tested dependencies
-├── .gitignore                         # Anti-leakage and binary asset exclusions
-├── .github/
-│   ├── ISSUE_TEMPLATE/                # 6 issue templates (bug, research, experiment, dataset...)
-│   ├── PULL_REQUEST_TEMPLATE.md       # Scientific PR review checklist
-│   └── workflows/tests.yml            # CI: install check + data-independent test subset (see REPRODUCIBILITY.md §4)
-├── dataset_tools/                     # Ingestion, validation, and supervision engine
-├── evaluation/                        # Benchmark harnesses and baseline runners
-├── experiments/                       # Micro-pilot configs, metrics, and JSON summaries
-│   └── phase4_micro_pilot/
-├── tests/                             # 99 automated unit and integration tests
-├── configs/                           # Central configuration files
-└── docs/                              # Detailed forensic audits, research logs, and history
-    ├── datasets/
-    ├── research/
-    │   └── inference-optimization.md  # Prospective acceleration (quantization, DSpark)
-    ├── evaluation/
-    ├── experiments/
-    ├── development/
-    └── history/
-        └── project-history.md         # Historical codename ARCHI-AI traceability
+├── README.md                      # Ce document (français)
+├── README_EN.md                   # Version anglaise
+├── START_HERE.md                  # Point d'entrée pour les nouveaux venus
+├── LICENSE                        # Licence MIT (code AXIS original)
+├── THIRD_PARTY_LICENSES.md        # Séparation code MIT / données tierces
+├── CONTRIBUTING.md                # Guide de contribution
+├── CODE_OF_CONDUCT.md             # Code de conduite (Contributor Covenant 2.1)
+├── SECURITY.md                    # Politique de signalement de sécurité
+├── GOVERNANCE.md                  # Modèle de gouvernance
+├── CITATION.cff                   # Métadonnées de citation académique
+├── ROADMAP.md                     # Feuille de route (terminé / en cours / bloqué / planifié)
+├── PROJECT_STATUS.md              # Matrice de statut détaillée
+├── CHANGELOG.md                   # Historique des versions
+├── RESEARCH.md                    # Méthodologie scientifique et falsifiabilité
+├── ARCHITECTURE.md                # Architecture du système et pipeline de données
+├── DATASET.md                     # Documentation du Master Dataset v2
+├── EVALUATION.md                  # Protocole de benchmark et métriques certifiées
+├── EXPERIMENTS.md                 # Registre des runs et ablations
+├── DEVELOPMENT.md                 # Guide développeur
+├── REPRODUCIBILITY.md             # Guide de reproduction
+├── pyproject.toml / requirements.txt
+├── .github/                       # Templates d'issues/PR et CI
+├── dataset_tools/                 # Ingestion, validation, moteur de supervision
+├── evaluation/                    # Harnais de benchmark et baselines
+├── experiment_package/            # Reproduction portable du micro-pilote QLoRA
+├── tests/                         # Suite de tests automatisés
+├── configs/                       # Fichiers de configuration
+├── scripts/                       # Scripts d'entrée (build/evaluate/validate)
+└── docs/
+    ├── research/                  # Rapports de recherche et readiness scientifique
+    ├── datasets/                  # Audits, matrices d'acquisition, licences
+    ├── evaluation/                # Audits indépendants du Gold Set
+    ├── experiments/                # Plans d'ablation, sélection de phase
+    ├── history/                   # Traçabilité historique (codename ARCHI-AI)
+    ├── CONTRIBUTOR_GUIDE.md       # Guide d'orientation pour nouveaux contributeurs
+    └── RESEARCH_CONTRIBUTION_PROTOCOL.md  # Protocole pour proposer une expérience
 ```
 
 ---
 
-## Reproducibility
+## 🔬 Reproduire les expériences
 
-To run the automated test suite:
+### 1. Installation
+
 ```bash
-# Clone the repository
 git clone https://github.com/EncoreZaan/AXIS.git
 cd AXIS
 
-# Set up environment
 python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\Activate.ps1
+source .venv/bin/activate  # Windows : .venv\Scripts\Activate.ps1
+
 pip install -r requirements.txt
 pip install -e .
+```
 
-# Run the automated test suite
+Cette installation a été testée sur un clone neuf sans dépendances préexistantes.
+
+### 2. Environnement
+
+Python 3.10 ou 3.11. Voir [`requirements.txt`](requirements.txt) et les extras `dataset` / `vlm` / `dev` de [`pyproject.toml`](pyproject.toml).
+
+### 3. Datasets — ce qui est public vs privé
+
+* **Reproductible immédiatement :** le code d'ingestion, les schémas, les scripts de validation, et les tests qui ne dépendent pas du corpus privé.
+* **Non reproductible sans données tierces :** le corpus brut complet (RPLAN, IL3D, etc.) n'est **pas redistribué** dans ce dépôt (voir [`DATASET.md` §5](DATASET.md#5-data-access-policy)). Un contributeur peut reconstruire le Master Dataset v2 en récupérant chaque source publique séparément puis en exécutant `dataset_tools/acquisition/`.
+
+### 4. Gold Set V3 et checkpoint
+
+Ni le Gold Set V3 ni le checkpoint `ARCHI-AI-P4-005` ne sont publiquement téléchargeables (`.gitignore` exclut `dataset/`, `*.pt`, `outputs/`). Ceci est documenté explicitement, pas caché : voir [`EVALUATION.md` §4](EVALUATION.md#4-artifact-availability) et [`REPRODUCIBILITY.md` §2](REPRODUCIBILITY.md#2-reproducing-phase-4-step-6-gold-set-v3-evaluation).
+
+### 5. Benchmarks
+
+```bash
+python scripts/evaluate_baseline.py --help
+```
+
+Baseline 0 (constante triviale) est exécutable directement sans données privées. Voir [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) pour la procédure complète.
+
+### 6. Tests
+
+```bash
 pytest tests
 ```
 
-> **Note:** `tests/` contains 99 test functions, but most assert against the
-> private RAW dataset corpus, which is not redistributed in this repository
-> (see [Data Access Policy](DATASET.md#5-data-access-policy)). Expect roughly
-> 35 to pass out of the box on a fresh clone; the rest require the private
-> corpus. See [`REPRODUCIBILITY.md` §4](REPRODUCIBILITY.md#4-automated-test-suite-what-actually-runs-on-a-fresh-clone)
-> for the full breakdown.
+> **Sur un clone neuf, sans le corpus privé :** sur 93 tests collectés, **35 passent, 19 échouent, 38 sont en erreur, 1 est ignoré** — vérifié directement sur un environnement vierge lors de cette publication. Le sous-ensemble de 9 tests strictement indépendant des données privées (`tests/test_audit_validators.py`, `tests/test_master_pipeline.py`) passe intégralement (9/9) et constitue le gate CI. Les 99 tests ne passent tous que dans l'environnement complet du mainteneur, avec le corpus privé présent localement. Détail complet : [`REPRODUCIBILITY.md` §4](REPRODUCIBILITY.md#4-automated-test-suite-what-actually-runs-on-a-fresh-clone).
 
-See [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) for instructions on running Baseline 0 and validating the Gold Set V3 manifest.
+### 7. Limites actuelles
 
----
-
-## Contributing
-
-We welcome contributions from ML researchers, GPU engineers, computer vision specialists, BIM/CAD experts, and practicing architects.
-
-Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) to learn how to propose an experiment, report a dataset anomaly, or submit a pull request.
+- Le corpus brut privé et le checkpoint entraîné ne sont pas publics.
+- `experiment_package/dataset/` (jeu d'exemples pour le dry-run QLoRA) n'existe pas dans le dépôt public — voir [`REPRODUCIBILITY.md` §3](REPRODUCIBILITY.md).
+- La convention de chemins historique `ARCHI_AI/` utilisée par certains scripts du micro-pilote nécessite une configuration manuelle locale — voir [`DATASET.md` §6](DATASET.md#6-local-directory-convention-for-the-full-pipeline).
 
 ---
 
-## Scientific Limitations & Known Blockers
+## 🗺️ Roadmap
 
-1. **Narrow Geometric Scope:** Checkpoint `005` demonstrates high-precision 3D spatial clearance regression. It is **not** a generalist architectural assistant.
-2. **Multimodal Pairing Rarity:** The raw corpus currently contains only 10 genuine 2D floorplan $\leftrightarrow$ 3D BIM pairs. Full multimodal pre-training is blocked until 50-100 permissive OpenBIM IFC models are integrated.
-3. **ResPlan Metric Quarantine:** ResPlan vector data cannot be used for metric surface area calculations ($m^2$) due to uncalibrated canvas normalization.
-4. **FloorPlanCAD Legal Quarantine:** 741 CAD vector drawings remain quarantined pending legal review.
-5. **Pre-Training Gate:** The formal Pre-Training Gate remains `CONDITIONAL` (`TRAINING_ALLOWED: NO`).
+✅ Terminé · 🟡 En cours / expérimental · 🔴 Bloqué · 🔵 Planifié
+
+Voir [`ROADMAP.md`](ROADMAP.md) pour le détail complet des phases, avec diagramme et description de chaque jalon.
 
 ---
 
-## License Status
+## 🤝 Contribuer
 
-> [!IMPORTANT]
-> **Formal Open-Source License is Currently TBD (To Be Determined).**  
-> This code and documentation are made public for academic review, scientific falsifiability, and collaborative research. Commercial redistribution rights are reserved pending final license selection. Third-party datasets retain their upstream licenses. See [`GOVERNANCE.md`](GOVERNANCE.md).
+AXIS accueille les contributions de chercheurs en IA/ML, ingénieurs logiciels, chercheurs en vision par ordinateur, spécialistes BIM/IFC/OpenBIM, spécialistes CAO/géométrie, architectes, étudiants, ingénieurs GPU, et toute personne souhaitant reproduire ou prolonger les expériences.
 
-Four distinct notions are easy to conflate and are kept separate throughout this repository:
+**Pour commencer :**
+1. Lisez [`START_HERE.md`](START_HERE.md) pour une vue d'ensemble en quelques minutes.
+2. Lisez [`docs/CONTRIBUTOR_GUIDE.md`](docs/CONTRIBUTOR_GUIDE.md) pour l'orientation détaillée (architecture du dépôt, premières contributions par niveau de difficulté).
+3. Suivez le processus détaillé dans [`CONTRIBUTING.md`](CONTRIBUTING.md) (fork, installation, branche, développement, tests, pull request).
 
-| Notion | Status |
+**Exemples de contributions possibles :** documentation, tests, datasets légalement redistribuables, benchmarks, modèles, outils BIM/IFC, géométrie, vision par ordinateur, machine learning, optimisation GPU, infrastructure, CI, correction de bugs, exemples, visualisations, reproductibilité scientifique.
+
+Pour proposer une nouvelle expérience scientifique, suivez [`docs/RESEARCH_CONTRIBUTION_PROTOCOL.md`](docs/RESEARCH_CONTRIBUTION_PROTOCOL.md).
+
+---
+
+## ⚠️ Limites scientifiques
+
+1. **Périmètre géométrique étroit :** le checkpoint `005` démontre une régression spatiale de dégagement 3D à haute précision. Ce n'est **pas** un assistant architectural généraliste.
+2. **Rareté des paires multimodales :** le corpus brut ne contient que 10 paires réelles 2D↔3D. Le pré-entraînement multimodal complet est bloqué tant que 50 à 100 modèles IFC OpenBIM sous licence permissive ne sont pas intégrés.
+3. **Quarantaine métrique ResPlan :** les données vectorielles ResPlan ne peuvent pas être utilisées pour des calculs de surface (m²) en raison d'une normalisation d'échelle non calibrée.
+4. **Quarantaine légale FloorPlanCAD :** 741 dessins vectoriels CAO restent en quarantaine dans l'attente d'une revue légale.
+5. **Pre-Training Gate bloqué :** le statut formel reste `CONDITIONAL` (`TRAINING_ALLOWED: NO`).
+6. **Historique Git limité :** ce dépôt ne contient pas l'historique incrémental complet des phases 0 à 4 — voir [`docs/history/project-history.md`](docs/history/project-history.md) pour le contexte.
+
+AXIS n'est **pas** prêt pour la production, n'est **pas** un modèle de fondation généraliste, et aucune capacité démontrée ici ne doit être extrapolée au-delà de son périmètre exact et vérifié.
+
+---
+
+## 🔓 Licence
+
+Le **code original AXIS** (scripts, outils, configuration, documentation de ce dépôt) est publié sous **licence MIT** — voir [`LICENSE`](LICENSE).
+
+Cette licence **ne s'applique pas** aux jeux de données tiers, images, modèles pré-entraînés, checkpoints, ou toute autre ressource appartenant à des tiers (RPLAN, IL3D, FloorPlanCAD, ResPlan, données OpenBIM externes, etc.). Ces ressources conservent leur propre licence d'origine et ne sont ni redistribuées ni relicenciées par AXIS. Voir [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) pour le détail complet source par source, et [`DATASET.md`](DATASET.md) pour le registre des sources.
+
+| Notion | Statut |
 | :--- | :--- |
-| **Repository visibility** | Public — the code and documentation are visible on GitHub to anyone. |
-| **Code license** | **TBD** — no license has been selected or granted yet. Public visibility does **not** imply a grant of reuse, modification, or redistribution rights. |
-| **Third-party dataset licenses** | Vary per source (see [`DATASET.md`](DATASET.md), column "Primary License") and are **not** modified or superseded by AXIS's own (TBD) license. Some are explicitly `LEGAL_REVIEW_REQUIRED`. |
-| **Model checkpoints / weights** | Not currently released publicly at all (see [`EVALUATION.md`](EVALUATION.md#4-artifact-availability)); their eventual license, if released, is undetermined. |
+| **Visibilité du dépôt** | Public sur GitHub. |
+| **Licence du code AXIS** | **MIT.** |
+| **Licences des datasets tiers** | Variables selon la source (voir `DATASET.md`, colonne « Primary License ») ; non modifiées par la licence MIT d'AXIS. Certaines sont explicitement `LEGAL_REVIEW_REQUIRED`. |
+| **Checkpoints / poids de modèle** | Non publiés actuellement (voir `EVALUATION.md` §4) ; leur licence future, si publication il y a, sera précisée à ce moment-là. |
 
 ---
 
-## Community & Contact
+## 👥 Communauté & contact
 
-* **Project Lead:** EncoreZaan (`teobarreau7@gmail.com`)
-* **Community:** Shared on AI research communities (including Renaud Dékode and OpenBIM working groups).
-* **Issues & Discussions:** [https://github.com/EncoreZaan/AXIS/issues](https://github.com/EncoreZaan/AXIS/issues)
+* **Responsable du projet :** EncoreZaan (`teobarreau7@gmail.com`)
+* **Communauté :** partagé au sein de communautés de recherche IA (dont groupes de travail Renaud Dékode et OpenBIM).
+* **Issues & discussions :** [github.com/EncoreZaan/AXIS/issues](https://github.com/EncoreZaan/AXIS/issues)
+* **Sécurité :** voir [`SECURITY.md`](SECURITY.md) pour le signalement responsable de vulnérabilités.
+* **Code de conduite :** voir [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).

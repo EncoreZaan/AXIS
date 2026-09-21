@@ -17,7 +17,7 @@ As the project established its formal scientific foundations—specifically:
 3. The quarantining of uncalibrated metric vectors (ResPlan scale anomalies) and legal risk assets (FloorPlanCAD);
 4. The execution and peer-audited verification of **Phase 4 Controlled Unimodal Micro-Pilot** (achieving 0.0517 m MAE on Gold Set V3 and 100% normative accuracy);
 
-the project transitioned from an exploratory working prototype into a formal, publicly-released research initiative (code license status: TBD — see `GOVERNANCE.md`). The official, permanent identity was designated as:
+the project transitioned from an exploratory working prototype into a formal, publicly-released open-source research initiative (code license: MIT, adopted after this transition — see `GOVERNANCE.md` and `LICENSE`). The official, permanent identity was designated as:
 
 $$\textbf{AXIS} \quad \text{—} \quad \textbf{Architectural eXpert Intelligence System}$$
 

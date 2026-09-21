@@ -1,5 +1,7 @@
 # AXIS — Publication Readiness Audit (Remediation Pass)
 
+> **⚠️ Superseded on license status:** this document records a remediation pass in which the code license was left explicitly `TBD` (§2.1, §5) as a decision for the project owner. That decision has since been made: AXIS's original code and documentation are now licensed under the **MIT License** (see [`LICENSE`](LICENSE), [`GOVERNANCE.md`](GOVERNANCE.md), [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md)). The rest of this document — the P0/P1 findings and fixes below — is kept unmodified as an accurate historical record of that remediation pass; do not read its TBD-license passages as the current state.
+>
 > **Prior audit reference commit:** `42b1f51` — "feat: official migration from ARCHI-AI to AXIS v0.1.0"
 > **Prior verdict:** `PUBLICATION READINESS: YELLOW`
 > **This document:** records what was actually inspected and changed in response to that audit, and states an updated verdict. It does not claim any metric, dataset, checkpoint, or capability beyond what is verifiable in this repository as of this remediation.

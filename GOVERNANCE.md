@@ -2,7 +2,7 @@
 
 ## Overview
 
-**AXIS (Architectural eXpert Intelligence System)** is a publicly-visible scientific research initiative aimed at developing specialized artificial intelligence for spatial, geometric, and architectural reasoning. "Publicly visible" describes the repository's hosting on GitHub, not a software license grant — see [License Status (TBD)](#license-status-tbd) below.
+**AXIS (Architectural eXpert Intelligence System)** is an open-source scientific research initiative aimed at developing specialized artificial intelligence for spatial, geometric, and architectural reasoning. The original AXIS code and documentation are licensed under the **MIT License** — see [License Status](#license-status) below. Third-party datasets and model checkpoints are governed separately and are not covered by this grant.
 
 The project is initiated and maintained by **EncoreZaan** (`teobarreau7@gmail.com`).
 
@@ -29,22 +29,22 @@ In AXIS, empirical falsifiability and rigorous benchmarking always supersede opi
 
 ---
 
-## License Status (TBD)
+## License Status
 
 > [!IMPORTANT]
-> **Formal License Selection is Currently TBD (To Be Determined).**
-> - The code and documentation are made publicly available for scientific inspection, peer review, and academic collaboration.
-> - Making this repository public on GitHub does **not** automatically grant unrestricted commercial reuse until a formal open-source license (such as Apache 2.0, MIT, or a specialized research license) is selected and ratified by the maintainer.
-> - Third-party datasets referenced in documentation (`RPLAN`, `IL3D`, `FloorPlanCAD`, etc.) retain their respective individual licenses and terms of service. AXIS does not redistribute proprietary data.
+> **The AXIS original code and documentation are licensed under the MIT License.** See [`LICENSE`](LICENSE) for the full text.
+> - This grant applies to the code, scripts, configuration, and prose documentation authored in this repository.
+> - It does **not** apply to third-party datasets, pretrained checkpoints, or other assets AXIS references or processes — those retain their own upstream terms. See [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) for the full breakdown.
+> - Third-party datasets referenced in documentation (`RPLAN`, `IL3D`, `FloorPlanCAD`, etc.) retain their respective individual licenses and terms of service. AXIS does not redistribute proprietary data and does not sublicense or override upstream terms.
 
 ### Terminology this project keeps distinct
 
-These four terms describe different things and are not interchangeable:
+These terms describe different things and are not interchangeable:
 
-- **Public repository / publicly visible:** anyone can read this code and documentation on GitHub. This is the current state.
-- **Open research:** the project's methodology, results, and negative findings are documented openly, including failures and blockers (`Pre-Training Gate`, quarantined datasets, etc.). This is the current state.
-- **Open-source (code license):** a formal license grant (MIT, Apache-2.0, etc.) permitting reuse, modification, and redistribution of the code under stated terms. This is **not yet the state** — see above.
-- **Third-party dataset / checkpoint licenses:** governed independently by their own upstream terms (per-source table in `DATASET.md`) or, for model checkpoints, not currently released at all. AXIS's own (TBD) license does not and will not retroactively change these.
+- **Public repository / publicly visible:** anyone can read this code and documentation on GitHub.
+- **Open research:** the project's methodology, results, and negative findings are documented openly, including failures and blockers (`Pre-Training Gate`, quarantined datasets, etc.).
+- **Open-source (code license):** the AXIS code itself is licensed under MIT, permitting reuse, modification, and redistribution of the *code* under MIT's terms.
+- **Third-party dataset / checkpoint licenses:** governed independently by their own upstream terms (per-source table in `DATASET.md` and `THIRD_PARTY_LICENSES.md`) or, for model checkpoints, not currently released publicly at all. AXIS's MIT license does not and cannot retroactively change these — MIT covers what AXIS itself wrote, not data or models AXIS does not own.
 
 ---
 

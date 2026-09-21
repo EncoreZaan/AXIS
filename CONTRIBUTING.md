@@ -1,6 +1,34 @@
 # Contributing to AXIS
 
+*Lire ce document en français : voir [`README.md`](README.md) pour une vue d'ensemble en français, et [`START_HERE.md`](START_HERE.md) pour le point d'entrée.*
+
 First off, welcome to **AXIS (Architectural eXpert Intelligence System)**! We are excited to collaborate with researchers, engineers, architects, and developers to build specialized intelligence for spatial and architectural reasoning.
+
+AXIS's original code is licensed under the **MIT License** (see [`LICENSE`](LICENSE)). By submitting a pull request, you agree that your contribution to the AXIS code/documentation is made under that same license. Contributions of third-party data must respect that data's own license — see [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) and never submit a dataset you are not licensed to redistribute.
+
+---
+
+## 💡 What Can I Contribute?
+
+You don't need to touch the model or the dataset pipeline to make a meaningful contribution. Examples, roughly independent of each other:
+
+| Area | Examples |
+| :--- | :--- |
+| **Documentation** | Fixing unclear explanations, translating a doc, improving a diagram, expanding `docs/CONTRIBUTOR_GUIDE.md` |
+| **Tests** | Adding coverage for an untested function, fixing a broken/orphaned test import |
+| **Datasets** | Proposing a legally redistributable dataset, auditing a license, reporting a data anomaly (`dataset_issue.md`) |
+| **Benchmarks** | Adding a new baseline, improving Baseline 0, proposing an additional metric |
+| **Models** | Architecture experiments, ablations, new task heads |
+| **BIM / IFC tooling** | `ifcopenshell` parsing improvements, IFC schema validation, coordinate referencing |
+| **Geometry / computer vision** | Floorplan raster segmentation, vector edge extraction, topological graph reconstruction |
+| **Machine learning** | Geometric deep learning, spatial representation learning, vision-language alignment |
+| **GPU / optimization** | Kernel optimization, quantization, memory profiling |
+| **Infrastructure / CI** | Improving `.github/workflows/tests.yml`, packaging fixes, dependency hygiene |
+| **Bug fixes** | Anything in the issue tracker labeled `bug` |
+| **Examples & visualizations** | Notebooks, plots of error distributions, walkthroughs |
+| **Scientific reproducibility** | Verifying a documented claim, reporting a discrepancy, improving `REPRODUCIBILITY.md` |
+
+Difficulty is roughly: 🟢 documentation/examples/simple tests → 🟡 pipeline/dataset tooling/evaluation → 🔴 ML/multimodal/geometry/IFC internals. See [`docs/CONTRIBUTOR_GUIDE.md`](docs/CONTRIBUTOR_GUIDE.md) for a more detailed breakdown — this is a rough complexity signal, not a ranking of value.
 
 ---
 
@@ -34,10 +62,12 @@ To maintain absolute scientific integrity, all contributors must adhere to four 
 
 ## Development Setup
 
-### 1. Clone the Repository
+### 1. Fork & Clone the Repository
+Fork the repository on GitHub, then clone your fork:
 ```bash
-git clone https://github.com/EncoreZaan/AXIS.git
+git clone https://github.com/<your-username>/AXIS.git
 cd AXIS
+git remote add upstream https://github.com/EncoreZaan/AXIS.git
 ```
 
 ### 2. Set Up a Python Virtual Environment
@@ -61,10 +91,10 @@ pip install -e .
 ```
 
 ### 4. Run the Test Suite
-Ensure that all 99 tests pass before making any changes:
 ```bash
 pytest tests
 ```
+On a fresh clone without the private dataset corpus, expect roughly 35/93 collected tests to pass — the rest require private data not redistributed in this repository (see [`REPRODUCIBILITY.md` §4](REPRODUCIBILITY.md#4-automated-test-suite-what-actually-runs-on-a-fresh-clone)). At minimum, verify that `tests/test_audit_validators.py` and `tests/test_master_pipeline.py` pass (9/9) — these are the CI gate and do not depend on private data.
 
 ---
 
@@ -104,7 +134,7 @@ Before writing substantial code, please open an issue using the relevant templat
   - `test: add unit test for project-group leakage detector`
 
 ### 3. Submitting a Pull Request
-1. Ensure `pytest tests` passes with 0 failures.
+1. Ensure the tests your change can affect still pass — at minimum, the private-data-independent CI gate (`pytest tests/test_audit_validators.py tests/test_master_pipeline.py`); run the full suite too if you have the private corpus locally.
 2. Verify that no secrets, credentials, or large binary datasets are included (`git status`).
 3. Open a Pull Request against `main` using `.github/PULL_REQUEST_TEMPLATE.md`.
 4. Engage constructively in code review.
