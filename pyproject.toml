@@ -8,7 +8,8 @@ version = "0.1.0"
 description = "AXIS — Architectural eXpert Intelligence System: Specializing in Spatial, Geometric, and Architectural Reasoning"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "TBD — Research Preview Only (All Rights Reserved pending formal license selection)" }
+license = "LicenseRef-TBD-Research-Preview"
+license-files = []
 authors = [
     { name = "EncoreZaan", email = "teobarreau7@gmail.com" }
 ]
@@ -44,6 +45,21 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+# Required to import dataset_tools.preprocessing / dataset_tools.resplan and to
+# collect tests/test_preprocessing.py, tests/test_phase3_scientific_readiness.py.
+# These were previously undeclared, which made `pip install -e .` followed by
+# `pytest tests` fail on a fresh clone even before touching the private dataset.
+dataset = [
+    "shapely>=2.0.0",
+    "pyarrow>=15.0.0",
+    "ifcopenshell>=0.7.0"
+]
+# NOTE: these are loose bounds for general development. They are NOT the exact
+# pins used to produce the VLM QLoRA proof-of-concept results reported in
+# EXPERIMENTS.md / EVALUATION.md — for bit-for-bit reproduction of that
+# specific micro-experiment, use experiment_package/requirements.txt instead,
+# which pins the exact versions (accelerate==1.15.0, transformers==5.17.0,
+# etc.) that were actually installed when that run was executed.
 vlm = [
     "transformers>=4.45.0",
     "peft>=0.14.0",
@@ -62,6 +78,15 @@ dev = [
 "Homepage" = "https://github.com/EncoreZaan/AXIS"
 "Bug Tracker" = "https://github.com/EncoreZaan/AXIS/issues"
 "Documentation" = "https://github.com/EncoreZaan/AXIS/tree/main/docs"
+
+[tool.setuptools.packages.find]
+# Only these two directories are installable Python packages. Every other
+# top-level directory (configs/, docs/, evaluation/reports, experiment_package/,
+# scripts/, test_images/, tests/) is data, standalone scripts, or a
+# self-contained bundle with its own requirements.txt — not part of the
+# `axis-ai` importable package — so they must be excluded explicitly to avoid
+# setuptools' "Multiple top-level packages discovered in a flat-layout" error.
+include = ["dataset_tools*", "evaluation*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

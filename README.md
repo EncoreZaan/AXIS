@@ -3,13 +3,14 @@
 ## Architectural eXpert Intelligence System
 
 [![Python 3.10 | 3.11](https://img.shields.io/badge/Python-3.10%20%7C%203.11-blue.svg)](https://www.python.org/)
-[![Tests Passing](https://img.shields.io/badge/Tests-99%2F99%20Passing-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-99%20in%20maintainer%20env%20%7C%20~35%2F99%20on%20fresh%20clone-yellow.svg)](REPRODUCIBILITY.md#4-automated-test-suite-what-actually-runs-on-a-fresh-clone)
 [![Master Dataset v2](https://img.shields.io/badge/Master%20Dataset%20v2-65%2C342%20Assets-blueviolet.svg)](DATASET.md)
 [![Gold Set V3 Certified](https://img.shields.io/badge/Gold%20Set%20V3-Certified%200.0517m%20MAE-success.svg)](EVALUATION.md)
 [![License: TBD](https://img.shields.io/badge/License-TBD%20(Research%20Preview)-yellow.svg)](GOVERNANCE.md)
 
 > **Official Repository:** [https://github.com/EncoreZaan/AXIS.git](https://github.com/EncoreZaan/AXIS.git)  
-> **Evolution Note:** AXIS is the official open-source research evolution of the project historically codenamed `ARCHI-AI`. All scientific provenance and historical identifiers (`ARCHI-AI-P4-005`, hashes, run logs) remain preserved and fully traceable. See [`docs/history/project-history.md`](docs/history/project-history.md).
+> **Publication Readiness:** See [`PUBLICATION_READINESS_AUDIT.md`](PUBLICATION_READINESS_AUDIT.md) for the record of what was audited, what was fixed, and what remains an open, explicitly-stated limitation.  
+> **Evolution Note:** AXIS is the publicly-released research evolution of the project historically codenamed `ARCHI-AI`. "Publicly released" refers to the repository's visibility, not to its software license — see [License Status](#license-status) below, which is currently **TBD**. All scientific provenance and historical identifiers (`ARCHI-AI-P4-005`, hashes, run logs) remain preserved and fully traceable. See [`docs/history/project-history.md`](docs/history/project-history.md).
 
 ---
 
@@ -34,7 +35,7 @@
 
 ## What is AXIS?
 
-**AXIS (Architectural eXpert Intelligence System)** is an open-source scientific research initiative aimed at developing specialized artificial intelligence for:
+**AXIS (Architectural eXpert Intelligence System)** is a publicly-visible, open scientific research initiative aimed at developing specialized artificial intelligence for:
 
 1. **Spatial Reasoning:** Understanding relative coordinate relationships, 3D Euclidean distances, clearance zones, and orientation in complex interior spaces.
 2. **Geometric Reasoning:** Reading, decoding, and validating 2D architectural drawings (floorplans) and 3D Building Information Models (BIM / IFC).
@@ -63,11 +64,11 @@ We adhere to strict, transparent status descriptors across the entire project:
 | Subsystem / Milestone | Status | Description & Verifiable Grounding |
 | :--- | :---: | :--- |
 | **Master Dataset v2** | `DONE` | **65,342 unique assets** across 19 sources (`DATASET_SPLIT_REPORT.md`). 0 SHA256 leaks, 0 project leaks. |
-| **Data Partitioning** | `DONE` | 53,720 train / 5,724 val / 5,898 test / 1,563 review. Seed = 42. |
-| **Automated Test Suite** | `DONE` | **99/99 passing tests** in `tests/` covering ingestion, audits, targets, and leakage. |
+| **Data Partitioning** | `DONE` | 53,720 train / 5,724 val / 5,898 test (= 65,342 total) + 1,563 held in a separate, isolated review queue (not summed into the 65,342). Seed = 42. See [`DATASET.md`](DATASET.md#2-dataset-partitions--anti-leakage-guarantees). |
+| **Automated Test Suite** | `DONE` (maintainer environment) | **99 tests** in `tests/`; **99/99 passing requires the private RAW dataset corpus**, which is not redistributed in this repository. See [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md#4-automated-test-suite-what-actually-runs-on-a-fresh-clone) for what actually runs on a fresh clone (~35/99 out of the box). |
 | **Phase 4 Task Gating** | `DONE` | 4/69 tasks approved (`FLOORPLAN_READING`, `ROOM_TOPOLOGY`, `OBJECT_RELATION`, `CLEARANCE_CHECK`). 65 excluded. |
-| **Gold Set V3 Sanctuary** | `DONE` | 200 certified instances + 200 hard negatives. Manifest SHA256: `81561fae5b524fa2...`. Immutable & read-only. |
-| **Clearance Benchmark** | `DONE` | **0.0517 m MAE** on Gold Set (vs Baseline 0: **2.7739 m**, **+98.14%** improvement). 100% accuracy. |
+| **Gold Set V3 Sanctuary** | `DONE` | 200 certified instances + 200 hard negatives. Manifest SHA256: `81561fae5b524fa26622e5fac27d612f7d75a11e6ff0be774448fef04b9f2aca`. Immutable & read-only. **Not publicly downloadable** — see [`EVALUATION.md`](EVALUATION.md#4-artifact-availability). |
+| **Clearance Benchmark** | `DONE` | **0.0517 m MAE** on Gold Set (vs Baseline 0: **2.7739 m**), a **98.14%** relative MAE reduction (arithmetic, see [`EVALUATION.md`](EVALUATION.md)). 100% Pass/Fail accuracy on a 99-positive/1-negative set of 100 — see caveat in [`EVALUATION.md`](EVALUATION.md#32-why-100-accuracy-is-not-a-robustness-proof). |
 | **ResPlan Metric Scale** | `BLOCKED` | Forensic audit proved scale distortion on 17k plans. **Quarantined** for all metric ($m^2$) tasks. |
 | **FloorPlanCAD Legal** | `BLOCKED` | 741 CAD vector drawings quarantined under `LEGAL_REVIEW_REQUIRED`. |
 | **2D Vision Model (`ROOM_TOPOLOGY`)** | `NOT YET VALIDATED` | Baseline 0 calibrated (34% exact match). Model training scheduled for upcoming phase. |
@@ -109,9 +110,9 @@ Selected Checkpoint A-Full (005)  0.0517 m      0.0412 m      0.0703 m      +98.
 ```
 
 * **Absolute Error Reduction:** **$-2.7222$ m** relative to Baseline 0.
-* **Generalization Gap:** **$+0.0036$ m** (Validation MAE $0.0481$ m $\to$ Gold MAE $0.0517$ m, low-gap certified).
-* **Normative Verdict Classification Accuracy:** **100.00%** ($99\text{ TP} / 0\text{ FP} / 1\text{ TN} / 0\text{ FN}$).
-* **Certified Checkpoint SHA256:** `69f00c211e1db63181bf7c6f4ae624c3aa312856f7d8b2191bc9c8b84a680d54`
+* **Validation → Gold Set MAE Difference:** **$+0.0036$ m** (Validation MAE $0.0481$ m $\to$ Gold MAE $0.0517$ m). This is the difference between two independently-constructed held-out sets, not a classical train-vs-test generalization gap — see [`EVALUATION.md`](EVALUATION.md#31-task-1-clearance_check-n--100) for the distinction.
+* **Normative Verdict Classification Accuracy:** **100.00%** ($99\text{ TP} / 0\text{ FP} / 1\text{ TN} / 0\text{ FN}$ on $n=100$). **This is not a general robustness claim** — the set is 99 positives / 1 negative, so a trivial "always PASS" strategy would already score 99%. See [`EVALUATION.md`](EVALUATION.md#32-why-100-accuracy-is-not-a-robustness-proof) for the full statistical context.
+* **Certified Checkpoint SHA256:** `69f00c211e1db63181bf7c6f4ae624c3aa312856f7d8b2191bc9c8b84a680d54` — **checkpoint file itself is not publicly available**; see [`EVALUATION.md`](EVALUATION.md#4-artifact-availability).
 
 See [`EVALUATION.md`](EVALUATION.md) for full error distribution curves and case studies.
 
@@ -176,7 +177,8 @@ AXIS/
 ├── .gitignore                         # Anti-leakage and binary asset exclusions
 ├── .github/
 │   ├── ISSUE_TEMPLATE/                # 6 issue templates (bug, research, experiment, dataset...)
-│   └── PULL_REQUEST_TEMPLATE.md       # Scientific PR review checklist
+│   ├── PULL_REQUEST_TEMPLATE.md       # Scientific PR review checklist
+│   └── workflows/tests.yml            # CI: install check + data-independent test subset (see REPRODUCIBILITY.md §4)
 ├── dataset_tools/                     # Ingestion, validation, and supervision engine
 ├── evaluation/                        # Benchmark harnesses and baseline runners
 ├── experiments/                       # Micro-pilot configs, metrics, and JSON summaries
@@ -210,9 +212,16 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 pip install -e .
 
-# Run 99 automated tests
+# Run the automated test suite
 pytest tests
 ```
+
+> **Note:** `tests/` contains 99 test functions, but most assert against the
+> private RAW dataset corpus, which is not redistributed in this repository
+> (see [Data Access Policy](DATASET.md#5-data-access-policy)). Expect roughly
+> 35 to pass out of the box on a fresh clone; the rest require the private
+> corpus. See [`REPRODUCIBILITY.md` §4](REPRODUCIBILITY.md#4-automated-test-suite-what-actually-runs-on-a-fresh-clone)
+> for the full breakdown.
 
 See [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) for instructions on running Baseline 0 and validating the Gold Set V3 manifest.
 
@@ -241,6 +250,15 @@ Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) to learn how to propose an expe
 > [!IMPORTANT]
 > **Formal Open-Source License is Currently TBD (To Be Determined).**  
 > This code and documentation are made public for academic review, scientific falsifiability, and collaborative research. Commercial redistribution rights are reserved pending final license selection. Third-party datasets retain their upstream licenses. See [`GOVERNANCE.md`](GOVERNANCE.md).
+
+Four distinct notions are easy to conflate and are kept separate throughout this repository:
+
+| Notion | Status |
+| :--- | :--- |
+| **Repository visibility** | Public — the code and documentation are visible on GitHub to anyone. |
+| **Code license** | **TBD** — no license has been selected or granted yet. Public visibility does **not** imply a grant of reuse, modification, or redistribution rights. |
+| **Third-party dataset licenses** | Vary per source (see [`DATASET.md`](DATASET.md), column "Primary License") and are **not** modified or superseded by AXIS's own (TBD) license. Some are explicitly `LEGAL_REVIEW_REQUIRED`. |
+| **Model checkpoints / weights** | Not currently released publicly at all (see [`EVALUATION.md`](EVALUATION.md#4-artifact-availability)); their eventual license, if released, is undetermined. |
 
 ---
 

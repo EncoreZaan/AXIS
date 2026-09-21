@@ -8,7 +8,20 @@ tqdm>=4.66.0
 requests>=2.31.0
 pytest>=8.0.0
 
-# Optional VLM & Fine-tuning dependencies (for GPU experiments)
+# Dataset ingestion & preprocessing dependencies (required to import
+# dataset_tools.preprocessing / dataset_tools.resplan and to collect
+# tests/test_preprocessing.py and tests/test_phase3_scientific_readiness.py).
+# These were previously missing from this file even though the code imports
+# them unconditionally.
+shapely>=2.0.0
+pyarrow>=15.0.0
+ifcopenshell>=0.7.0
+
+# Optional VLM & Fine-tuning dependencies (for GPU experiments).
+# These are loose bounds for general development, NOT the exact pins used to
+# produce the reported VLM QLoRA proof-of-concept results. For bit-for-bit
+# reproduction of that specific micro-experiment, use
+# experiment_package/requirements.txt instead (see REPRODUCIBILITY.md).
 transformers>=4.45.0
 peft>=0.14.0
 accelerate>=0.30.0

@@ -23,7 +23,7 @@ All runs were executed with fixed seed configurations and evaluated on locked va
 - **Identifier:** `ARCHI-AI-P4-005`
 - **Checkpoint SHA256:** `69f00c211e1db63181bf7c6f4ae624c3aa312856f7d8b2191bc9c8b84a680d54`
 - **Config SHA256:** `b16859bddc4971a59a3bd06fa514f1a0249b0e1c16cb631f4ad5915531a10411`
-- **Gold Set MAE:** **0.0517 m** (Generalization gap: $+0.0036$ m)
+- **Gold Set MAE:** **0.0517 m** (Validation → Gold Set MAE difference: $+0.0036$ m — see `EVALUATION.md` §3.1 for why this is not labeled a "generalization gap")
 
 ---
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-**AXIS (Architectural eXpert Intelligence System)** is an open-source scientific research initiative aimed at developing specialized artificial intelligence for spatial, geometric, and architectural reasoning.
+**AXIS (Architectural eXpert Intelligence System)** is a publicly-visible scientific research initiative aimed at developing specialized artificial intelligence for spatial, geometric, and architectural reasoning. "Publicly visible" describes the repository's hosting on GitHub, not a software license grant — see [License Status (TBD)](#license-status-tbd) below.
 
 The project is initiated and maintained by **EncoreZaan** (`teobarreau7@gmail.com`).
 
@@ -36,6 +36,15 @@ In AXIS, empirical falsifiability and rigorous benchmarking always supersede opi
 > - The code and documentation are made publicly available for scientific inspection, peer review, and academic collaboration.
 > - Making this repository public on GitHub does **not** automatically grant unrestricted commercial reuse until a formal open-source license (such as Apache 2.0, MIT, or a specialized research license) is selected and ratified by the maintainer.
 > - Third-party datasets referenced in documentation (`RPLAN`, `IL3D`, `FloorPlanCAD`, etc.) retain their respective individual licenses and terms of service. AXIS does not redistribute proprietary data.
+
+### Terminology this project keeps distinct
+
+These four terms describe different things and are not interchangeable:
+
+- **Public repository / publicly visible:** anyone can read this code and documentation on GitHub. This is the current state.
+- **Open research:** the project's methodology, results, and negative findings are documented openly, including failures and blockers (`Pre-Training Gate`, quarantined datasets, etc.). This is the current state.
+- **Open-source (code license):** a formal license grant (MIT, Apache-2.0, etc.) permitting reuse, modification, and redistribution of the code under stated terms. This is **not yet the state** — see above.
+- **Third-party dataset / checkpoint licenses:** governed independently by their own upstream terms (per-source table in `DATASET.md`) or, for model checkpoints, not currently released at all. AXIS's own (TBD) license does not and will not retroactively change these.
 
 ---
 

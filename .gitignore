@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Packaging / build artifacts (created by `pip install -e .`)
+*.egg-info/
+build/
+dist/
+
 # Caches and testing
 .pytest_cache/
 .coverage

@@ -1,10 +1,11 @@
-# Pipeline QLoRA — Qwen2-VL-7B-Instruct & ARCHI-AI
+# Pipeline QLoRA — Qwen2-VL-7B-Instruct & AXIS
 
 Date : 21 Septembre 2026  
-Projet : **ARCHI-AI**  
+Projet : **AXIS** (codename historique : `ARCHI-AI`)  
 Modèle de référence : `Qwen/Qwen2-VL-7B-Instruct`  
 Méthode : **QLoRA 4-bit (NF4)**  
 Statut : **Validé en Dry-Run (sans entraînement effectif)**  
+Script canonique : `experiment_package/train_qlora.py` (voir [`docs/history/legacy_qlora_prototype/README.md`](../history/legacy_qlora_prototype/README.md) pour l'ancien prototype archivé)
 
 ---
 
@@ -46,7 +47,7 @@ Le pipeline d'entraînement est conçu pour adapter les capacités de raisonneme
 
 ## 2. Format Attendu des Données
 
-Le dataset expérimental est situé dans `ARCHI_AI/dataset/` (`train.jsonl` et `validation.jsonl`).
+Le dataset expérimental est situé dans `experiment_package/dataset/` (`train.jsonl` et `validation.jsonl`), résolu relativement à la racine du package (`PACKAGE_ROOT`) plutôt que via un chemin absolu propre à une machine.
 
 ### Structure d'une entrée JSONL :
 ```json
@@ -78,7 +79,7 @@ Le dataset expérimental est situé dans `ARCHI_AI/dataset/` (`train.jsonl` et `
 ```
 
 ### Règles de gestion du format :
-1. **Chemins d'images** : Le champ `"image"` dans `content` contient un chemin relatif (`images/archi_001.jpg`). La classe `ARCHIVisionDataset` résout automatiquement ce chemin vers `ARCHI_AI/dataset/images/archi_001.jpg`.
+1. **Chemins d'images** : Le champ `"image"` dans `content` contient un chemin relatif (`images/archi_001.jpg`). La classe `ARCHIVisionDataset` (nom de classe historique conservé dans le code) résout automatiquement ce chemin vers `experiment_package/dataset/images/archi_001.jpg`, relativement à la racine du package.
 2. **Masquage des labels (Prompt Masking)** : Les tokens du prompt utilisateur, des patches visuels et des en-têtes système sont masqués avec l'indice `-100` (valeur `ignore_index` de PyTorch CrossEntropyLoss). Seuls les tokens de la réponse structurée de l'architecte contribuent au calcul de la loss.
 
 ---
@@ -128,7 +129,7 @@ Pour notre cas, **Hugging Face `Trainer`** natif a été retenu au détriment de
 
 ## 6. Paramètres d'Entraînement et Mémoire
 
-Centralisés dans `ARCHI_AI/config/qlora_experiment.yaml` :
+Centralisés dans `experiment_package/config/qlora_experiment.yaml` :
 
 | Paramètre | Valeur | Justification |
 | :--- | :--- | :--- |
@@ -162,9 +163,9 @@ Lors des tests de validation et du dry-run, deux particularités techniques maje
 
 ## 8. Résultats du Dry-Run
 
-Le dry-run exécuté avec la commande :
+Le dry-run exécuté avec la commande (depuis `experiment_package/`) :
 ```bash
-python ARCHI_AI/train_qlora.py --dry-run
+python train_qlora.py --dry-run
 ```
 a produit les résultats suivants :
 

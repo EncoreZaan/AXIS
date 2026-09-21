@@ -3,7 +3,7 @@
 ARCHI-AI — STEP 1: Forensic Inventory
 =====================================
 Établit un inventaire exhaustif, déterministe et reprenable (cache SQLite)
-de chaque fichier physique présent dans ARCHI_AI/dataset/raw/external/.
+de chaque fichier physique présent dans dataset/raw/external/ (résolu via RAW_DIR, relatif à la racine du dépôt).
 """
 
 import os

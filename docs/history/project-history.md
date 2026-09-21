@@ -17,7 +17,7 @@ As the project established its formal scientific foundations—specifically:
 3. The quarantining of uncalibrated metric vectors (ResPlan scale anomalies) and legal risk assets (FloorPlanCAD);
 4. The execution and peer-audited verification of **Phase 4 Controlled Unimodal Micro-Pilot** (achieving 0.0517 m MAE on Gold Set V3 and 100% normative accuracy);
 
-the project transitioned from an exploratory working prototype into a formal open-source research initiative. The official, permanent identity was designated as:
+the project transitioned from an exploratory working prototype into a formal, publicly-released research initiative (code license status: TBD — see `GOVERNANCE.md`). The official, permanent identity was designated as:
 
 $$\textbf{AXIS} \quad \text{—} \quad \textbf{Architectural eXpert Intelligence System}$$
 
@@ -48,5 +48,13 @@ To guarantee unbroken provenance and falsifiability in academic peer review, **h
 | **Phase 2** | Sept 2026 | Supervision engine v1, Gold Set V2, red-team harm & shortcut audit | **COMPLETED & CERTIFIED** |
 | **Phase 3** | Sept 2026 | RAW forensic audit (66,847 files), ResPlan calibration audit, FloorPlanCAD legal quarantine | **COMPLETED & GATED** |
 | **Phase 4** | Sept 2026 | Task catalog gating (4/69 tasks), Dataset A build, Baseline 0, Gold Set V3 evaluation | **COMPLETED & SCIENTIFICALLY VALIDATED** |
-| **AXIS v0.1.0** | Current | Public GitHub publication, open-source documentation, community engagement | **CURRENT MILESTONE** |
+| **AXIS v0.1.0** | Current | Public GitHub publication, openly-published documentation, community engagement | **CURRENT MILESTONE** |
 | **Phase 5** | Upcoming | Acquisition of 50-100 OpenBIM IFC pairs, metric plan generation, pre-training gate | **PLANNED** |
+
+---
+
+## 4. Git History Limitation
+
+This public repository was initialized with a single commit (`feat: official migration from ARCHI-AI to AXIS v0.1.0`) that already contains the full Phase 0–4 codebase and documentation described above. **The public Git history does not contain the incremental commit-by-commit development history of Phases 0 through 4** — that history exists only in the maintainer's private local/working repository and was not carried over when this public repository was created.
+
+This is stated explicitly rather than implied, per the project's commitment to scientific traceability: the phase-by-phase narrative in §3 above and the identifiers in §2 are the available record of that work, backed by the artifacts and hashes documented throughout this repository — not by a granular commit log. No attempt has been made to fabricate or backfill an artificial multi-commit history to simulate one; doing so would misrepresent the actual provenance of the published code.

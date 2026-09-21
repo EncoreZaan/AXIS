@@ -1,4 +1,6 @@
-# ARCHI-AI : Package d'Entraînement Distant QLoRA (GPU 24 Go)
+# AXIS : Package d'Entraînement Distant QLoRA (GPU 24 Go)
+
+> Canonique pour la reproduction de l'expérience VLM QLoRA (voir `REPRODUCIBILITY.md`). Historique : ce package était développé sous le nom de code `ARCHI-AI`.
 
 Ce package autonome et reproductible contient l'ensemble des scripts, configurations et données nécessaires pour exécuter le micro-test d'entraînement QLoRA de **Qwen2-VL-7B-Instruct** sur une instance distante Linux équipée d'un GPU de 24 Go (RTX 3090, RTX 4090, A10G, etc.).
 

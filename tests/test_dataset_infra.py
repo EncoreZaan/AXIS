@@ -19,7 +19,22 @@ import pytest
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from dataset.master.schema.models import MasterAnnotation
+try:
+    from dataset.master.schema.models import MasterAnnotation
+except ModuleNotFoundError:
+    # `dataset/master/schema/models.py` is part of the original author's local
+    # dataset construction workspace (the `dataset/` tree itself is gitignored
+    # and not redistributed — see DATASET.md, "Data Access Policy"). This
+    # module was never migrated into the published `dataset_tools` package, so
+    # this entire test file cannot run against a fresh public clone. See
+    # REPRODUCIBILITY.md, "Reproducibility Limitations" for details instead of
+    # failing with an opaque ImportError at collection time.
+    pytest.skip(
+        "test_dataset_infra.py requires the private `dataset/master/schema/models.py` "
+        "module, which is not part of this public repository. See REPRODUCIBILITY.md.",
+        allow_module_level=True,
+    )
+
 from dataset_tools.validation.taxonomy import SplitName, Skill, LearningType, QAStatus
 from dataset_tools.validation.qa_validator import QAValidator
 from dataset_tools.deduplication.hasher import compute_sha256, compute_average_hash, hamming_distance

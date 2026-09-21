@@ -65,6 +65,7 @@ flowchart TD
 ---
 
 ### 3. NEXT
+- [ ] **Path Portability for the Micro-Pilot Pipeline:** Parameterize the hardcoded `ARCHI_AI/`-prefixed paths in `dataset_tools/experiments/micro_pilot/` and the standalone Wave-1 audit scripts (`gold_set_builder.py`, `audit_calculator.py`, `decision_classifier.py`, `deep_audit.py`, `audit_diagnostics.py`) to resolve relative to the repository root, matching the convention already used in `dataset_tools/master_pipeline/config.py`. See `DATASET.md` §6 for the current documented workaround.
 - [ ] **Corpus Gap Remediation (P0):** Acquire 50 to 100 permissive OpenBIM IFC models (MIT, Apache 2.0, CC-BY) with paired architectural elevations and floorplans.
 - [ ] **Deterministic CAD Plan Derivation (P1):** Build an automated pipeline extracting millimeter-accurate vector plans from `IfcSpace` / `IfcWall` geometries, permanently solving the metric scale issue without relying on uncalibrated pixels.
 - [ ] **2D Vision Benchmark Execution:** Train and evaluate a dedicated 2D vision backbone on `ROOM_TOPOLOGY` and `FLOORPLAN_READING` tasks from Dataset A.
