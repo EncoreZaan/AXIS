@@ -59,18 +59,18 @@ class AuditReporter:
 
 | Métrique | Valeur Auditée | Seuil Critique | Statut Red Team |
 | :--- | :---: | :---: | :---: |
-| **Exemples Totaux Audités** | **{s['total_audited_records']}** | $\ge 250$ | CERTIFIÉ (Stratifié) |
-| **Échantillon Wave 1 Repaired** | **{st['total_wave1_sampled']} / {st['total_wave1_available']} ({st['wave1_sample_percentage']} %)** | $\ge 20\\%$ | CONFORME |
+| **Exemples Totaux Audités** | **{s['total_audited_records']}** | $\\ge 250$ | CERTIFIÉ (Stratifié) |
+| **Échantillon Wave 1 Repaired** | **{st['total_wave1_sampled']} / {st['total_wave1_available']} ({st['wave1_sample_percentage']} %)** | $\\ge 20\\%$ | CONFORME |
 | **Échantillon Gold Set V2** | **{st['gold_v2_sampled']} / {st['total_gold_v2']} (100.0 %)** | 100% | COUVERTURE TOTALE |
 | **Audit des WARNINGs** | **{st['wave1_warnings_sampled']} / {st['wave1_warnings_count']} (100.0 %)** | 100% | EXHAUSTIF |
 | **Audit de la Review Queue** | **{st['review_queue_sampled']} / {st['total_review_queue']} (100.0 %)** | 100% | EXHAUSTIF |
 | **Audit des L6 Multicontraintes**| **{st['wave1_l6_sampled']} / {st['wave1_l6_count']} (100.0 %)** | 100% | EXHAUSTIF |
-| **Taux de Grounding Indépendant**| **{m['grounding_ratio_pct']} %** | $\ge 85\\%$ | {'ALERTE' if m['grounding_ratio_pct'] < 85 else 'OK'} |
-| **Taux de Réponses Spécifiques** | **{m['specific_answers_pct']} %** | $\ge 80\\%$ | {'VULNÉRABLE' if m['specific_answers_pct'] < 80 else 'OK'} |
-| **Taux de Fake Multimodal** | **{m['fake_multimodal_pct']} %** | $\le 5\\%$ | {'DÉFAILLANCE' if m['fake_multimodal_pct'] > 5 else 'OK'} |
-| **Taux de Duplication Structurelle**| **{m['structural_dup_pct']} %** | $\le 15\\%$ | {'SATURATION' if m['structural_dup_pct'] > 15 else 'OK'} |
-| **Taux d'Authenticité L5/L6** | **{m['l6_authenticity_pct']} %** | $\ge 80\\%$ | {'INSUFFISANT' if m['l6_authenticity_pct'] < 80 else 'OK'} |
-| **Taux de Transfert Adversarial**| **{m['adversarial_transfer_rate_pct']} %** | $\le 10\\%$ | {'TROP GÉNÉRIQUE' if m['adversarial_transfer_rate_pct'] > 10 else 'OK'} |
+| **Taux de Grounding Indépendant**| **{m['grounding_ratio_pct']} %** | $\\ge 85\\%$ | {'ALERTE' if m['grounding_ratio_pct'] < 85 else 'OK'} |
+| **Taux de Réponses Spécifiques** | **{m['specific_answers_pct']} %** | $\\ge 80\\%$ | {'VULNÉRABLE' if m['specific_answers_pct'] < 80 else 'OK'} |
+| **Taux de Fake Multimodal** | **{m['fake_multimodal_pct']} %** | $\\le 5\\%$ | {'DÉFAILLANCE' if m['fake_multimodal_pct'] > 5 else 'OK'} |
+| **Taux de Duplication Structurelle**| **{m['structural_dup_pct']} %** | $\\le 15\\%$ | {'SATURATION' if m['structural_dup_pct'] > 15 else 'OK'} |
+| **Taux d'Authenticité L5/L6** | **{m['l6_authenticity_pct']} %** | $\\ge 80\\%$ | {'INSUFFISANT' if m['l6_authenticity_pct'] < 80 else 'OK'} |
+| **Taux de Transfert Adversarial**| **{m['adversarial_transfer_rate_pct']} %** | $\\le 10\\%$ | {'TROP GÉNÉRIQUE' if m['adversarial_transfer_rate_pct'] > 10 else 'OK'} |
 
 ---
 

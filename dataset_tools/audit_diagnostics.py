@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 import json
 from collections import Counter
+from pathlib import Path
 
-dataset_path = 'ARCHI_AI/dataset/master/v1/supervision/wave1/wave1_dataset.jsonl'
+# Repository root, resolved from this file's location (this used to be reached
+# via a local `ARCHI_AI/` directory junction — see DATASET.md §6 for history).
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
+dataset_path = str(REPO_ROOT / "dataset" / "master" / "v1" / "supervision" / "wave1" / "wave1_dataset.jsonl")
 with open(dataset_path, 'r', encoding='utf-8') as f:
     examples = [json.loads(line) for line in f]
 

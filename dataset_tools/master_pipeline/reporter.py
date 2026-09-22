@@ -101,7 +101,7 @@ class ReportGenerator:
 ## 1. Résultats par Dimension Qualité
 | Dimension | Description | Seuil d'Admission | Statut Global |
 | :--- | :--- | :---: | :---: |
-| **Visual Quality** | Résolution $\ge 256$px, netteté, lisibilité | 0.65 | CONFORME |
+| **Visual Quality** | Résolution $\\ge 256$px, netteté, lisibilité | 0.65 | CONFORME |
 | **Structural Quality** | Cohérence géométrique, syntaxe IFC | 0.65 | CONFORME |
 | **Metadata Quality** | Complétude des attributs requis | 0.65 | CONFORME |
 | **Semantic Quality** | Absence d'anomalie de grandeur (pixels vs m²) | 0.65 | SOUS CONTRÔLE |
@@ -119,7 +119,7 @@ class ReportGenerator:
 
 > **Date du rapport :** {self.timestamp}  
 > **Version Pipeline :** `{PIPELINE_VERSION}`  
-> **Méthode :** Collisions exactes SHA-256 + Hamming pHash ($\le 5$) + Analyse sémantique.
+> **Méthode :** Collisions exactes SHA-256 + Hamming pHash ($\\le 5$) + Analyse sémantique.
 
 ---
 

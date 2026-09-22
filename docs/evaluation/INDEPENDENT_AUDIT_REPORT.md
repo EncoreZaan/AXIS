@@ -1,5 +1,12 @@
 # ARCHI-AI — Rapport d'Audit Indépendant Global (`INDEPENDENT_AUDIT_REPORT.md`)
 
+> **⚠️ Audit historique — Phase 2.** Cet audit (Gold Set V2, 21 September 2026) a produit le
+> verdict `RED` historique enregistré dans `PRE_TRAINING_GATE.md`. Les points bloquants qu'il
+> a soulevés ont depuis été traités en Phase 3 ; le statut de gate actuel et faisant autorité
+> est `CONDITIONAL` (`TRAINING_ALLOWED: NO`) — voir
+> [`docs/research/SCIENTIFIC_READINESS_REPORT.md`](../research/SCIENTIFIC_READINESS_REPORT.md).
+> Ce rapport est conservé tel quel comme trace de l'audit Phase 2.
+>
 > **Date d'audit :** 21 September 2026  
 > **Posture :** RED TEAM STRICTE (Audit Indépendant Pré-Entraînement)  
 > **Principe :** Zéro validation complaisante, rejet des faux PASS par circularité.
@@ -50,4 +57,5 @@
 ---
 
 ## 3. Verdict Indépendant Global
-Voir le document de décision formel : `PRE_TRAINING_GATE.md`.
+Voir le document de décision formel de l'époque : `PRE_TRAINING_GATE.md` (statut historique `RED`,
+depuis supersédé par le statut `CONDITIONAL` de `SCIENTIFIC_READINESS_REPORT.md` — voir bandeau ci-dessus).

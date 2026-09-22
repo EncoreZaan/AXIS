@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Script de reconstruction intégrale du dataset ARCHI-AI réaligné sur les 25 images réelles.
-Source de vérité : chaque photographie dans ARCHI_AI/dataset/images/archi_*.jpg
+Script de reconstruction intégrale du dataset AXIS réaligné sur les 25 images réelles.
+Source de vérité : chaque photographie dans dataset/images/archi_*.jpg (racine du dépôt)
 """
 
 import json

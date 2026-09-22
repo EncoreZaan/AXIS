@@ -9,6 +9,7 @@ import os
 import re
 import json
 import hashlib
+from pathlib import Path
 from dataclasses import dataclass, field, asdict
 from typing import Dict, List, Any, Optional, Tuple
 
@@ -332,7 +333,8 @@ class MultiLevelPairingDetector:
 
 
 if __name__ == "__main__":
-    core_path = r"c:\Users\encor\Documents\Devs\AEON-RWKV\ARCHI_AI\dataset\raw\external\core"
+    REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+    core_path = str(REPO_ROOT / "dataset" / "raw" / "external" / "core")
     detector = MultiLevelPairingDetector(core_path)
     res = detector.run_full_audit()
     print(json.dumps(res["summary"], indent=2))

@@ -41,8 +41,12 @@ from dataset_tools.preprocessing.bim.ifc_preprocessor import BuildingSmartIfcPre
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 RAW_DIR = BASE_DIR / "dataset" / "raw" / "external"
-PROCESSED_DIR = BASE_DIR / "dataset" / "processed"
 MASTER_DIR = BASE_DIR / "dataset" / "master" / "v1"
+# Preprocessors create their processed-output directory (and any subdirectories)
+# as a side effect of construction/processing (BasePreprocessor.__init__ does
+# `self.processed_root.mkdir(...)`). Each test below is passed a pytest
+# `tmp_path` for this instead of a real `dataset/processed` path, so running
+# the suite does not write persistent artifacts into the repository working tree.
 
 
 def test_registry_contains_all_sources():
@@ -60,9 +64,9 @@ def test_registry_contains_all_sources():
         assert exp in sources, f"Source attendue manquante dans le registre: {exp}"
 
 
-def test_floorplancad_strictly_frozen():
+def test_floorplancad_strictly_frozen(tmp_path):
     """Garantit que FloorPlanCAD est exclu et ne produit aucun élément CORE V1."""
-    handler = FloorPlanCadFrozenHandler(RAW_DIR, PROCESSED_DIR)
+    handler = FloorPlanCadFrozenHandler(RAW_DIR, tmp_path)
     items = list(handler.process())
     assert len(items) == 0, "FloorPlanCAD ne doit produire AUCUN élément dans CORE V1"
     stats = handler.get_stats()
@@ -70,9 +74,9 @@ def test_floorplancad_strictly_frozen():
     assert "LEGAL_REVIEW_REQUIRED" in stats["warnings"][0]
 
 
-def test_ergonomie_preserves_original_units():
+def test_ergonomie_preserves_original_units(tmp_path):
     """Vérifie que l'ergonomie préserve les unités cm originales tout en ajoutant le SI m."""
-    prep = ErgonomiePreprocessor(RAW_DIR, PROCESSED_DIR)
+    prep = ErgonomiePreprocessor(RAW_DIR, tmp_path)
     items = list(prep.process(limit=10))
     assert len(items) > 0
     for item in items:
@@ -83,9 +87,9 @@ def test_ergonomie_preserves_original_units():
         assert item.routing == RoutingType.MULTIUSE
 
 
-def test_mmmu_strictly_benchmark_holdout():
+def test_mmmu_strictly_benchmark_holdout(tmp_path):
     """Garantit que 100% des questions MMMU sont étanches et sanctuarisées en BENCHMARK."""
-    prep = MmmuArchitecturePreprocessor(RAW_DIR, PROCESSED_DIR)
+    prep = MmmuArchitecturePreprocessor(RAW_DIR, tmp_path)
     items = list(prep.process(limit=5))
     assert len(items) > 0
     for item in items:
@@ -94,9 +98,9 @@ def test_mmmu_strictly_benchmark_holdout():
         assert item.qa.is_benchmark_holdout is True
 
 
-def test_ifc_bench_split_sanctuary():
+def test_ifc_bench_split_sanctuary(tmp_path):
     """Vérifie la séparation stricte entre les questions d'entraînement et de test benchmark d'IFC-Bench."""
-    prep = IfcBenchQAPreprocessor(RAW_DIR, PROCESSED_DIR)
+    prep = IfcBenchQAPreprocessor(RAW_DIR, tmp_path)
     items = list(prep.process(limit=20))
     assert len(items) > 0
     for item in items:
@@ -109,9 +113,9 @@ def test_ifc_bench_split_sanctuary():
             assert item.qa.is_benchmark_holdout is False
 
 
-def test_resplan_no_hallucinated_scale():
+def test_resplan_no_hallucinated_scale(tmp_path):
     """Vérifie que ResPlan ne fabrique aucune échelle arbitraire."""
-    prep = ResPlanPreprocessor(RAW_DIR, PROCESSED_DIR)
+    prep = ResPlanPreprocessor(RAW_DIR, tmp_path)
     items = list(prep.process(limit=5))
     assert len(items) > 0
     for item in items:
@@ -121,9 +125,9 @@ def test_resplan_no_hallucinated_scale():
         assert item.floorplan.total_area_m2 is not None
 
 
-def test_buildingsmart_ifc_parsing():
+def test_buildingsmart_ifc_parsing(tmp_path):
     """Vérifie l'extraction IfcOpenShell des maquettes buildingSMART."""
-    prep = BuildingSmartIfcPreprocessor(RAW_DIR, PROCESSED_DIR)
+    prep = BuildingSmartIfcPreprocessor(RAW_DIR, tmp_path)
     items = list(prep.process(limit=3))
     assert len(items) > 0
     for item in items:

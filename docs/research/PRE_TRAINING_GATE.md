@@ -1,6 +1,18 @@
-# ARCHI-AI — Décision du Pre-Training Gate (`PRE_TRAINING_GATE.md`)
+# AXIS — Décision du Pre-Training Gate (`PRE_TRAINING_GATE.md`)
 
-> **Statut Officiel du Gate :** **RED**  
+> **⚠️ Décision historique — Phase 2, supersédée par Phase 3.** Ce document enregistre le
+> verdict **RED** rendu à l'issue de la Phase 2 (`SUPERVISION_TASK_GAP_ANALYSIS.md`), sur la
+> base de l'audit indépendant `docs/evaluation/INDEPENDENT_AUDIT_REPORT.md`. Les trois motifs
+> bloquants listés ci-dessous (anomalie ResPlan, dépendance multimodale incomplète,
+> contamination du Gold Set V2) ont depuis été traités explicitement en Phase 3 — voir
+> [`docs/research/SCIENTIFIC_READINESS_REPORT.md`](SCIENTIFIC_READINESS_REPORT.md) §1, qui
+> constitue la **décision de gate actuelle et faisant autorité** : statut **`CONDITIONAL`**
+> (et non plus `RED`), avec **`TRAINING_ALLOWED: NO`** toujours en vigueur. Ce document est
+> conservé tel quel comme trace historique de l'audit Phase 2 ; il ne doit pas être lu comme
+> l'état courant du gate.
+>
+> **Statut historique du Gate (Phase 2, superseded) :** **RED**  
+> **Statut actuel du Gate (Phase 3, faisant autorité) :** **`CONDITIONAL`** (`TRAINING_ALLOWED: NO`) — voir `SCIENTIFIC_READINESS_REPORT.md`
 > **Niveau de Confiance Sanitaire :** **HAUTE RIGUEUR (Audit Red Team)**  
 > **Autorisation de Fine-Tuning :** **INTERDICTION FORMELLE**
 

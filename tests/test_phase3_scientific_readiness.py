@@ -10,25 +10,14 @@ from dataset_tools.pairing.pairing_detector import MultiLevelPairingDetector
 from dataset_tools.resplan.resplan_forensic_auditor import ResPlanForensicAuditor
 
 
-def _resolve_candidate_path(rel_parts, fallback):
+def _resolve_candidate_path(rel_parts):
     root = os.path.dirname(os.path.dirname(__file__))
-    candidates = [
-        os.path.join(root, *rel_parts),
-        os.path.join(root, "ARCHI_AI", *rel_parts),
-        fallback,
-    ]
-    for c in candidates:
-        if os.path.exists(c):
-            return c
-    return candidates[0]
+    return os.path.join(root, *rel_parts)
 
 
 @pytest.fixture(scope="module")
 def core_dir():
-    return _resolve_candidate_path(
-        ["dataset", "raw", "external", "core"],
-        r"c:\Users\encor\Documents\Devs\AEON-RWKV\ARCHI_AI\dataset\raw\external\core"
-    )
+    return _resolve_candidate_path(["dataset", "raw", "external", "core"])
 
 
 @pytest.fixture(scope="module")
@@ -73,10 +62,7 @@ def test_pairing_confidence_consistency(pairing_audit):
 
 def test_pairing_provenance_completeness(pairing_audit):
     """Verify that every certified pair has full provenance: paths, sha256, source IDs."""
-    raw_ext = _resolve_candidate_path(
-        ["dataset", "raw", "external"],
-        r"c:\Users\encor\Documents\Devs\AEON-RWKV\ARCHI_AI\dataset\raw\external"
-    )
+    raw_ext = _resolve_candidate_path(["dataset", "raw", "external"])
     for p in pairing_audit["resbim_pairs"]:
         assert p["asset_a"]["sha256"] != ""
         assert p["asset_b"]["sha256"] != ""
@@ -126,10 +112,7 @@ def test_resplan_safe_capabilities_identified(resplan_audit):
 
 @pytest.fixture(scope="module")
 def sup_manifest():
-    return _resolve_candidate_path(
-        ["dataset", "supervision", "v1", "manifests", "SUPERVISION_MANIFEST.jsonl"],
-        r"c:\Users\encor\Documents\Devs\AEON-RWKV\ARCHI_AI\dataset\supervision\v1\manifests\SUPERVISION_MANIFEST.jsonl"
-    )
+    return _resolve_candidate_path(["dataset", "supervision", "v1", "manifests", "SUPERVISION_MANIFEST.jsonl"])
 
 
 def test_resplan_not_in_supervision_metric_tasks(sup_manifest):

@@ -18,23 +18,26 @@ import time
 import math
 import random
 import hashlib
+from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 
-sys.path.insert(0, os.path.abspath("."))
-sys.path.insert(0, os.path.abspath("ARCHI_AI"))
+# Repository root, resolved from this file's location (this used to be reached
+# via a local `ARCHI_AI/` directory junction — see DATASET.md §6 for history).
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+sys.path.insert(0, str(REPO_ROOT))
 
 import numpy as np
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-from ARCHI_AI.dataset_tools.experiments.micro_pilot.models import (
+from dataset_tools.experiments.micro_pilot.models import (
     SpatialRelationMLP,
     ClearanceMLP,
     PlanVisionCNN,
     build_model
 )
-from ARCHI_AI.dataset_tools.experiments.micro_pilot.dataset_loader import DatasetASubset
+from dataset_tools.experiments.micro_pilot.dataset_loader import DatasetASubset
 
 
 def set_seed(seed: int = 42):

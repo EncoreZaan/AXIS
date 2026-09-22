@@ -30,6 +30,7 @@ import json
 import time
 import shutil
 import hashlib
+from pathlib import Path
 from collections import Counter
 from typing import Dict, Any, List, Tuple
 
@@ -39,19 +40,21 @@ import torch
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stderr.reconfigure(encoding='utf-8')
 
-sys.path.insert(0, os.path.abspath("."))
-sys.path.insert(0, os.path.abspath("ARCHI_AI"))
+# Repository root, resolved from this file's location (this used to be reached
+# via a local `ARCHI_AI/` directory junction — see DATASET.md §6 for history).
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+sys.path.insert(0, str(REPO_ROOT))
 
-from ARCHI_AI.dataset_tools.experiments.micro_pilot.models import build_model
+from dataset_tools.experiments.micro_pilot.models import build_model
 
 
-BASE_EXP_DIR = "ARCHI_AI/experiments/phase4_micro_pilot"
-ROOT_EXP_DIR = "experiments/phase4_micro_pilot"
+BASE_EXP_DIR = str(REPO_ROOT / "experiments" / "phase4_micro_pilot")
+ROOT_EXP_DIR = str(REPO_ROOT / "experiments" / "phase4_micro_pilot")
 GOLD_EVAL_DIR = os.path.join(BASE_EXP_DIR, "gold_eval")
 ROOT_GOLD_EVAL_DIR = os.path.join(ROOT_EXP_DIR, "gold_eval")
 
-GOLD_MANIFEST_PATH = "ARCHI_AI/dataset/supervision/v1/manifests/GOLD_V3_MANIFEST.jsonl"
-DATASET_A_DIR = "ARCHI_AI/dataset/experiments/phase4_micro_pilot/dataset_a"
+GOLD_MANIFEST_PATH = str(REPO_ROOT / "dataset" / "supervision" / "v1" / "manifests" / "GOLD_V3_MANIFEST.jsonl")
+DATASET_A_DIR = str(REPO_ROOT / "dataset" / "experiments" / "phase4_micro_pilot" / "dataset_a")
 BASELINE_0_PATH = os.path.join(BASE_EXP_DIR, "baselines/baseline_0.json")
 
 PRIMARY_CKPT_PATH = os.path.join(BASE_EXP_DIR, "runs/ARCHI-AI-P4-005/checkpoint/checkpoint_best_validation.pt")
@@ -130,7 +133,7 @@ def main():
     # -------------------------------------------------------------
     print("\n--- STEP 2: Hash Gold Set ---")
     gold_manifest_hash = compute_sha256(GOLD_MANIFEST_PATH)
-    counterexamples_path = "ARCHI_AI/dataset/supervision/v1/examples/counterexamples.jsonl"
+    counterexamples_path = str(REPO_ROOT / "dataset" / "supervision" / "v1" / "examples" / "counterexamples.jsonl")
     counterexamples_hash = compute_sha256(counterexamples_path) if os.path.exists(counterexamples_path) else None
 
     print(f"Gold Manifest       : {GOLD_MANIFEST_PATH}")
@@ -840,7 +843,7 @@ Conformément à la règle de verrouillage strict du Step 5 :
 
 ### 3. Distribution des Erreurs par Projet et par Source
 - **Projets :** Les 100 cas `CLEARANCE_CHECK` proviennent de 100 projets distincts.
-- **Dispersion :** 90% des exemples présentent une erreur $\le 0.098$ m. Seulement 2 cas sur 100 dépassent 0.20 m.
+- **Dispersion :** 90% des exemples présentent une erreur $\\le 0.098$ m. Seulement 2 cas sur 100 dépassent 0.20 m.
 - **Biais de Source :** Aucun biais détecté, la variance d'erreur inter-projets reste inférieure à 0.0023.
 """
 

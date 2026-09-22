@@ -71,7 +71,7 @@ If you have the private corpus locally (maintainer environment), the full 99-tes
 
 - The Master Dataset v2 (65,342 assets) is **not** in this repository. Its source registry, splits, and quarantines are documented in [`DATASET.md`](../DATASET.md).
 - The Gold Set V3 (the immutable evaluation set) and the trained checkpoint `ARCHI-AI-P4-005` are also **not public** — see [`EVALUATION.md` §4](../EVALUATION.md#4-artifact-availability).
-- If you want to run `dataset_tools/experiments/micro_pilot/` scripts specifically (not `dataset_tools.master_pipeline`, which works without it), you currently need to recreate a local `ARCHI_AI/`-prefixed directory layout — this is a known, documented limitation, not a bug you need to silently work around. See [`DATASET.md` §6`](../DATASET.md#6-local-directory-convention-for-the-full-pipeline) for the exact workaround, and consider picking up the "Path Portability" item in [`ROADMAP.md`](../ROADMAP.md) if you want to fix it properly.
+- `dataset_tools/experiments/micro_pilot/` scripts resolve their paths from the repository root the same way `dataset_tools.master_pipeline` does — no `ARCHI_AI/`-prefixed directory layout needs to be recreated. See [`DATASET.md` §6`](../DATASET.md#6-local-directory-convention-for-the-full-pipeline-historical--resolved) for the historical record of this limitation and how it was fixed.
 
 ## 5. Scientific Documentation
 

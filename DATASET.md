@@ -87,21 +87,18 @@ In compliance with the individual licensing terms of each upstream academic/rese
 
 ---
 
-## 6. Local Directory Convention for the Full Pipeline
+## 6. Local Directory Convention for the Full Pipeline (Historical — Resolved)
 
-The `dataset_tools` package is not internally uniform in how it locates data on disk, and this matters for anyone trying to run more than the pure-logic tests:
+> **Status: RESOLVED as of the pre-training-gate remediation pass.** The `ARCHI_AI/`-prefixed
+> path convention described below no longer exists in this codebase. This section is kept as
+> a historical record of the limitation and how it was fixed — it is not a setup step current
+> contributors need to perform.
 
-- **`dataset_tools/master_pipeline/`** (the module that actually built Master Dataset v2, covered by `tests/test_master_pipeline.py`) resolves every path relative to the repository root at runtime (`BASE_DIR = Path(__file__).resolve().parent.parent.parent`, e.g. `dataset_tools/master_pipeline/config.py`). It requires no special setup beyond a `dataset/` directory existing under the repo root.
-- **`dataset_tools/experiments/micro_pilot/`** (the scripts that produced checkpoint `ARCHI-AI-P4-005` and the Gold Set V3 evaluation — `trainer.py`, `run_micro_pilot.py`, `gold_evaluator.py`) and several standalone Wave-1-era audit scripts at the top of `dataset_tools/` (`gold_set_builder.py`, `audit_calculator.py`, `decision_classifier.py`, `deep_audit.py`, `audit_diagnostics.py`) instead use hardcoded string paths prefixed with `ARCHI_AI/` (e.g. `ARCHI_AI/dataset/master/v1/...`) and, in a few files, `sys.path.insert(0, os.path.abspath("ARCHI_AI"))` followed by `from ARCHI_AI.dataset_tools... import ...`.
+The `dataset_tools` package was not previously internally uniform in how it located data on disk:
 
-This `ARCHI_AI/` prefix is **not** a typo and not something this remediation silently rewrote: it is a deliberate local convention from the project's original (pre-AXIS-rename) development setup, where a directory or directory junction named `ARCHI_AI` sat at the repository root — confirmed by the `# Legacy junctions` / `ARCHI_AI` entry in `.gitignore`, which predates this remediation. An external researcher who wants to run these specific scripts (as opposed to `dataset_tools.master_pipeline`, which works without it) needs to recreate that same layout, e.g.:
+- **`dataset_tools/master_pipeline/`** (the module that actually built Master Dataset v2, covered by `tests/test_master_pipeline.py`) already resolved every path relative to the repository root at runtime (`BASE_DIR = Path(__file__).resolve().parent.parent.parent`, e.g. `dataset_tools/master_pipeline/config.py`). It required no special setup beyond a `dataset/` directory existing under the repo root.
+- **`dataset_tools/experiments/micro_pilot/`** (the scripts that produced checkpoint `ARCHI-AI-P4-005` and the Gold Set V3 evaluation — `trainer.py`, `run_micro_pilot.py`, `gold_evaluator.py`, `dataset_loader.py`, `baseline_evaluator.py`) and several standalone Wave-1-era audit scripts at the top of `dataset_tools/` (`gold_set_builder.py`, `audit_calculator.py`, `decision_classifier.py`, `deep_audit.py`, `audit_diagnostics.py`) instead used hardcoded string paths prefixed with `ARCHI_AI/` (e.g. `ARCHI_AI/dataset/master/v1/...`) and, in a few files, `sys.path.insert(0, os.path.abspath("ARCHI_AI"))` followed by `from ARCHI_AI.dataset_tools... import ...`.
 
-```bash
-# From the repository root
-mkdir -p ARCHI_AI
-ln -s "$(pwd)/dataset_tools" ARCHI_AI/dataset_tools   # so `from ARCHI_AI.dataset_tools...` resolves
-ln -s "$(pwd)/dataset" ARCHI_AI/dataset               # once you have built or placed a local dataset/ tree
-ln -s "$(pwd)/experiments" ARCHI_AI/experiments        # for micro-pilot run/checkpoint output
-```
+That `ARCHI_AI/` prefix was not a typo: it was a deliberate local convention from the project's original (pre-AXIS-rename) development setup, where a directory of symlinks named `ARCHI_AI` sat at the repository root, each pointing back at the corresponding real subdirectory (`dataset_tools`, `dataset`, `experiments`) — confirmed by the `# Legacy junctions` / `ARCHI_AI` entry in `.gitignore`. Because each `ARCHI_AI/<subdir>` symlink resolved back to the identical physical directory at the repo root, the fix below is a pure path-resolution change: it does not alter which files on disk these scripts read from or write to, and does not touch the checkpoint, Gold Set, or benchmark results those scripts previously produced.
 
-**Why this was documented instead of rewritten:** unifying every one of these scripts onto a single portable path convention (matching `master_pipeline/config.py`) would touch a dozen files that call into the checkpoint-producing and Gold-Set-evaluating pipeline — code this remediation cannot execute or verify against real data (the private dataset corpus is not present in this environment, per §5 above). Rewriting it blindly risks silently changing behavior in the exact scripts responsible for the headline `ARCHI-AI-P4-005` / Gold Set V3 results without any way to confirm the rewrite is correct. Documenting the existing, working convention is the honest fix available right now; fully parameterizing these paths (e.g. via an environment variable or CLI flag, matching `master_pipeline/config.py`'s approach) is tracked as follow-up work in `ROADMAP.md`.
+**Fix applied:** every affected file now resolves the repository root at runtime the same way `dataset_tools/master_pipeline/config.py` and `dataset_tools/supervision/independent_audit/run_audit.py` already did — `REPO_ROOT = Path(__file__).resolve().parent(.parent...)` walked up to the repo root — and builds all data/report paths from that, and imports switched from `from ARCHI_AI.dataset_tools... import ...` to the direct `from dataset_tools... import ...` form (with `REPO_ROOT` added to `sys.path` instead of a synthetic `ARCHI_AI` path segment). No external researcher needs to recreate the `ARCHI_AI/` symlink layout anymore; these scripts now run correctly from a plain `git clone` given the same repo-root-relative `dataset/` and `experiments/` layout `master_pipeline` already assumed.

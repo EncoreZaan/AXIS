@@ -10,8 +10,13 @@ Produces BASELINE_RESULTS.md and baseline_0.json.
 import os
 import json
 import statistics
+from pathlib import Path
 from typing import Dict, List, Any
 from collections import Counter
+
+# Repository root, resolved from this file's location (this used to be reached
+# via a local `ARCHI_AI/` directory junction — see DATASET.md §6 for history).
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 
 def load_jsonl(path: str) -> List[Dict[str, Any]]:
     if not os.path.exists(path):
@@ -216,7 +221,7 @@ def run_and_report(
 - **Distance médiane constante prédite :** `{baselines['OBJECT_RELATION']['predicted_distance']} m` (Moyenne : `{baselines['OBJECT_RELATION']['mean_distance']} m`)
 - **Performance sur Validation (N={eval_results['OBJECT_RELATION']['sample_count']}) :**
   - MAE : **{eval_results['OBJECT_RELATION']['mae_m']:.4f} m**
-  - Taux de succès ($\le 0.05$ m) : **{eval_results['OBJECT_RELATION']['success_rate_5cm']*100:.1f}%**
+  - Taux de succès ($\\le 0.05$ m) : **{eval_results['OBJECT_RELATION']['success_rate_5cm']*100:.1f}%**
 
 #### C. `FLOORPLAN_READING`
 - **Règle Baseline :** {baselines['FLOORPLAN_READING']['strategy']}
@@ -248,8 +253,8 @@ Toutes les tâches disposent d'un baseline trivial déterministe certifié comme
     return baseline_payload
 
 if __name__ == "__main__":
-    train_p = "ARCHI_AI/dataset/experiments/phase4_micro_pilot/dataset_a/small/train.jsonl"
-    val_p = "ARCHI_AI/dataset/experiments/phase4_micro_pilot/dataset_a/small/validation.jsonl"
-    out_p = "ARCHI_AI/experiments/phase4_micro_pilot"
+    train_p = str(REPO_ROOT / "dataset" / "experiments" / "phase4_micro_pilot" / "dataset_a" / "small" / "train.jsonl")
+    val_p = str(REPO_ROOT / "dataset" / "experiments" / "phase4_micro_pilot" / "dataset_a" / "small" / "validation.jsonl")
+    out_p = str(REPO_ROOT / "experiments" / "phase4_micro_pilot")
     res = run_and_report(train_p, val_p, out_p)
     print(json.dumps(res, indent=2))

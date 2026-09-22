@@ -9,10 +9,16 @@ and applies controlled ablations (Full, Metadata-Stripped, Target-Field-Masked).
 import os
 import json
 import torch
+from pathlib import Path
 from torch.utils.data import Dataset
 from typing import List, Dict, Any, Optional
 from PIL import Image
 import torchvision.transforms as T
+
+# Repository root, resolved from this file's location (this used to be reached
+# via a local `ARCHI_AI/` directory junction — see DATASET.md §6 for history).
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+DEFAULT_IMAGE_BASE_DIR = str(REPO_ROOT / "dataset" / "raw" / "external")
 
 class DatasetASubset(Dataset):
     """
@@ -25,7 +31,7 @@ class DatasetASubset(Dataset):
         task_id: Optional[str] = None,
         ablation_mode: str = "full",  # "full", "metadata_stripped", "target_masked"
         limit: Optional[int] = None,
-        image_base_dir: str = "ARCHI_AI/dataset/raw/external"
+        image_base_dir: str = DEFAULT_IMAGE_BASE_DIR
     ):
         self.jsonl_path = jsonl_path
         self.task_id = task_id

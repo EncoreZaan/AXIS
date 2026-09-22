@@ -252,7 +252,7 @@ pytest tests
 
 - Le corpus brut privé et le checkpoint entraîné ne sont pas publics.
 - `experiment_package/dataset/` (jeu d'exemples pour le dry-run QLoRA) n'existe pas dans le dépôt public — voir [`REPRODUCIBILITY.md` §3](REPRODUCIBILITY.md).
-- La convention de chemins historique `ARCHI_AI/` utilisée par certains scripts du micro-pilote nécessite une configuration manuelle locale — voir [`DATASET.md` §6](DATASET.md#6-local-directory-convention-for-the-full-pipeline).
+- ~~La convention de chemins historique `ARCHI_AI/` utilisée par certains scripts du micro-pilote nécessite une configuration manuelle locale~~ — **corrigé** : ces scripts résolvent désormais leurs chemins depuis la racine du dépôt sans configuration manuelle. Voir [`DATASET.md` §6](DATASET.md#6-local-directory-convention-for-the-full-pipeline-historical--resolved) pour l'historique.
 
 ---
 

@@ -69,7 +69,7 @@ class ProvenanceRecord(BaseModel):
 
 class VisualMetadata(BaseModel):
     """Métadonnées associées à un fichier image ou document visuel."""
-    path: str = Field(..., description="Chemin relatif vers l'image dans ARCHI_AI")
+    path: str = Field(..., description="Chemin relatif vers l'image (racine du dépôt)")
     width: Optional[int] = Field(default=None)
     height: Optional[int] = Field(default=None)
     format: Optional[str] = Field(default=None)

@@ -2,9 +2,9 @@
 """
 ARCHI-AI — Point d'Entrée CLI du Pipeline de Prétraitement
 ==========================================================
-Exécute la normalisation canonique du corpus brut ARCHI-AI vers :
-- ARCHI_AI/dataset/processed/
-- ARCHI_AI/dataset/master/v1/
+Exécute la normalisation canonique du corpus brut AXIS vers :
+- dataset/processed/
+- dataset/master/v1/
 
 Usage :
     python -m dataset_tools.preprocessing.run --source all
@@ -17,7 +17,7 @@ from pathlib import Path
 import sys
 import json
 
-# Définir le path pour importer ARCHI_AI
+# Résoudre la racine du dépôt pour les imports
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(BASE_DIR))
 

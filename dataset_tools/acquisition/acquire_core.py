@@ -1,7 +1,7 @@
 """
-ARCHI-AI Complete Raw Dataset Acquisition Script
-Author: ARCHI-AI Engineering
-Target Directory: ARCHI_AI/dataset/raw/external/
+AXIS Complete Raw Dataset Acquisition Script
+Author: AXIS Engineering
+Target Directory: dataset/raw/external/ (repository root)
 """
 
 import os

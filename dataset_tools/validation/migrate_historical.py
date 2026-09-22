@@ -116,7 +116,7 @@ def migrate_historical_dataset(base_dir: str):
                 full_img_path = os.path.join(base_dir, "dataset", img_rel) if not os.path.exists(os.path.join(base_dir, img_rel)) else os.path.join(base_dir, img_rel)
                 w, h, sha256, phash = get_image_info(full_img_path)
                 
-                # Normalize relative path standard inside ARCHI_AI
+                # Normalize relative path standard inside the repository
                 norm_img_rel = f"dataset/{img_rel}" if not img_rel.startswith("dataset/") else img_rel
                 
                 image_item = ImageItem(

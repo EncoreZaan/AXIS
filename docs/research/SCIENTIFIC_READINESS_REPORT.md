@@ -1,4 +1,4 @@
-# ARCHI-AI — Rapport de Maturité Scientifique Pré-Entraînement (`SCIENTIFIC_READINESS_REPORT.md`)
+# AXIS — Rapport de Maturité Scientifique Pré-Entraînement (`SCIENTIFIC_READINESS_REPORT.md`)
 
 > **Phase :** PHASE 3 — Corpus Expansion & Scientific Readiness  
 > **Auteur :** Lead Dataset Engineer, Multimodal Dataset Researcher & Forensic Auditor  

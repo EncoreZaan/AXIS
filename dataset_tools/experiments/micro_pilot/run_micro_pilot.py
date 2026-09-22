@@ -23,22 +23,25 @@ import sys
 import json
 import time
 import shutil
+from pathlib import Path
 from typing import Dict, Any, List, Tuple
 
-sys.path.insert(0, os.path.abspath("."))
-sys.path.insert(0, os.path.abspath("ARCHI_AI"))
+# Repository root, resolved from this file's location (this used to be reached
+# via a local `ARCHI_AI/` directory junction — see DATASET.md §6 for history).
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+sys.path.insert(0, str(REPO_ROOT))
 
 import numpy as np
 import torch
 from torch.utils.data import DataLoader
 
-from ARCHI_AI.dataset_tools.experiments.micro_pilot.models import build_model
-from ARCHI_AI.dataset_tools.experiments.micro_pilot.dataset_loader import DatasetASubset
-from ARCHI_AI.dataset_tools.experiments.micro_pilot.trainer import Trainer, set_seed
-from ARCHI_AI.dataset_tools.supervision.shortcut_auditor import ShortcutAuditor
+from dataset_tools.experiments.micro_pilot.models import build_model
+from dataset_tools.experiments.micro_pilot.dataset_loader import DatasetASubset
+from dataset_tools.experiments.micro_pilot.trainer import Trainer, set_seed
+from dataset_tools.supervision.shortcut_auditor import ShortcutAuditor
 
 
-BASE_EXP_DIR = "ARCHI_AI/experiments/phase4_micro_pilot"
+BASE_EXP_DIR = str(REPO_ROOT / "experiments" / "phase4_micro_pilot")
 CONFIGS_DIR = os.path.join(BASE_EXP_DIR, "configs")
 RUNS_DIR = os.path.join(BASE_EXP_DIR, "runs")
 REPORTS_DIR = os.path.join(BASE_EXP_DIR, "reports")
@@ -58,12 +61,18 @@ def save_run_config(config: Dict[str, Any], filepath: str):
 
 
 def copy_to_root():
-    root_exp = "experiments/phase4_micro_pilot"
+    # Historically this mirrored BASE_EXP_DIR (reached via the ARCHI_AI/
+    # junction) into a second, cwd-relative "experiments/phase4_micro_pilot"
+    # location. Now that BASE_EXP_DIR resolves directly to the repo-root
+    # location (see REPO_ROOT above), the two paths are usually the same
+    # directory; the abspath guard below keeps this idempotent instead of
+    # raising shutil.SameFileError when that's the case.
+    root_exp = str(REPO_ROOT / "experiments" / "phase4_micro_pilot")
     if os.path.exists(BASE_EXP_DIR):
         for sub in ["reports", "configs", "runs", "baselines", "ablations", "checkpoints", "curves", "metrics"]:
             s = os.path.join(BASE_EXP_DIR, sub)
             d = os.path.join(root_exp, sub)
-            if os.path.exists(s):
+            if os.path.exists(s) and os.path.abspath(s) != os.path.abspath(d):
                 os.makedirs(d, exist_ok=True)
                 for f in os.listdir(s):
                     src_f = os.path.join(s, f)
@@ -101,7 +110,7 @@ def step_5_overfit_test(task_id: str = "OBJECT_RELATION") -> Tuple[bool, Dict[st
     print("STEP 5: OVERFIT TEST (Mandatory Gate)")
     print("=" * 60)
     subset_size = 32
-    train_path = "ARCHI_AI/dataset/experiments/phase4_micro_pilot/dataset_a/small/train.jsonl"
+    train_path = str(REPO_ROOT / "dataset" / "experiments" / "phase4_micro_pilot" / "dataset_a" / "small" / "train.jsonl")
     dataset = DatasetASubset(train_path, task_id=task_id, limit=subset_size)
     loader = DataLoader(dataset, batch_size=subset_size, shuffle=True)
 
@@ -191,8 +200,8 @@ def execute_run(
     lr: float = 1e-3,
     batch_size: int = 32
 ) -> Dict[str, Any]:
-    train_path = f"ARCHI_AI/dataset/experiments/phase4_micro_pilot/dataset_a/{dataset_variant}/train.jsonl"
-    val_path = f"ARCHI_AI/dataset/experiments/phase4_micro_pilot/dataset_a/{dataset_variant}/validation.jsonl"
+    train_path = str(REPO_ROOT / "dataset" / "experiments" / "phase4_micro_pilot" / "dataset_a" / dataset_variant / "train.jsonl")
+    val_path = str(REPO_ROOT / "dataset" / "experiments" / "phase4_micro_pilot" / "dataset_a" / dataset_variant / "validation.jsonl")
 
     train_ds = DatasetASubset(train_path, task_id=task_id, ablation_mode=ablation_mode)
     val_ds = DatasetASubset(val_path, task_id=task_id, ablation_mode=ablation_mode)
@@ -395,9 +404,9 @@ ABLATION_GATE: PASS
     print("STEP 10: Shortcut Audit")
     print("=" * 60)
     auditor = ShortcutAuditor()
-    train_data = json.load(open("ARCHI_AI/experiments/phase4_micro_pilot/baselines/baseline_0.json"))
-    raw_train = [json.loads(l) for l in open("ARCHI_AI/dataset/experiments/phase4_micro_pilot/dataset_a/small/train.jsonl", encoding="utf-8")]
-    raw_val = [json.loads(l) for l in open("ARCHI_AI/dataset/experiments/phase4_micro_pilot/dataset_a/small/validation.jsonl", encoding="utf-8")]
+    train_data = json.load(open(REPO_ROOT / "experiments" / "phase4_micro_pilot" / "baselines" / "baseline_0.json"))
+    raw_train = [json.loads(l) for l in open(REPO_ROOT / "dataset" / "experiments" / "phase4_micro_pilot" / "dataset_a" / "small" / "train.jsonl", encoding="utf-8")]
+    raw_val = [json.loads(l) for l in open(REPO_ROOT / "dataset" / "experiments" / "phase4_micro_pilot" / "dataset_a" / "small" / "validation.jsonl", encoding="utf-8")]
 
     # Split leakage check
     is_clean_split, split_diag = auditor.audit_split_leakage(raw_train + raw_val)

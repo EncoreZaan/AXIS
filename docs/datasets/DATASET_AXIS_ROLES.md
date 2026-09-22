@@ -1,12 +1,12 @@
-# ARCHI-AI — Rôles Métier & Affectation Fonctionnelle des Datasets
+# AXIS — Rôles Métier & Affectation Fonctionnelle des Datasets
 
-Ce document attribue à chaque dataset audité ses rôles précis au sein de l'architecture d'intelligence spatiale et architecturale d'**ARCHI-AI**.
+Ce document attribue à chaque dataset audité ses rôles précis au sein de l'architecture d'intelligence spatiale et architecturale d'**AXIS**.
 
 ---
 
-## 1. Cartographie des Rôles Métier ARCHI-AI
+## 1. Cartographie des Rôles Métier AXIS
 
-Dans ARCHI-AI, chaque compétence mobilisée doit reposer sur des sources de vérité supervisées adaptées. Les 13 rôles fonctionnels sont définis comme suit :
+Dans AXIS, chaque compétence mobilisée doit reposer sur des sources de vérité supervisées adaptées. Les 13 rôles fonctionnels sont définis comme suit :
 
 1. **`PERCEPTION` :** Capacité à identifier les éléments physiques dans une image (parois, ouvertures, meubles, volumes).
 2. **`PLAN UNDERSTANDING` :** Capacité à lire, interpréter et extraire la sémantique d'un plan 2D technique d'architecte.
@@ -26,7 +26,7 @@ Dans ARCHI-AI, chaque compétence mobilisée doit reposer sur des sources de vé
 
 ## 2. Matrice d'Affectation par Dataset
 
-| Dataset | Rôles Métier Principaux | Rôles Secondaires | Justification Fonctionnelle ARCHI-AI |
+| Dataset | Rôles Métier Principaux | Rôles Secondaires | Justification Fonctionnelle AXIS |
 | :--- | :--- | :--- | :--- |
 | **Structured3D** | `SPATIAL REASONING`, `PLAN UNDERSTANDING`, `PERCEPTION` | `INTERIOR DESIGN`, `BENCHMARK` | Seul dataset reliant directement un plan 2D à une version 3D vide ET meublée d'une même pièce. |
 | **IL3D** | `SPATIAL REASONING`, `INTERIOR DESIGN`, `PEDAGOGY` | `PERCEPTION`, `BENCHMARK` | Alignement natif entre description en langage naturel et placement tridimensionnel des objets (Apache-2.0). |
@@ -49,7 +49,7 @@ Dans ARCHI-AI, chaque compétence mobilisée doit reposer sur des sources de vé
 
 ---
 
-## 3. Répartition des Rôles pour ARCHI-AI Dataset V1
+## 3. Répartition des Rôles pour AXIS Dataset V1
 
 Pour la construction concrète du Dataset V1, chaque rôle est alloué à une source primaire dominante :
 

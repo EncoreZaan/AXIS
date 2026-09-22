@@ -9,6 +9,7 @@ import os
 import sys
 import json
 import pickle
+from pathlib import Path
 import numpy as np
 from typing import Dict, List, Any, Tuple
 
@@ -217,7 +218,8 @@ class ResPlanForensicAuditor:
 
 
 if __name__ == "__main__":
-    pkl_file = r"c:\Users\encor\Documents\Devs\AEON-RWKV\ARCHI_AI\dataset\raw\external\core\resplan\extracted\ResPlan.pkl"
+    REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+    pkl_file = str(REPO_ROOT / "dataset" / "raw" / "external" / "core" / "resplan" / "extracted" / "ResPlan.pkl")
     auditor = ResPlanForensicAuditor(pkl_file)
     print("Auditing Metric Calibration...")
     metric_res = auditor.audit_metric_calibration(1000)

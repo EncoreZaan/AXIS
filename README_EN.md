@@ -252,7 +252,7 @@ pytest tests
 
 - The private raw corpus and the trained checkpoint are not public.
 - `experiment_package/dataset/` (the example set for the QLoRA dry-run) does not exist in the public repository — see [`REPRODUCIBILITY.md` §3](REPRODUCIBILITY.md).
-- The historical `ARCHI_AI/` path convention used by some micro-pilot scripts requires manual local setup — see [`DATASET.md` §6](DATASET.md#6-local-directory-convention-for-the-full-pipeline).
+- ~~The historical `ARCHI_AI/` path convention used by some micro-pilot scripts requires manual local setup~~ — **fixed**: these scripts now resolve their paths from the repository root with no manual setup. See [`DATASET.md` §6](DATASET.md#6-local-directory-convention-for-the-full-pipeline-historical--resolved) for the history.
 
 ---
 

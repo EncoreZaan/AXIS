@@ -10,7 +10,7 @@ import sys
 import json
 from pathlib import Path
 
-# Ensure ARCHI_AI root is on python path
+# Ensure the repository root is on the python path
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(BASE_DIR))
 

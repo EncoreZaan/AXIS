@@ -6,10 +6,15 @@ import json
 import re
 import sys
 from collections import Counter, defaultdict
+from pathlib import Path
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-DATASET_PATH = 'ARCHI_AI/dataset/master/v1/supervision/wave1/wave1_dataset.jsonl'
+# Repository root, resolved from this file's location (this used to be reached
+# via a local `ARCHI_AI/` directory junction — see DATASET.md §6 for history).
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
+DATASET_PATH = str(REPO_ROOT / "dataset" / "master" / "v1" / "supervision" / "wave1" / "wave1_dataset.jsonl")
 
 def run_deep_checks():
     with open(DATASET_PATH, 'r', encoding='utf-8') as f:

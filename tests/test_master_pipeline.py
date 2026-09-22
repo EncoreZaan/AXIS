@@ -21,9 +21,11 @@ from dataset_tools.master_pipeline.metadata_extractor import (
     extract_floorplan_metadata,
 )
 from dataset_tools.master_pipeline.deduplicator import MultiLevelDeduplicator
+from dataset_tools.master_pipeline import legal_filter as legal_filter_module
 from dataset_tools.master_pipeline.legal_filter import LegalFilter
 from dataset_tools.master_pipeline.quality_scorer import QualityScorer
 from dataset_tools.master_pipeline.provenance_tracker import ProvenanceTracker
+from dataset_tools.master_pipeline import split_manager as split_manager_module
 from dataset_tools.master_pipeline.split_manager import DeterministicSplitter, extract_project_group_id
 from dataset_tools.master_pipeline.canonicalizer import build_canonical_record
 
@@ -48,7 +50,7 @@ def test_classify_asset_deterministic():
     assert status == "CLASSIFIED_DETERMINISTIC"
 
 
-def test_legal_filter_floorplancad():
+def test_legal_filter_floorplancad(tmp_path, monkeypatch):
     """Garantit que FloorPlanCAD (CC BY-NC 4.0) est obligatoirement filtré."""
     rec_fpc = RawAssetRecord(
         asset_id="dummy_fpc",
@@ -62,7 +64,12 @@ def test_legal_filter_floorplancad():
         parent_dir="floorplancad",
         source_dataset="CORE_FLOORPLANCAD",
     )
-    lf = LegalFilter()
+    # restricted_root is pointed at a pytest tmp_path, and MANIFEST_RESTRICTED
+    # is monkeypatched to the same tmp_path, so this test does not write
+    # LegalFilter's output (RESTRICTED_MANIFEST.jsonl, FLOORPLANCAD_LEGAL_DOSSIER.md)
+    # into the repository working tree.
+    monkeypatch.setattr(legal_filter_module, "MANIFEST_RESTRICTED", tmp_path / "manifests" / "RESTRICTED_MANIFEST.jsonl")
+    lf = LegalFilter(restricted_root=tmp_path / "restricted" / "legal_review" / "floorplancad")
     app, rest, stats = lf.apply_filter([rec_fpc])
     assert len(rest) == 1
     assert len(app) == 0
@@ -115,8 +122,14 @@ def test_quality_scorer_dimensions():
     assert qs.determine_status(scores) == QualityStatus.PASS
 
 
-def test_split_deterministic_anti_leakage():
+def test_split_deterministic_anti_leakage(tmp_path, monkeypatch):
     """Vérifie l'étanchéité absolue du découpage par project_group_id."""
+    # SPLITS_DIR / MANIFEST_SPLIT are module-level constants (not constructor
+    # parameters) that partition_records() writes to directly; monkeypatch
+    # them to a pytest tmp_path so this test does not write real split/manifest
+    # files into the repository working tree.
+    monkeypatch.setattr(split_manager_module, "SPLITS_DIR", tmp_path / "splits")
+    monkeypatch.setattr(split_manager_module, "MANIFEST_SPLIT", tmp_path / "manifests" / "SPLIT_MANIFEST.jsonl")
     splitter = DeterministicSplitter(seed=42)
 
     c1 = build_canonical_record(
