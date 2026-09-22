@@ -1,0 +1,50 @@
+name: Deploy AXIS website
+
+# Publishes the static site in `website/` to GitHub Pages. No build step:
+# the folder is uploaded as-is (plain HTML/CSS/vanilla JS, see website/README.md).
+#
+# One-time manual step required (cannot be done from a workflow file):
+# Settings -> Pages -> Build and deployment -> Source: "GitHub Actions".
+# Until that is set, this workflow will run but the deployment step will
+# fail with a "Pages site not found" / "not enabled" error.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "website/**"
+      - ".github/workflows/deploy-website.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one concurrent deployment; let in-flight runs finish instead of
+# cancelling them, so a Pages deployment is never left half-published.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website/ as the Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: website
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
