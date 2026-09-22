@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
 <rect width="32" height="32" rx="7" fill="#0a0b0d"/>
-<g fill="#f4f2ec">
-<polygon points="9.5,4 4,27 11.3,27"/>
-<polygon points="18,11 12.3,27 19.7,27"/>
-<polygon points="26.3,15 20.7,27 28,27"/>
+<g fill="#f4f2ec" transform="translate(3 3) scale(0.1469)">
+<path d="M57 104 L0 177 L27 177 L57 137 Z"/>
+<path d="M64 0 L64 99 L103 138 L103 39 Z"/>
+<path d="M112 89 L112 149 L136 177 L177 177 Z"/>
 </g>
 </svg>
