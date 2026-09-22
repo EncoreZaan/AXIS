@@ -123,10 +123,19 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.9em;
 }
 
 .nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 500;
   letter-spacing: 0.08em;
+}
+
+.nav-mark {
+  width: 18px;
+  height: auto;
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -267,12 +276,28 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.9em;
   padding-right: clamp(24px, 5vw, 64px);
 }
 
+.hero-emblem {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 14px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+.hero.is-ready .hero-emblem { opacity: 1; transform: translateY(0); }
+.hero-emblem-mark {
+  width: clamp(30px, 3.6vw, 46px);
+  height: auto;
+  color: var(--ink);
+  opacity: 0.94;
+}
+
 .hero-kicker {
   text-align: center;
   font-size: 0.72rem;
   letter-spacing: 0.28em;
   color: var(--ink-dim);
-  margin: 0 0 6px;
+  margin: 10px 0 0;
 }
 
 .hero-word {
@@ -361,7 +386,8 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.9em;
 .hero.is-ready .hero-copy .reveal-item:nth-child(2) { transition-delay: 0.28s; }
 .hero.is-ready .hero-copy .reveal-item:nth-child(3) { transition-delay: 0.4s; }
 .hero.is-ready .hero-visual.reveal-item { transition-delay: 0.5s; }
-.hero.is-ready .hero-kicker { transition-delay: 0s; }
+.hero.is-ready .hero-emblem { transition-delay: 0s; }
+.hero.is-ready .hero-kicker { transition-delay: 0.16s; }
 
 /* ---- hero visual ----
    `.hero-visual` is a plain flow container (auto height) so the
@@ -960,6 +986,7 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.9em;
   flex-wrap: wrap;
   gap: 24px;
 }
+.footer-mark { width: 24px; height: auto; margin-bottom: 12px; color: var(--ink); }
 .footer-logo { font-family: var(--font-display); font-size: 1.3rem; margin: 0; letter-spacing: 0.05em; }
 .footer-tagline { font-size: 0.8rem; color: var(--ink-dim); margin: 4px 0 0; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.85rem; color: var(--ink-dim); }
@@ -1057,5 +1084,5 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.9em;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .hero-word, .reveal-item, .reveal-on-scroll, .hero-card, .anno, .anno-line { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .hero-word, .hero-emblem, .reveal-item, .reveal-on-scroll, .hero-card, .anno, .anno-line { opacity: 1 !important; transform: none !important; filter: none !important; }
 }
