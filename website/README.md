@@ -42,12 +42,25 @@ website/
 
 Every number and status claim on this page (65,342 assets, the
 0.0517 m / 2.7739 m evaluation figures, the 98.14% reduction, the 200/200
-Gold Set V3 counts, the validated/experimental/planned/blocked breakdown)
-is sourced directly from `PROJECT_STATUS.md`, `DATASET.md`, `EVALUATION.md`
-and `ROADMAP.md` at the repository root. If those documents are updated,
-this page's copy (in both `index.html` and `js/i18n.js`) must be updated to
-match — never the other way around. Do not restate a number here that
-isn't already documented in those files.
+Gold Set V3 counts, the RUN-023 metrics — 1,006 test examples, 63.12%
+topological reasoning accuracy vs 14.51% base, 100% format adherence, 0%
+hallucination, VDI 1.28 — and the validated/experimental/unproven/blocked
+breakdown) is sourced directly from `PROJECT_STATUS.md`, `docs/PROJECT_STATUS.md`,
+`docs/SCIENTIFIC_TIMELINE.md`, `DATASET.md`, `EVALUATION.md`, `ARCHITECTURE.md`,
+`ROADMAP.md`, and the `RUN-019` through `RUN-023` folders at the repository
+root. If those documents are updated, this page's copy (in both `index.html`
+and `js/i18n.js`) must be updated to match — never the other way around. Do
+not restate a number here that isn't already documented in those files.
+
+"AXIS-Clearance", "AXIS-Spatial", and "AXIS-Unified" (used in the Models
+section) are this page's own public names for three internal components
+documented in `ARCHITECTURE.md` §2.3/2.5 (`SpatialRelationMLP`, the
+`Qwen2-VL-7B-Instruct + LoRA` adapter from `RUN-022`, and the planned
+`Unified Architectural Transformer`) — a presentation layer, not a rename
+of those documents' own identifiers. AXIS Studio is presented as planned
+and not yet started, because no implementation, interface, or mockup for
+it exists anywhere in this repository; do not add feature claims for it
+here until a real component exists to document.
 
 ## Accessibility & performance notes
 
