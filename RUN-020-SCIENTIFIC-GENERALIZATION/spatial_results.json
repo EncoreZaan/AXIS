@@ -1,0 +1,39 @@
+{
+  "spatial_continuous_distance_metric": "METRIC_UNAVAILABLE",
+  "rationale": "REAL_DATA_PILOT does not contain continuous numerical ground truth coordinates, bounding boxes, or metric distances. Generating artificial ground-truth distances is strictly prohibited by protocol \u00a77.",
+  "spatial_keywords_audit": {
+    "base_model_keyword_frequencies": {
+      "circulation": 380,
+      "est": 309,
+      "cloison": 203,
+      "centre": 166,
+      "baie": 141,
+      "chambre": 110,
+      "bain": 86,
+      "cuisine": 66,
+      "haut": 66,
+      "droite": 56,
+      "gauche": 49,
+      "bas": 44,
+      "connect\u00e9": 34,
+      "s\u00e9par\u00e9": 29,
+      "porte": 29
+    },
+    "trained_model_keyword_frequencies": {
+      "circulation": 254,
+      "paroi": 252,
+      "distribution": 250,
+      "porte": 132,
+      "central": 127,
+      "s\u00e9jour": 127,
+      "noyau": 127,
+      "cloison": 127,
+      "d\u00e9gagement": 125,
+      "est": 3,
+      "chambre": 2,
+      "cuisine": 2,
+      "haut": 1
+    }
+  },
+  "spatial_reasoning_finding": "Base Model attempts layout-specific spatial grounding (referencing 'au centre', 'en haut \u00e0 gauche', 'en bas \u00e0 droite', 's\u00e9jour'). RUN-019 Model outputs a fixed spatial description invariant across all images ('Le noyau de circulation central dessert les pi\u00e8ces principales...'), demonstrating zero layout-specific spatial sensitivity."
+}

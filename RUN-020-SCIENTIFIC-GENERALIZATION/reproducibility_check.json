@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-09-23T01:01:29Z",
+  "seed": 42,
+  "decoding": "greedy (do_sample=False, temperature=0.0)",
+  "all_exact_match": true,
+  "status": "PASS",
+  "cases": [
+    {
+      "sample_index": 0,
+      "sample_id": "archi_pilot_0001",
+      "exact_match": true,
+      "len_first": 941,
+      "len_second": 941
+    },
+    {
+      "sample_index": 1,
+      "sample_id": "archi_pilot_0005",
+      "exact_match": true,
+      "len_first": 945,
+      "len_second": 945
+    },
+    {
+      "sample_index": 2,
+      "sample_id": "archi_pilot_0013",
+      "exact_match": true,
+      "len_first": 1016,
+      "len_second": 1016
+    }
+  ]
+}

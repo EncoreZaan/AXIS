@@ -1,0 +1,23 @@
+{
+  "total_assets": 1000,
+  "unique_assets": 1000,
+  "unique_sha256_count": 1000,
+  "train_count": 775,
+  "validation_count": 98,
+  "test_count": 127,
+  "cross_split_duplicates": 0,
+  "resbim_valid_pairs": 10,
+  "rplan_unique_plans": 990,
+  "corrupt_files_detected": 0,
+  "duplicate_files_filtered": 3,
+  "formats": {
+    "PNG": 990,
+    "JPEG": 10
+  },
+  "dimensions": {
+    "CORE_RPLAN": "256x256",
+    "CORE_RESBIM_PAIRED": "varied high-resolution"
+  },
+  "audit_verdict": "PASS",
+  "is_scientifically_useful": true
+}

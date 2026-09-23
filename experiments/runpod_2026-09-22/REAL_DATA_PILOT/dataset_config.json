@@ -1,0 +1,28 @@
+{
+  "name": "AXIS_REAL_DATA_PILOT",
+  "version": "1.0.0",
+  "date": "2026-09-22",
+  "description": "First authentic architectural training pilot subset for AXIS VLM fine-tuning.",
+  "target_model": "Qwen/Qwen2-VL-7B-Instruct",
+  "total_unique_assets": 1000,
+  "split_counts": {
+    "train": 775,
+    "validation": 98,
+    "test": 127
+  },
+  "source_breakdown": {
+    "CORE_RPLAN": 990,
+    "CORE_RESBIM_PAIRED": 10
+  },
+  "leakage_audit": {
+    "cross_split_duplicates": 0,
+    "split_seed": 42,
+    "split_strategy": "project_group_id_deterministic_hash"
+  },
+  "provenance": {
+    "CORE_RPLAN": "Open Research License (metindeder/rplan-floorplan-edited)",
+    "CORE_RESBIM_PAIRED": "MIT License (tsesterh/ResBIM-IFC)",
+    "CORE_FLOORPLANCAD": "STRICTLY_EXCLUDED",
+    "GOLD_SET_V3": "SANCTUARY_ZERO_OVERLAP"
+  }
+}

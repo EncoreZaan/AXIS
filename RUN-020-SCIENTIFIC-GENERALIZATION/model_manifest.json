@@ -1,0 +1,15 @@
+{
+  "base_model": "Qwen/Qwen2-VL-7B-Instruct",
+  "base_model_revision": "eed13092ef92e448dd6875b2a00151bd3f7db0ac",
+  "adapter_path": "/workspace/AXIS/RUN-019-FIRST-REAL-DATA-QLORA/checkpoints/final_adapter",
+  "adapter_model_safetensors_sha256": "409d2098fbe6ea74c9659ab84b33d66179b2a294e95d360f36ce0fdd32685f22",
+  "quantization": "4-bit NF4 double quant bfloat16",
+  "generation_config": {
+    "do_sample": false,
+    "temperature": 0.0,
+    "max_new_tokens": 256,
+    "seed": 42,
+    "min_pixels": 200704,
+    "max_pixels": 262144
+  }
+}

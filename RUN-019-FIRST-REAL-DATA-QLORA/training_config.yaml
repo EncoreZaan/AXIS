@@ -1,0 +1,65 @@
+# AXIS Real Data Scientific Pilot Training Configuration
+# Designed for Qwen2-VL-7B-Instruct on 24 GB GPU (RunPod Phase 3 Baseline)
+# INVARIANT: TRAINING_ALLOWED: NO | TRAINING_MAY_BEGIN: NO
+
+model:
+  name_or_path: "Qwen/Qwen2-VL-7B-Instruct"
+  revision: "eed13092ef92e448dd6875b2a00151bd3f7db0ac"
+  torch_dtype: "bfloat16"
+  low_cpu_mem_usage: true
+  device_map: "auto"
+
+quantization:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_compute_dtype: "bfloat16"
+
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  freeze_vision_tower: true
+
+dataset:
+  train_file: "experiments/runpod_2026-09-22/REAL_DATA_PILOT/train.jsonl"
+  validation_file: "experiments/runpod_2026-09-22/REAL_DATA_PILOT/validation.jsonl"
+  test_file: "experiments/runpod_2026-09-22/REAL_DATA_PILOT/test.jsonl"
+  images_base_dir: "experiments/runpod_2026-09-22/REAL_DATA_PILOT"
+  min_pixels: 200704
+  max_pixels: 262144
+  max_seq_length: 1536
+
+training:
+  output_dir: "outputs/axis_real_data_pilot"
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 8
+  num_train_epochs: 2
+  learning_rate: 1.0e-4
+  learning_rate_candidates:
+    - 1.0e-4   # Conservative baseline
+    - 1.5e-4   # HYPOTHESIS_ONLY (unvalidated from Phase 2 fixture)
+    - 2.0e-4   # Steep descent exploratory
+  lr_scheduler_type: "cosine"
+  warmup_ratio: 0.05
+  optim: "paged_adamw_8bit"
+  gradient_checkpointing: true
+  bf16: true
+  fp16: false
+  logging_steps: 1
+  eval_strategy: "epoch"
+  save_strategy: "epoch"
+  save_total_limit: 2
+  seed: 42
+  report_to: "none"

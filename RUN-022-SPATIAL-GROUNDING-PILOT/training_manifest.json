@@ -1,0 +1,39 @@
+{
+  "run_id": "RUN-022-SPATIAL-GROUNDING-PILOT",
+  "scientific_objective": "Test whether spatial supervision grounding increases actual visual dependence and spatial reasoning accuracy without template shortcut",
+  "base_model": "Qwen/Qwen2-VL-7B-Instruct",
+  "model_revision": "eed13092ef92e448dd6875b2a00151bd3f7db0ac",
+  "git_commit": "f4d5e949053743d97091ea35080de5d365899df7",
+  "dataset_version": "AXIS_SPATIAL_SUPERVISION_V1",
+  "dataset_root": "RUN-021-SPATIAL-SUPERVISION",
+  "train_file": "RUN-021-SPATIAL-SUPERVISION/train.jsonl",
+  "validation_file": "RUN-021-SPATIAL-SUPERVISION/validation.jsonl",
+  "test_file": "RUN-021-SPATIAL-SUPERVISION/test.jsonl",
+  "dataset_sha256": "9c0908c4c2bc25c647cfde7d885e4d8fe9ba507fb00fb79ce42852942ea60d6c",
+  "train_sha256": "227ba7db7769e3f25d365a33efd03126e18612cf5821f1f23dcd2342a701e849",
+  "validation_sha256": "c543a319321534f016c94aeb8ee74503bc8f01511c232ec91394d69a307467d2",
+  "test_sha256": "aaba73433c9ccea7a5c6134154577ea80591e23755665794bec603ebdf53053f",
+  "seed": 42,
+  "hyperparameters": {
+    "quantization": "4-bit NF4 double quant bfloat16",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+    "learning_rate": 0.0001,
+    "microbatch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "effective_batch_size": 8,
+    "num_train_epochs": 3,
+    "sequence_length": 1536,
+    "min_pixels": 200704,
+    "max_pixels": 262144,
+    "optimizer": "paged_adamw_8bit",
+    "gradient_checkpointing": true
+  },
+  "manual_audit_audit": {
+    "manual_audit_human": "NOT_PERFORMED",
+    "automated_geometric_audit": "PASS",
+    "description": "50 samples were programmatically audited with 100% geometric agreement; no human visual inspection was performed."
+  }
+}

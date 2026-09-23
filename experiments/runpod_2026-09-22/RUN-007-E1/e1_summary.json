@@ -1,0 +1,61 @@
+{
+  "run_id": "RUN-007-E1",
+  "timestamp": "2026-09-22 22:05:21 UTC",
+  "num_epochs": 8,
+  "total_optimization_steps": 24,
+  "train_runtime_sec": 269.1176767349243,
+  "eval_runtime_sec": 2.368652105331421,
+  "peak_vram_mib": 11756.6826171875,
+  "train_loss_final": 1.6976692924896877,
+  "eval_loss_initial": 1.958370566368103,
+  "eval_loss_final": 1.7271009683609009,
+  "epoch_evals": [
+    {
+      "epoch": 1.0,
+      "eval_loss": 1.958370566368103,
+      "eval_runtime": 2.4484
+    },
+    {
+      "epoch": 2.0,
+      "eval_loss": 1.8880857229232788,
+      "eval_runtime": 2.5208
+    },
+    {
+      "epoch": 3.0,
+      "eval_loss": 1.8238130807876587,
+      "eval_runtime": 2.3858
+    },
+    {
+      "epoch": 4.0,
+      "eval_loss": 1.7771466970443726,
+      "eval_runtime": 2.4367
+    },
+    {
+      "epoch": 5.0,
+      "eval_loss": 1.7487506866455078,
+      "eval_runtime": 2.4431
+    },
+    {
+      "epoch": 6.0,
+      "eval_loss": 1.7345240116119385,
+      "eval_runtime": 2.4888
+    },
+    {
+      "epoch": 7.0,
+      "eval_loss": 1.7274253368377686,
+      "eval_runtime": 2.4909
+    },
+    {
+      "epoch": 8.0,
+      "eval_loss": 1.7271009683609009,
+      "eval_runtime": 2.4285
+    },
+    {
+      "epoch": 8.0,
+      "eval_loss": 1.7271009683609009,
+      "eval_runtime": 2.3679
+    }
+  ],
+  "generated_sample": "L'organisation spatiale de cette pi\u00e8ce est bien pens\u00e9e et offre un espace de vie confortable et fonctionnel. Voici les points forts de cette pi?ce :\n\n1. **Lumi\u00e8re naturelle abondante** : Les grandes fen\u00eatres lat\u00e9rales permettent une entr\u00e9e de lumi\u00e8re naturelle intense, cr\u00e9ant une ambiance chaleureuse et accueillante.\n\n2. **Vue panoramique** : La pr\u00e9sence d'une grande fen\u00eatre arri\u00e8re offre une vue imprenable sur la ville ou le paysage, ajoutant une dimension de d\u00e9tente et de d\u00e9tente \u00e0 la pi\u00e8ce.\n\n",
+  "status": "PASS"
+}

@@ -1,0 +1,14 @@
+{
+  "run_id": "RUN-019-FIRST-REAL-DATA-QLORA",
+  "git_commit": "f4d5e949053743d97091ea35080de5d365899df7",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "gpu_total_vram_mib": 24124.1875,
+  "cuda_version": "12.4",
+  "python_version": "3.12.3",
+  "pytorch_version": "2.6.0+cu124",
+  "transformers_version": "5.17.0",
+  "peft_version": "0.21.0",
+  "bitsandbytes_version": "0.50.2",
+  "model_id": "Qwen/Qwen2-VL-7B-Instruct",
+  "model_revision": "eed13092ef92e448dd6875b2a00151bd3f7db0ac"
+}

@@ -1,0 +1,27 @@
+{
+  "run_id": "RUN-023-SPATIAL-GENERALIZATION-EVAL",
+  "date": "2026-09-23T15:39:35.003227+00:00",
+  "evaluation_dataset": "AXIS_SPATIAL_SUPERVISION_V1 (test.jsonl)",
+  "test_samples": 1006,
+  "results_summary": {
+    "base_model": {
+      "grounding_accuracy": 0.1451,
+      "format_adherence": 0.6561,
+      "id_hallucination_rate": 0.0
+    },
+    "run_019": {
+      "grounding_accuracy": 0.1581,
+      "format_adherence": 0.5606,
+      "id_hallucination_rate": 0.0
+    },
+    "run_022": {
+      "grounding_accuracy": 0.6312,
+      "format_adherence": 1.0,
+      "id_hallucination_rate": 0.0,
+      "directional_macro_f1": 0.7322,
+      "vdi": 1.28,
+      "vdi_pass": false
+    }
+  },
+  "reproducibility": "PASS"
+}

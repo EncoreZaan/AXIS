@@ -1,0 +1,65 @@
+{
+  "audit_id": "RUN-009-DATASET_AUDIT",
+  "timestamp": "2026-09-22 22:35:00 UTC",
+  "dataset_classification": "RUNTIME_TEST_CORPUS",
+  "summary": {
+    "train_records": 20,
+    "validation_records": 5,
+    "test_records": 0,
+    "total_records": 25,
+    "total_image_files": 25,
+    "unique_image_count": 1,
+    "duplicate_image_count": 24,
+    "unique_image_hashes_sha256": [
+      "e6b036c6081a5c4f4219173c238d02beec00e00216e3dbbc5782230b95f3e350"
+    ],
+    "matches_test_image_fixture": true,
+    "fixture_origin": "/workspace/AXIS/test_images/sample_interior.jpg",
+    "fixture_sha256": "e6b036c6081a5c4f4219173c238d02beec00e00216e3dbbc5782230b95f3e350"
+  },
+  "provenance_and_boundaries": {
+    "master_dataset_v2_present": false,
+    "master_dataset_v2_records_certified": 65342,
+    "gold_set_v3_present": false,
+    "gold_set_v3_isolated": true,
+    "core_floorplancad_quarantined": true,
+    "core_floorplancad_records_in_dataset": 0,
+    "cleared_sources_config": "/workspace/AXIS/configs/training_corpus_cleared.json",
+    "cleared_sources_config_sha256": "5fd39698864be5facb1f07c7f44829da65d8e065da1324f1787f9da358d05d49"
+  },
+  "distributions": {
+    "sources": {
+      "runtime_fixture": 25
+    },
+    "categories": {
+      "ANALYSE D'ESPACE": 5,
+      "STYLE / MATERIAUX / AMBIANCE": 5,
+      "ERGONOMIE / CIRCULATION": 5,
+      "CRITIQUE DE PROJET": 5,
+      "PROPOSITION D'AM\u00c9LIORATION": 5
+    },
+    "space_types": {
+      "salon": 11,
+      "espace ext\u00e9rieur": 2,
+      "salle de bain": 3,
+      "cuisine": 3,
+      "espace ouvert": 1,
+      "chambre": 1,
+      "petit espace": 3,
+      "bureau": 1
+    },
+    "modalities": {
+      "image_text_paired": 25,
+      "text_only": 0
+    }
+  },
+  "technical_findings": [
+    "The Pod contains only a 25-sample runtime test corpus (20 train, 5 validation, 0 test).",
+    "Every single image file (archi_001.jpg to archi_025.jpg) is an identical duplicate of test_images/sample_interior.jpg.",
+    "The dataset is NOT representative of the 65,342-sample Master Dataset v2.",
+    "Zero FloorPlanCAD assets are present.",
+    "Zero Gold Set V3 assets are present.",
+    "The dataset is valid strictly for software pipeline verification, hardware benchmarking, and engineering ablations."
+  ],
+  "verdict": "RUNTIME_TEST_CORPUS_CONFIRMED"
+}

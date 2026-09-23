@@ -1,0 +1,277 @@
+{
+  "human_blind_evaluation": "NOT_PERFORMED",
+  "evaluation_mode": "AUTOMATED_SIDE_BY_SIDE",
+  "description": "10 deterministic test samples across diverse spatial tasks anonymized and compiled side-by-side.",
+  "samples": [
+    {
+      "sample_num": 1,
+      "sample_index": 12,
+      "example_id": "archi_pilot_0013_TASK_G_SHORTEST_PATH",
+      "task_type": "MULTI_HOP_REACHABILITY",
+      "question": "En naviguant uniquement \u00e0 travers les portes int\u00e9rieures, quel est le nombre minimal de portes \u00e0 franchir pour passer de la pi\u00e8ce [33, 146, 53, 182] \u00e0 la pi\u00e8ce [204, 143, 224, 182] ?",
+      "ground_truth": "3 portes",
+      "candidates": [
+        [
+          "Model Beta",
+          "OBSERVATION\nL'image pr\u00e9sente un plan de appartement 2D colori\u00e9 de gris sur fond blanc. Les parois ext\u00e9rieures et pi\u00e8ces int\u00e9rieures sont marqu\u00e9es par des parois de couleur rouge avec portes et ouvertures en jaune vif.\n\nANALY"
+        ],
+        [
+          "Model Alpha",
+          "Pour passer de la pi\u00e8ce [33, 146, 53, 182] \u00e0 la pi\u00e8ce [204, 143, 224, 182] en naviguant uniquement \u00e0 travers les portes int\u00e9rieures, vous devrez franch"
+        ],
+        [
+          "Model Gamma",
+          "Le trajet le plus court n\u00e9cessite de franchir exactement 3 portes."
+        ]
+      ],
+      "key": {
+        "Model Alpha": "BASE_MODEL",
+        "Model Beta": "RUN-019",
+        "Model Gamma": "RUN-022"
+      }
+    },
+    {
+      "sample_num": 2,
+      "sample_index": 45,
+      "example_id": "archi_pilot_0028_TASK_G_CIRCULATION_HUB",
+      "task_type": "CIRCULATION_HUB_IDENTIFICATION",
+      "question": "Quel espace joue le r\u00f4le de noyau de distribution central en connectant le plus grand nombre de portes d'acc\u00e8s ?",
+      "ground_truth": "[81, 53, 178, 179] (6 portes)",
+      "candidates": [
+        [
+          "Model Gamma",
+          "Le noyau de circulation central est la pi\u00e8ce d\u00e9limit\u00e9e par [69, 60, 183, 168], distribuant directement 6 portes d'acc\u00e8s."
+        ],
+        [
+          "Model Beta",
+          "OBSERVATION\nL'espace de distribution central de la structure plane 20077 pr\u00e9sente une composition g\u00e9om\u00e9trique plane standardis\u00e9e de 256 unit\u00e9s de c\u00f4t\u00e9. Les parois ext\u00e9rieures et cloisons s\u00e9paratives d\u00e9finissent les volumes int\u00e9rieurs avec portes et"
+        ],
+        [
+          "Model Alpha",
+          "Le noyau de distribution central qui joue le r\u00f4le le plus important en connectant le plus grand nombre de portes d'acc\u00e8s est le centre de la structure. Il est entour\u00e9 de six portes d'acc\u00e8s, ce qui en fait le noyau le plus central et le plus important."
+        ]
+      ],
+      "key": {
+        "Model Alpha": "BASE_MODEL",
+        "Model Beta": "RUN-019",
+        "Model Gamma": "RUN-022"
+      }
+    },
+    {
+      "sample_num": 3,
+      "sample_index": 88,
+      "example_id": "archi_pilot_0059_TASK_B_DIRECTION",
+      "task_type": "DIRECTIONAL_RELATION",
+      "question": "Quelle est la position relative de la pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete englobante [29, 146, 56, 168] par rapport \u00e0 la pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete [203, 80, 228, 118] ?",
+      "ground_truth": "au-dessus de",
+      "candidates": [
+        [
+          "Model Gamma",
+          "La pi\u00e8ce [29, 146, 56, 168] est situ\u00e9e au-dessus de la pi\u00e8ce [203, 80, 228, 118]."
+        ],
+        [
+          "Model Alpha",
+          "La pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete englobante [29, 146, 56, 168] est situ\u00e9e \u00e0 droite et en dessous de la pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete [203, 80, 22"
+        ],
+        [
+          "Model Beta",
+          "La pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete englobante [29, 146, 56, 168] est situ\u00e9e en position sup\u00e9rieure et l\u00e9g\u00e8rement \u00e0 droite par rapport \u00e0 la pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete [203, "
+        ]
+      ],
+      "key": {
+        "Model Alpha": "BASE_MODEL",
+        "Model Beta": "RUN-019",
+        "Model Gamma": "RUN-022"
+      }
+    },
+    {
+      "sample_num": 4,
+      "sample_index": 134,
+      "example_id": "archi_pilot_0099_TASK_A_ROOM_COUNT",
+      "task_type": "ROOM_CARDINALITY",
+      "question": "Combien de pi\u00e8ces int\u00e9rieures distinctes (surfaces blanches closes) composent ce plan d'\u00e9tage ?",
+      "ground_truth": "7",
+      "candidates": [
+        [
+          "Model Alpha",
+          "Le plan d'\u00e9tage comporte 5 pi\u00e8ces int\u00e9rieures distinctes (surfaces blanches closes)."
+        ],
+        [
+          "Model Gamma",
+          "Ce plan d'\u00e9tage comprend exactement 8 pi\u00e8ces int\u00e9rieures distinctes."
+        ],
+        [
+          "Model Beta",
+          "Le plan d'\u00e9tage comporte 5 pi\u00e8ces int\u00e9rieures distinctes (surfaces blanches closes)."
+        ]
+      ],
+      "key": {
+        "Model Alpha": "BASE_MODEL",
+        "Model Beta": "RUN-019",
+        "Model Gamma": "RUN-022"
+      }
+    },
+    {
+      "sample_num": 5,
+      "sample_index": 210,
+      "example_id": "archi_pilot_0183_TASK_D_CONNECTED_NEG",
+      "task_type": "DOOR_CONNECTIVITY_NEGATIVE",
+      "question": "La pi\u00e8ce d\u00e9limit\u00e9e par [53, 79, 69, 116] et la pi\u00e8ce d\u00e9limit\u00e9e par [65, 120, 106, 156] sont-elles directement reli\u00e9es par une porte de passage (rep\u00e8re vert) ?",
+      "ground_truth": "Non",
+      "candidates": [
+        [
+          "Model Gamma",
+          "Non, il n'existe aucune porte directe reliant ces deux pi\u00e8ces."
+        ],
+        [
+          "Model Beta",
+          "Oui, les pi\u00e8ces d\u00e9limit\u00e9es par les parois ext\u00e9rieures et les cloisons s\u00e9paratives sont directement reli\u00e9es par une porte de passage de dimension standardis\u00e9e de 80 cm de largeur et de hauteur variable selon le plafond ou le calepinage des cloisons"
+        ],
+        [
+          "Model Alpha",
+          "Oui, les pi\u00e8ces d\u00e9limit\u00e9es par [53, 79, 69, 116] et [65, 120, 106, 156] sont directement reli\u00e9es par une porte de passage (rep\u00e8re vert)."
+        ]
+      ],
+      "key": {
+        "Model Alpha": "BASE_MODEL",
+        "Model Beta": "RUN-019",
+        "Model Gamma": "RUN-022"
+      }
+    },
+    {
+      "sample_num": 6,
+      "sample_index": 350,
+      "example_id": "archi_pilot_0388_TASK_A_ROOM_COUNT",
+      "task_type": "ROOM_CARDINALITY",
+      "question": "Combien de pi\u00e8ces int\u00e9rieures distinctes (surfaces blanches closes) composent ce plan d'\u00e9tage ?",
+      "ground_truth": "7",
+      "candidates": [
+        [
+          "Model Gamma",
+          "Ce plan d'\u00e9tage comprend exactement 7 pi\u00e8ces int\u00e9rieures distinctes."
+        ],
+        [
+          "Model Alpha",
+          "Le plan d'\u00e9tage comporte 5 pi\u00e8ces int\u00e9rieures distinctes (surfaces blanches closes)."
+        ],
+        [
+          "Model Beta",
+          "Le plan d'\u00e9tage que vous avez fourni comporte 5 pi\u00e8ces int\u00e9rieures distinctes (surfaces blanches closes)."
+        ]
+      ],
+      "key": {
+        "Model Alpha": "BASE_MODEL",
+        "Model Beta": "RUN-019",
+        "Model Gamma": "RUN-022"
+      }
+    },
+    {
+      "sample_num": 7,
+      "sample_index": 480,
+      "example_id": "archi_pilot_0503_TASK_B_DIRECTION",
+      "task_type": "DIRECTIONAL_RELATION",
+      "question": "Quelle est la position relative de la pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete englobante [144, 21, 184, 33] par rapport \u00e0 la pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete [144, 181, 165, 236] ?",
+      "ground_truth": "\u00e0 gauche de",
+      "candidates": [
+        [
+          "Model Alpha",
+          "La pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete englobante [144, 21, 184, 33] est situ\u00e9e en haut de la pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete [144, 181, 165, 2"
+        ],
+        [
+          "Model Beta",
+          "La pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete englobante [144, 21, 184, 33] est situ\u00e9e au-dessus et l\u00e9g\u00e8rement \u00e0 droite de la pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete [144, 181,"
+        ],
+        [
+          "Model Gamma",
+          "La pi\u00e8ce [144, 21, 184, 33] est situ\u00e9e \u00e0 gauche de la pi\u00e8ce [144, 181, 165, 236]."
+        ]
+      ],
+      "key": {
+        "Model Alpha": "BASE_MODEL",
+        "Model Beta": "RUN-019",
+        "Model Gamma": "RUN-022"
+      }
+    },
+    {
+      "sample_num": 8,
+      "sample_index": 610,
+      "example_id": "archi_pilot_0654_TASK_D_CONNECTED_NEG",
+      "task_type": "DOOR_CONNECTIVITY_NEGATIVE",
+      "question": "La pi\u00e8ce d\u00e9limit\u00e9e par [29, 81, 104, 132] et la pi\u00e8ce d\u00e9limit\u00e9e par [73, 168, 101, 198] sont-elles directement reli\u00e9es par une porte de passage (rep\u00e8re vert) ?",
+      "ground_truth": "Non",
+      "candidates": [
+        [
+          "Model Gamma",
+          "Non, il n'existe aucune porte directe reliant ces deux pi\u00e8ces."
+        ],
+        [
+          "Model Beta",
+          "Oui, les pi\u00e8ces d\u00e9limit\u00e9es par les parois ext\u00e9rieures et les cloisons s\u00e9paratives sont directement reli\u00e9es par une porte de passage de dimension standardis\u00e9e de 80 cm de largeur et de hauteur variable selon le plafond ou le calepinage des cloisons"
+        ],
+        [
+          "Model Alpha",
+          "Oui, les pi\u00e8ces d\u00e9limit\u00e9es par [29, 81, 104, 132] et [73, 168, 101, 198] sont directement reli\u00e9es par une porte de passage (rep\u00e8re vert)."
+        ]
+      ],
+      "key": {
+        "Model Alpha": "BASE_MODEL",
+        "Model Beta": "RUN-019",
+        "Model Gamma": "RUN-022"
+      }
+    },
+    {
+      "sample_num": 9,
+      "sample_index": 750,
+      "example_id": "archi_pilot_0783_TASK_A_ROOM_COUNT",
+      "task_type": "ROOM_CARDINALITY",
+      "question": "Combien de pi\u00e8ces int\u00e9rieures distinctes (surfaces blanches closes) composent ce plan d'\u00e9tage ?",
+      "ground_truth": "8",
+      "candidates": [
+        [
+          "Model Alpha",
+          "Le plan d'\u00e9tage comporte 5 pi\u00e8ces int\u00e9rieures distinctes (surfaces blanches closes)."
+        ],
+        [
+          "Model Gamma",
+          "Ce plan d'\u00e9tage comprend exactement 7 pi\u00e8ces int\u00e9rieures distinctes."
+        ],
+        [
+          "Model Beta",
+          "Le plan d'\u00e9tage que vous avez fourni comporte 5 pi\u00e8ces int\u00e9rieures distinctes (surfaces blanches closes)."
+        ]
+      ],
+      "key": {
+        "Model Alpha": "BASE_MODEL",
+        "Model Beta": "RUN-019",
+        "Model Gamma": "RUN-022"
+      }
+    },
+    {
+      "sample_num": 10,
+      "sample_index": 920,
+      "example_id": "archi_pilot_0927_TASK_B_DIRECTION",
+      "task_type": "DIRECTIONAL_RELATION",
+      "question": "Quelle est la position relative de la pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete englobante [40, 56, 67, 88] par rapport \u00e0 la pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete [200, 156, 217, 201] ?",
+      "ground_truth": "au-dessus de",
+      "candidates": [
+        [
+          "Model Beta",
+          "La pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete englobante [40, 56, 67, 88] est situ\u00e9e en position sup\u00e9rieure et l\u00e9g\u00e8rement \u00e0 droite par rapport \u00e0 la pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete [200, 15"
+        ],
+        [
+          "Model Gamma",
+          "La pi\u00e8ce [40, 56, 67, 88] est situ\u00e9e au-dessus de la pi\u00e8ce [200, 156, 217, 201]."
+        ],
+        [
+          "Model Alpha",
+          "La pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete englobante [40, 56, 67, 88] est situ\u00e9e \u00e0 l'int\u00e9rieur de la pi\u00e8ce d\u00e9limit\u00e9e par la bo\u00eete [200, 156, 217, 2"
+        ]
+      ],
+      "key": {
+        "Model Alpha": "BASE_MODEL",
+        "Model Beta": "RUN-019",
+        "Model Gamma": "RUN-022"
+      }
+    }
+  ]
+}

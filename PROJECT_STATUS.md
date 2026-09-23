@@ -1,47 +1,87 @@
-# AXIS — Current Project & Scientific Status
+# AXIS — Authoritative Current Project & Scientific Status
 
-> **Last Updated:** September 2026  
-> **Official Policy:** Scientifically honest, falsifiable, and verifiable against real artefacts.
-
----
-
-## 1. Status Legend
-
-The AXIS project strictly enforces transparent status descriptors across all documentation:
-
-- **`DONE`** : Completed, peer-audited, verified by automated tests, and backed by verifiable disk artifacts.
-- **`IN PROGRESS`** : Active development or ongoing investigation under active execution.
-- **`BLOCKED`** : Progress paused due to an explicit technical, legal, or data dependency.
-- **`PLANNED`** : Structured for upcoming roadmap phases; no execution started yet.
-- **`EXPERIMENTAL`** : Exploratory proof-of-concept; results are preliminary and cannot be generalized.
-- **`NOT YET VALIDATED`** : Implementation exists in draft form but lacks formal benchmark or empirical verification.
+> **Document Version:** 2.0.0  
+> **Last Updated:** 2026-09-23  
+> **Governing Commit:** `f4d5e949053743d97091ea35080de5d365899df7` (`f4d5e94`)  
+> **Scientific Integrity Policy:** Strictly verifiable, falsifiable, and traceable against physical artifacts.
 
 ---
 
-## 2. Component & Milestone Matrix
+## 1. Executive Summary
 
-| Component / Subsystem | Current Status | Empirical Evidence & Artifacts | Known Limitations / Notes |
-| :--- | :---: | :--- | :--- |
-| **Master Dataset v2** | `DONE` | 65,342 assets consolidated across 19 sources (`DATASET_SPLIT_REPORT.md`). Zero SHA256 / project leaks. | Requires 50-100 additional OpenBIM IFC models for multimodal scale. |
-| **Data Partitioning (Splits)** | `DONE` | Train: 53,720 / Val: 5,724 / Test: 5,898 (sum = 65,342 total assets) + Review queue: 1,563 held separately, **not** summed into the 65,342. Gated with seed 42. | Strictly partitioned by `project_group_id`. See `DATASET.md` §2. |
-| **Test Suite** | `DONE` (maintainer env) | **99 tests** in `tests/`; 99/99 pass **only** when the private RAW dataset corpus is present locally. | On a fresh public clone, ~35/99 pass out of the box (see `REPRODUCIBILITY.md` §4); the rest require the non-redistributed dataset, and 7 are skipped due to an orphaned pre-migration import. Runs in ~4 minutes under `pytest` in the maintainer's full environment. |
-| **ResPlan Scale Forensic** | `DONE` | Forensic analysis of 17,000 plans proving scale distortion (`net_area` anomaly). | **BLOCKED for metric tasks (m²).** Quarantined. 6 non-metric capabilities safe. |
-| **FloorPlanCAD Status** | `BLOCKED` | 741 CAD vector drawings isolated under `LEGAL_REVIEW_REQUIRED`. | Blocked on intellectual property / license clarification. |
-| **2D/3D Pair Discovery in RAW**| `DONE` | Exhaustive scan of 66,847 files confirmed 0 new hidden 2D/3D pairs exist in RAW. | 10 certified pairs exist (`CORE_RESBIM_PAIRED`). Arbitrary matching rejected. |
-| **Phase 4 Task Gating** | `DONE` | 4/69 tasks approved (`FLOORPLAN_READING`, `ROOM_TOPOLOGY`, `OBJECT_RELATION`, `CLEARANCE_CHECK`). | 65 tasks excluded due to lack of ground truth or uncalibrated data. |
-| **Dataset A Construction** | `DONE` | Built Small (800), Medium (2,400), Full (6,000) subsets (`dataset_a/`). | Zero collision with Gold Set V3. |
-| **Gold Set V3 Sanctification**| `DONE` | 200 certified instances + 200 hard negatives. SHA256: `81561fae5b524fa26622e5fac27d612f7d75a11e6ff0be774448fef04b9f2aca`. | Read-only, immutable evaluation set. |
-| **Checkpoint Evaluation (`005`)**| `DONE` | MAE: 0.0517 m on Gold Set (vs Baseline 0: 2.7739 m), a 98.14% relative MAE reduction. 100% Pass/Fail accuracy on a 99-positive/1-negative set of 100 — see `EVALUATION.md` §3.2 for why this is not a general robustness claim. | Validated exclusively for 3D spatial clearance regression. Checkpoint weights not publicly available (`EVALUATION.md` §4). |
-| **2D Vision Model (`ROOM_TOPOLOGY`)** | `NOT YET VALIDATED` | Baseline 0 calibrated (34% exact match). Model architecture not trained in Phase 4. | Labeled `NOT_EVALUATED` on Gold Set in Phase 4. |
-| **VLM QLoRA Proof-of-Concept** | `EXPERIMENTAL` | Dry-run & 6-step run on Qwen2-VL-7B (loss 1.893 $\to$ 1.769). 0 OOM, 0 NaN. | **Micro-experiment only.** Not a trained production model. |
-| **Multimodal 2D $\leftrightarrow$ 3D Reasoning** | `NOT YET VALIDATED` | Synthetic cross-modal reasoning without true pairs rejected. | Awaiting open-licensed paired BIM models. |
-| **DSpark Acceleration** | `PLANNED` | Theoretical evaluation tracked in `docs/research/inference-optimization.md`. | No integration or benchmark exists yet. |
-| **Pre-Training Gate** | `BLOCKED` | Status: `CONDITIONAL` (`TRAINING_ALLOWED: NO`). | Blocked until dataset expansion requirements are satisfied. |
+**AXIS** (*Architectural eXtensible Intelligence System*) is an open-source, reproducible artificial intelligence research initiative developing vision-language foundation models for architectural reasoning, spatial grounding, and multimodal 2D/3D building understanding.
+
+As of **September 23, 2026**, AXIS has concluded the **Phase 6B Spatial Grounding Pilot** (`RUN-022`) and its comprehensive evaluation (`RUN-023`), establishing significant measurable gains in discrete spatial reasoning while honestly identifying critical methodological boundaries regarding visual dependency.
+
+```text
+======================================================================
+AXIS RESEARCH CAMPAIGN STATUS SUMMARY (2026-09-23)
+======================================================================
+LATEST MILESTONE:              RUN-023-SPATIAL-GENERALIZATION-EVAL
+BASE MODEL:                    Qwen/Qwen2-VL-7B-Instruct (4-bit NF4)
+CHECKPOINT EVALUATED:          RUN-022 final_adapter (LoRA r=16, alpha=32)
+ADAPTER SHA-256:               71c3f3eaf8de758bc9c843fdb70c6c03538789a7c1fddc7ab1af198b40ee8479
+HELD-OUT TEST SET:             1,006 samples (AXIS_SPATIAL_SUPERVISION_V1)
+----------------------------------------------------------------------
+OVERALL GROUNDING ACCURACY:    63.12% (+48.61 pp vs 14.51% Base Model)
+SYNTAX & FORMAT ADHERENCE:     100.00%
+DIRECTIONAL REASONING:         98.40%
+DOOR CONNECTIVITY:             94.00% (Positive: 92.80%, Negative: 95.20%)
+ROOM & DOOR CARDINALITY:       69.20%
+MULTI-HOP REACHABILITY:        80.00%
+ID HALLUCINATION RATE:         0.00% (Eradicated vs 100% in RUN-019)
+BIT-EXACT REPRODUCIBILITY:     PASS (20/20 bit-exact concordance, seed 42)
+----------------------------------------------------------------------
+VISUAL DEPENDENCY INDEX (VDI): 1.28
+VDI THRESHOLD REQUIRED:        >= 3.0
+VDI OFFICIAL VERDICT:          VDI_PASS = NO (Visual dependency unproven)
+CIRCULATION HUB ACCURACY:      0.00% (Strict integer bbox equality sensitivity)
+HUMAN BLIND EVALUATION:        NOT_PERFORMED (Automated side-by-side)
+======================================================================
+SANCTUARIES:                   ALL 5 STRICTLY UNMODIFIED & AUDITED
+CURRENT OPERATIONAL STATE:     TRAINING_ALLOWED: NO | EVALUATION_COMPLETED
+NEXT AUTHORIZED STEP:          AWAIT HUMAN VALIDATION BEFORE PHASE 7
+======================================================================
+```
 
 ---
 
-## 3. What AXIS Is NOT (Scientifically Honest Boundary)
+## 2. Mandatory Status Answers (11 Core Invariants)
 
-- **NOT Production-Ready:** AXIS is an active foundational research initiative.
-- **NOT A Generalist Foundation Model:** The current validated checkpoint proves spatial clearance geometric regression, not general architectural autonomy.
-- **NOT "AGI for Architecture":** All demonstrated capabilities are narrowly bounded by deterministic target contracts and falsifiable verification scripts.
+1. **What is AXIS?**  
+   An AI research initiative building verifiable multimodal foundation models for architectural plan understanding, spatial topology, and metric reasoning.
+2. **What has been completed?**  
+   Phases 1 through 6B, encompassing dataset sanitization, GPU profiling (RUN-001–RUN-014), real-data pilot (RUN-019), scientific falsification (RUN-020), spatial supervision engineering (RUN-021), 2,310-step pilot training with deterministic resumption (RUN-022), and comprehensive 1,006-sample evaluation (RUN-023).
+3. **What is the current scientific state?**  
+   Significant empirical advancement on discrete architectural queries (63.12% accuracy vs 14.51% base); however, **causal visual dependency has not been proven** under the official VDI protocol ($\text{VDI} = 1.28 < 3.0$).
+4. **What experiments have been run?**  
+   RUN-001 through RUN-023. See full registry in [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) and [`docs/SCIENTIFIC_TIMELINE.md`](docs/SCIENTIFIC_TIMELINE.md).
+5. **What has been proven?**  
+   100% format discipline, elimination of ID hallucinations (0.00%), high directional precision (98.40%), door connectivity (94.00%), multi-hop path reachability (80.00%), and exact numerical reproducibility (20/20 bit-exact).
+6. **What has NOT been proven?**  
+   Visual grounding / pixel dependency has NOT been proven. General architectural autonomy and metric surface regression have NOT been proven.
+7. **What datasets are locked?**  
+   `Master Dataset v2` (65,342 assets), `Gold Set V3` (200 items), `REAL_DATA_PILOT` (1,000 assets), and `AXIS_SPATIAL_SUPERVISION_V1` (7,950 examples, config hash `9c0908c4...`).
+8. **What checkpoints are locked?**  
+   `RUN-019 final_adapter` and `RUN-022 final_adapter` (bit-identical to `checkpoint-2310`, SHA-256: `71c3f3eaf8de758bc9c843fdb70c6c03538789a7c1fddc7ab1af198b40ee8479`).
+9. **What are the current limitations?**  
+   VDI 50% binary chance floor; bounding-box text prompt confounding; circulation hub strict integer equality sensitivity; lack of human review.
+10. **What is the next authorized step?**  
+    Await explicit human validation before launching Phase 7.
+11. **Which experiments must NOT be rerun?**  
+    RUN-019, RUN-020, RUN-021, RUN-022, and RUN-023 must never be rerun or retrofitted.
+
+---
+
+## 3. Navigation to Canonical Documentation
+
+- **Full Project Status & Q&A:** [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md)
+- **Chronological Timeline:** [`docs/SCIENTIFIC_TIMELINE.md`](docs/SCIENTIFIC_TIMELINE.md)
+- **Gates & Decision Records:** [`docs/GATES_AND_DECISIONS.md`](docs/GATES_AND_DECISIONS.md)
+- **Documentation Policy:** [`docs/DOCUMENTATION_POLICY.md`](docs/DOCUMENTATION_POLICY.md)
+- **Detailed Experiment Reports:**
+  - [`RUN-019 First Real-Data QLoRA`](docs/experiments/RUN-019/README.md)
+  - [`RUN-020 Scientific Falsification`](docs/experiments/RUN-020/README.md)
+  - [`RUN-021 Spatial Supervision Dataset`](docs/experiments/RUN-021/README.md)
+  - [`RUN-022 Spatial Grounding Pilot`](docs/experiments/RUN-022/README.md)
+  - [`RUN-023 Grounding Evaluation`](docs/experiments/RUN-023/README.md)

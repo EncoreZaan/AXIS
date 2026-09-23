@@ -1,0 +1,2010 @@
+{
+  "seed": 42,
+  "total_manifest_entries": 167,
+  "entries": [
+    {
+      "asset_id": "archi_pilot_0001",
+      "source": "CORE_RESBIM_PAIRED",
+      "split": "test",
+      "task": "paired_cad_ifc_analysis",
+      "prompt_id": "PROMPT-RESBIM-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0005",
+      "source": "CORE_RESBIM_PAIRED",
+      "split": "test",
+      "task": "paired_cad_ifc_analysis",
+      "prompt_id": "PROMPT-RESBIM-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0013",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0018",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0023",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0027",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0028",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0032",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0034",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0037",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0051",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0056",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0059",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0064",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0071",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0090",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0095",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0096",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0099",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0100",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0107",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0128",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0129",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0140",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0178",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0179",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0180",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0183",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0185",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0203",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0204",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0207",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0243",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0245",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0248",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0255",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0265",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0273",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0279",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0284",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0289",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0323",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0333",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0358",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0387",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0388",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0389",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0390",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0392",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0399",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0408",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0413",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0438",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0457",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0466",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0467",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0468",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0471",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0483",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0489",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0502",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0503",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0507",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0512",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0514",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0538",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0546",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0560",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0573",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0581",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0595",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0597",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0609",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0610",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0637",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0642",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0652",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0654",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0655",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0656",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0673",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0685",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0699",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0705",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0707",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0716",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0724",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0727",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0738",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0750",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0754",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0756",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0761",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0762",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0768",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0783",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0789",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0808",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0811",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0815",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0816",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0823",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0831",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0859",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0860",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0863",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0865",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0868",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0871",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0877",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0881",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0890",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0903",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0913",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0916",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0923",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0927",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0935",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0940",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0944",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0950",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0965",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0968",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0970",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0973",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0991",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0995",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "in_domain_plan_critique",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "original",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0001",
+      "source": "CORE_RESBIM_PAIRED",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "solid_black",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0001",
+      "source": "CORE_RESBIM_PAIRED",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "arch_masked",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0001",
+      "source": "CORE_RESBIM_PAIRED",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "unrelated_noise",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0001",
+      "source": "CORE_RESBIM_PAIRED",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-TEXT-ONLY-RPLAN",
+      "condition": "text_only",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0071",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "solid_black",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0071",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "arch_masked",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0071",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "unrelated_noise",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0071",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-TEXT-ONLY-RPLAN",
+      "condition": "text_only",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0185",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "solid_black",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0185",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "arch_masked",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0185",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "unrelated_noise",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0185",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-TEXT-ONLY-RPLAN",
+      "condition": "text_only",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0333",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "solid_black",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0333",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "arch_masked",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0333",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "unrelated_noise",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0333",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-TEXT-ONLY-RPLAN",
+      "condition": "text_only",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0468",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "solid_black",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0468",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "arch_masked",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0468",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "unrelated_noise",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0468",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-TEXT-ONLY-RPLAN",
+      "condition": "text_only",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0595",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "solid_black",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0595",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "arch_masked",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0595",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "unrelated_noise",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0595",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-TEXT-ONLY-RPLAN",
+      "condition": "text_only",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0707",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "solid_black",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0707",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "arch_masked",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0707",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "unrelated_noise",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0707",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-TEXT-ONLY-RPLAN",
+      "condition": "text_only",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0811",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "solid_black",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0811",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "arch_masked",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0811",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "unrelated_noise",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0811",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-TEXT-ONLY-RPLAN",
+      "condition": "text_only",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0903",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "solid_black",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0903",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "arch_masked",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0903",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "unrelated_noise",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0903",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-TEXT-ONLY-RPLAN",
+      "condition": "text_only",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0995",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "solid_black",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0995",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "arch_masked",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0995",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-RPLAN-STD",
+      "condition": "unrelated_noise",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    },
+    {
+      "asset_id": "archi_pilot_0995",
+      "source": "CORE_RPLAN",
+      "split": "test",
+      "task": "visual_dependency_ablation",
+      "prompt_id": "PROMPT-TEXT-ONLY-RPLAN",
+      "condition": "text_only",
+      "evaluated_models": [
+        "BASE",
+        "RUN-019"
+      ]
+    }
+  ]
+}

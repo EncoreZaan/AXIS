@@ -1,0 +1,12 @@
+{
+  "audit_timestamp": "2026-09-22T23:48:25Z",
+  "train_samples": 775,
+  "validation_samples": 98,
+  "test_samples": 127,
+  "test_train_id_overlap_count": 0,
+  "test_train_id_overlap_list": [],
+  "test_val_id_overlap_count": 0,
+  "image_hash_overlap_count": 0,
+  "evaluation_asset_intersect_training_asset": 0,
+  "anti_leakage_status": "PASS"
+}

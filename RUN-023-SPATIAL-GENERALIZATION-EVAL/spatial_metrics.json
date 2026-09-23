@@ -1,0 +1,495 @@
+{
+  "evaluation_dataset": "AXIS_SPATIAL_SUPERVISION_V1",
+  "total_test_samples": 1006,
+  "models": {
+    "BASE_MODEL": {
+      "scientific_grounding_accuracy": 0.1451,
+      "format_adherence_rate": 0.6561,
+      "id_hallucination_rate": 0.0,
+      "training_id_reuse_rate": 0.0,
+      "task_breakdown": {
+        "BIM_ELEMENT_CARDINALITY": {
+          "grounding_correct": 1,
+          "format_adherent": 5,
+          "total": 6,
+          "grounding_accuracy": 0.1667,
+          "format_adherence_rate": 0.8333
+        },
+        "ROOM_CARDINALITY": {
+          "grounding_correct": 9,
+          "format_adherent": 105,
+          "total": 125,
+          "grounding_accuracy": 0.072,
+          "format_adherence_rate": 0.84
+        },
+        "DOOR_CARDINALITY": {
+          "grounding_correct": 7,
+          "format_adherent": 88,
+          "total": 125,
+          "grounding_accuracy": 0.056,
+          "format_adherence_rate": 0.704
+        },
+        "DIRECTIONAL_RELATION": {
+          "grounding_correct": 4,
+          "format_adherent": 87,
+          "total": 125,
+          "grounding_accuracy": 0.032,
+          "format_adherence_rate": 0.696
+        },
+        "DOOR_CONNECTIVITY": {
+          "grounding_correct": 125,
+          "format_adherent": 125,
+          "total": 125,
+          "grounding_accuracy": 1.0,
+          "format_adherence_rate": 1.0
+        },
+        "DOOR_CONNECTIVITY_NEGATIVE": {
+          "grounding_correct": 0,
+          "format_adherent": 125,
+          "total": 125,
+          "grounding_accuracy": 0.0,
+          "format_adherence_rate": 1.0
+        },
+        "LARGEST_ROOM_IDENTIFICATION": {
+          "grounding_correct": 0,
+          "format_adherent": 0,
+          "total": 125,
+          "grounding_accuracy": 0.0,
+          "format_adherence_rate": 0.0
+        },
+        "MULTI_HOP_REACHABILITY": {
+          "grounding_correct": 0,
+          "format_adherent": 125,
+          "total": 125,
+          "grounding_accuracy": 0.0,
+          "format_adherence_rate": 1.0
+        },
+        "CIRCULATION_HUB_IDENTIFICATION": {
+          "grounding_correct": 0,
+          "format_adherent": 0,
+          "total": 125,
+          "grounding_accuracy": 0.0,
+          "format_adherence_rate": 0.0
+        }
+      },
+      "directional_metrics": {
+        "confusion_matrix": {
+          "ABOVE": {
+            "ABOVE": 0,
+            "BELOW": 51,
+            "LEFT_OF": 1,
+            "RIGHT_OF": 7,
+            "UNKNOWN": 33
+          },
+          "BELOW": {
+            "ABOVE": 0,
+            "BELOW": 0,
+            "LEFT_OF": 0,
+            "RIGHT_OF": 0,
+            "UNKNOWN": 0
+          },
+          "LEFT_OF": {
+            "ABOVE": 0,
+            "BELOW": 12,
+            "LEFT_OF": 3,
+            "RIGHT_OF": 0,
+            "UNKNOWN": 4
+          },
+          "RIGHT_OF": {
+            "ABOVE": 0,
+            "BELOW": 12,
+            "LEFT_OF": 0,
+            "RIGHT_OF": 1,
+            "UNKNOWN": 1
+          }
+        },
+        "per_class": {
+          "ABOVE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 92
+          },
+          "BELOW": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "LEFT_OF": {
+            "precision": 0.75,
+            "recall": 0.1579,
+            "f1": 0.2609,
+            "support": 19
+          },
+          "RIGHT_OF": {
+            "precision": 0.125,
+            "recall": 0.0714,
+            "f1": 0.0909,
+            "support": 14
+          }
+        },
+        "macro_f1": 0.0879
+      }
+    },
+    "RUN-019": {
+      "scientific_grounding_accuracy": 0.1581,
+      "format_adherence_rate": 0.5606,
+      "id_hallucination_rate": 0.0,
+      "training_id_reuse_rate": 0.0,
+      "task_breakdown": {
+        "BIM_ELEMENT_CARDINALITY": {
+          "grounding_correct": 0,
+          "format_adherent": 2,
+          "total": 6,
+          "grounding_accuracy": 0.0,
+          "format_adherence_rate": 0.3333
+        },
+        "ROOM_CARDINALITY": {
+          "grounding_correct": 8,
+          "format_adherent": 111,
+          "total": 125,
+          "grounding_accuracy": 0.064,
+          "format_adherence_rate": 0.888
+        },
+        "DOOR_CARDINALITY": {
+          "grounding_correct": 12,
+          "format_adherent": 84,
+          "total": 125,
+          "grounding_accuracy": 0.096,
+          "format_adherence_rate": 0.672
+        },
+        "DIRECTIONAL_RELATION": {
+          "grounding_correct": 13,
+          "format_adherent": 41,
+          "total": 125,
+          "grounding_accuracy": 0.104,
+          "format_adherence_rate": 0.328
+        },
+        "DOOR_CONNECTIVITY": {
+          "grounding_correct": 123,
+          "format_adherent": 123,
+          "total": 125,
+          "grounding_accuracy": 0.984,
+          "format_adherence_rate": 0.984
+        },
+        "DOOR_CONNECTIVITY_NEGATIVE": {
+          "grounding_correct": 3,
+          "format_adherent": 122,
+          "total": 125,
+          "grounding_accuracy": 0.024,
+          "format_adherence_rate": 0.976
+        },
+        "LARGEST_ROOM_IDENTIFICATION": {
+          "grounding_correct": 0,
+          "format_adherent": 0,
+          "total": 125,
+          "grounding_accuracy": 0.0,
+          "format_adherence_rate": 0.0
+        },
+        "MULTI_HOP_REACHABILITY": {
+          "grounding_correct": 0,
+          "format_adherent": 81,
+          "total": 125,
+          "grounding_accuracy": 0.0,
+          "format_adherence_rate": 0.648
+        },
+        "CIRCULATION_HUB_IDENTIFICATION": {
+          "grounding_correct": 0,
+          "format_adherent": 0,
+          "total": 125,
+          "grounding_accuracy": 0.0,
+          "format_adherence_rate": 0.0
+        }
+      },
+      "directional_metrics": {
+        "confusion_matrix": {
+          "ABOVE": {
+            "ABOVE": 10,
+            "BELOW": 0,
+            "LEFT_OF": 6,
+            "RIGHT_OF": 6,
+            "UNKNOWN": 70
+          },
+          "BELOW": {
+            "ABOVE": 0,
+            "BELOW": 0,
+            "LEFT_OF": 0,
+            "RIGHT_OF": 0,
+            "UNKNOWN": 0
+          },
+          "LEFT_OF": {
+            "ABOVE": 13,
+            "BELOW": 0,
+            "LEFT_OF": 3,
+            "RIGHT_OF": 0,
+            "UNKNOWN": 3
+          },
+          "RIGHT_OF": {
+            "ABOVE": 3,
+            "BELOW": 0,
+            "LEFT_OF": 0,
+            "RIGHT_OF": 0,
+            "UNKNOWN": 11
+          }
+        },
+        "per_class": {
+          "ABOVE": {
+            "precision": 0.3846,
+            "recall": 0.1087,
+            "f1": 0.1695,
+            "support": 92
+          },
+          "BELOW": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "LEFT_OF": {
+            "precision": 0.3333,
+            "recall": 0.1579,
+            "f1": 0.2143,
+            "support": 19
+          },
+          "RIGHT_OF": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 14
+          }
+        },
+        "macro_f1": 0.0959
+      }
+    },
+    "RUN-022": {
+      "scientific_grounding_accuracy": 0.6312,
+      "format_adherence_rate": 1.0,
+      "id_hallucination_rate": 0.0,
+      "training_id_reuse_rate": 0.0,
+      "task_breakdown": {
+        "BIM_ELEMENT_CARDINALITY": {
+          "grounding_correct": 4,
+          "format_adherent": 6,
+          "total": 6,
+          "grounding_accuracy": 0.6667,
+          "format_adherence_rate": 1.0
+        },
+        "ROOM_CARDINALITY": {
+          "grounding_correct": 84,
+          "format_adherent": 125,
+          "total": 125,
+          "grounding_accuracy": 0.672,
+          "format_adherence_rate": 1.0
+        },
+        "DOOR_CARDINALITY": {
+          "grounding_correct": 89,
+          "format_adherent": 125,
+          "total": 125,
+          "grounding_accuracy": 0.712,
+          "format_adherence_rate": 1.0
+        },
+        "DIRECTIONAL_RELATION": {
+          "grounding_correct": 123,
+          "format_adherent": 125,
+          "total": 125,
+          "grounding_accuracy": 0.984,
+          "format_adherence_rate": 1.0
+        },
+        "DOOR_CONNECTIVITY": {
+          "grounding_correct": 116,
+          "format_adherent": 125,
+          "total": 125,
+          "grounding_accuracy": 0.928,
+          "format_adherence_rate": 1.0
+        },
+        "DOOR_CONNECTIVITY_NEGATIVE": {
+          "grounding_correct": 119,
+          "format_adherent": 125,
+          "total": 125,
+          "grounding_accuracy": 0.952,
+          "format_adherence_rate": 1.0
+        },
+        "LARGEST_ROOM_IDENTIFICATION": {
+          "grounding_correct": 0,
+          "format_adherent": 125,
+          "total": 125,
+          "grounding_accuracy": 0.0,
+          "format_adherence_rate": 1.0
+        },
+        "MULTI_HOP_REACHABILITY": {
+          "grounding_correct": 100,
+          "format_adherent": 125,
+          "total": 125,
+          "grounding_accuracy": 0.8,
+          "format_adherence_rate": 1.0
+        },
+        "CIRCULATION_HUB_IDENTIFICATION": {
+          "grounding_correct": 0,
+          "format_adherent": 125,
+          "total": 125,
+          "grounding_accuracy": 0.0,
+          "format_adherence_rate": 1.0
+        }
+      },
+      "directional_metrics": {
+        "confusion_matrix": {
+          "ABOVE": {
+            "ABOVE": 90,
+            "BELOW": 0,
+            "LEFT_OF": 1,
+            "RIGHT_OF": 1,
+            "UNKNOWN": 0
+          },
+          "BELOW": {
+            "ABOVE": 0,
+            "BELOW": 0,
+            "LEFT_OF": 0,
+            "RIGHT_OF": 0,
+            "UNKNOWN": 0
+          },
+          "LEFT_OF": {
+            "ABOVE": 0,
+            "BELOW": 0,
+            "LEFT_OF": 19,
+            "RIGHT_OF": 0,
+            "UNKNOWN": 0
+          },
+          "RIGHT_OF": {
+            "ABOVE": 0,
+            "BELOW": 0,
+            "LEFT_OF": 0,
+            "RIGHT_OF": 14,
+            "UNKNOWN": 0
+          }
+        },
+        "per_class": {
+          "ABOVE": {
+            "precision": 1.0,
+            "recall": 0.9783,
+            "f1": 0.989,
+            "support": 92
+          },
+          "BELOW": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "LEFT_OF": {
+            "precision": 0.95,
+            "recall": 1.0,
+            "f1": 0.9744,
+            "support": 19
+          },
+          "RIGHT_OF": {
+            "precision": 0.9333,
+            "recall": 1.0,
+            "f1": 0.9655,
+            "support": 14
+          }
+        },
+        "macro_f1": 0.7322
+      }
+    }
+  },
+  "delta_run022_vs_base": {
+    "overall_grounding_accuracy": 0.4861,
+    "overall_format_adherence": 0.3439,
+    "tasks": {
+      "BIM_ELEMENT_CARDINALITY": 0.5,
+      "CIRCULATION_HUB_IDENTIFICATION": 0.0,
+      "DIRECTIONAL_RELATION": 0.952,
+      "DOOR_CARDINALITY": 0.656,
+      "DOOR_CONNECTIVITY": -0.072,
+      "DOOR_CONNECTIVITY_NEGATIVE": 0.952,
+      "LARGEST_ROOM_IDENTIFICATION": 0.0,
+      "MULTI_HOP_REACHABILITY": 0.8,
+      "ROOM_CARDINALITY": 0.6
+    }
+  },
+  "visual_dependency": {
+    "BASE_MODEL": {
+      "ORIGINAL": {
+        "grounding_accuracy": 0.64,
+        "format_adherence": 1.0,
+        "hallucination_rate": 0.0,
+        "relation_accuracy": 1.0
+      },
+      "BLACK": {
+        "grounding_accuracy": 0.5,
+        "format_adherence": 1.0,
+        "hallucination_rate": 0.0,
+        "relation_accuracy": 1.0
+      },
+      "ARCHITECTURAL_MASK": {
+        "grounding_accuracy": 0.46,
+        "format_adherence": 0.96,
+        "hallucination_rate": 0.0,
+        "relation_accuracy": 1.0
+      },
+      "UNIFORM_NOISE": {
+        "grounding_accuracy": 0.49,
+        "format_adherence": 0.87,
+        "hallucination_rate": 0.0,
+        "relation_accuracy": 1.0
+      },
+      "TEXT_ONLY": {
+        "grounding_accuracy": 0.47,
+        "format_adherence": 0.63,
+        "hallucination_rate": 0.0,
+        "relation_accuracy": 1.0
+      },
+      "VDI_METRICS": {
+        "Acc_original": 0.64,
+        "Acc_black": 0.5,
+        "Acc_text_only": 0.47,
+        "denominator": 0.5,
+        "VDI": 1.28,
+        "threshold": 3.0,
+        "vdi_pass": false
+      }
+    },
+    "RUN-022": {
+      "ORIGINAL": {
+        "grounding_accuracy": 0.64,
+        "format_adherence": 1.0,
+        "hallucination_rate": 0.0,
+        "relation_accuracy": 1.0
+      },
+      "BLACK": {
+        "grounding_accuracy": 0.5,
+        "format_adherence": 1.0,
+        "hallucination_rate": 0.0,
+        "relation_accuracy": 1.0
+      },
+      "ARCHITECTURAL_MASK": {
+        "grounding_accuracy": 0.46,
+        "format_adherence": 0.96,
+        "hallucination_rate": 0.0,
+        "relation_accuracy": 1.0
+      },
+      "UNIFORM_NOISE": {
+        "grounding_accuracy": 0.51,
+        "format_adherence": 0.88,
+        "hallucination_rate": 0.0,
+        "relation_accuracy": 1.0
+      },
+      "TEXT_ONLY": {
+        "grounding_accuracy": 0.47,
+        "format_adherence": 0.63,
+        "hallucination_rate": 0.0,
+        "relation_accuracy": 1.0
+      },
+      "VDI_METRICS": {
+        "Acc_original": 0.64,
+        "Acc_black": 0.5,
+        "Acc_text_only": 0.47,
+        "denominator": 0.5,
+        "VDI": 1.28,
+        "threshold": 3.0,
+        "vdi_pass": false
+      }
+    }
+  }
+}

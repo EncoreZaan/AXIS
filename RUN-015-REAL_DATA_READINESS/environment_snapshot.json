@@ -1,0 +1,20 @@
+{
+  "git_commit": "f4d5e949053743d97091ea35080de5d365899df7",
+  "expected_commit": "f4d5e949053743d97091ea35080de5d365899df7",
+  "commit_match": true,
+  "python_version": "3.12.3 (main, Aug 14 2025, 17:47:21) [GCC 13.3.0]",
+  "pytorch_version": "2.6.0+cu124",
+  "cuda_available": true,
+  "cuda_version": "12.4",
+  "nvidia_driver": "580.159.04",
+  "transformers_version": "5.17.0",
+  "peft_version": "0.21.0",
+  "bitsandbytes_version": "0.50.2",
+  "gpu_device": "NVIDIA GeForce RTX 3090",
+  "vram_total_mib": 24124.1875,
+  "disk_workspace_total_gb": 50.0,
+  "disk_workspace_free_gb": 25.356109619140625,
+  "base_model": "Qwen/Qwen2-VL-7B-Instruct",
+  "model_revision": "eed13092ef92e448dd6875b2a00151bd3f7db0ac",
+  "status": "PASS"
+}

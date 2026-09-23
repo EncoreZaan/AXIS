@@ -16,7 +16,7 @@ The Master Dataset v2 is compiled from 19 independent physical repositories, cat
 | `CORE_RPLAN` | 2D Floorplan Rasters (256x256) | 30,002 | **ACTIVE** | Academic Research Only [^1] | Plan topology & room reading |
 | `CORE_IL3D` | 3D Interior Scenes & Objects | 27,820 | **ACTIVE** | Academic Research Only [^1] | 3D Cartesian coordinates & clearance |
 | `CORE_STRUCTSCAN3D` | RGB-D Scans & Bounding Boxes | 7,814 | **ACTIVE** | Open Research | Subjective perspective & depth |
-| `CORE_FLOORPLANCAD` | CAD Vector Drawings | 741 | **QUARANTINED** | CC-BY-SA 4.0 | Quarantined (`LEGAL_REVIEW_REQUIRED`) |
+| `CORE_FLOORPLANCAD` | CAD Vector Drawings | 741 | **QUARANTINED** | CC-BY-SA 4.0 / CC-BY-NC 4.0 [^2] | Quarantined & excluded (`LEGAL_REVIEW_REQUIRED`) |
 | `CORE_IFC_BENCH` | OpenBIM IFC Models | 345 | **ACTIVE** | CC-BY 4.0 / Open | BIM schema entities & axonometric views |
 | `CORE_BUILDINGSMART_IFC` | Standard buildingSMART IFCs | 72 | **ACTIVE** | Open Standard | IFC schema validation & testbeds |
 | `CORE_RESBIM_PAIRED` | True Paired BIM + Floorplan | 20 | **ACTIVE** | CC-BY 4.0 / MIT | Ground truth multimodal 2D/3D (10 pairs) |
@@ -35,6 +35,8 @@ The Master Dataset v2 is compiled from 19 independent physical repositories, cat
 ---
 
 [^1]: "Academic Research Only" is the maintainer's short paraphrase of the upstream license terms for RPLAN and IL3D, not a formal SPDX license identifier — these sources do not use a standard OSI license. It means: non-commercial use for research/academic purposes, no redistribution of the raw assets, as stated by each source's original release terms. AXIS does not sublicense or alter these terms; a contributor building the Master Dataset v2 locally is bound by the original upstream terms directly, and should consult the upstream license text (linked from each source's original release page, not reproduced here) rather than rely on this paraphrase alone.
+
+[^2]: Upstream Voxel51 Hugging Face metadata specifies `cc-by-sa-4.0`, whereas the repository README text (lines 109, 130) and ICCV 2021 publication specify `CC-BY-NC 4.0` / non-commercial research use only. The original site `floorplancad.github.io` shut down in 2022. Quarantined and permanently excluded from active training corpus configurations. See [`docs/datasets/PROVENANCE_DECISION_RECORD_FLOORPLANCAD.md`](docs/datasets/PROVENANCE_DECISION_RECORD_FLOORPLANCAD.md).
 
 ## 2. Dataset Partitions & Anti-Leakage Guarantees
 
@@ -62,9 +64,17 @@ TOTAL           65,342 assets       42,667 projects     PASS (0 leaks)      PASS
 - **Enforcement:** Strictly prohibited from all metric surface ($\text{m}^2$) and physical dimension tasks.
 - **Permitted Use:** Scale-invariant topological graphs (room adjacency, room count).
 
-### 3.2. FloorPlanCAD Legal Quarantine
-- **Status:** `LEGAL_REVIEW_REQUIRED`.
-- **Enforcement:** All 741 CAD vector drawings remain strictly isolated from training splits until legal clearance is completed.
+### 3.2. FloorPlanCAD Legal Quarantine & Training Pipeline Exclusion
+- **Status:** `LEGAL_REVIEW_REQUIRED` (Formally Quarantined & Strictly Excluded).
+- **Licensing Discrepancy:** The Hugging Face mirror (`Voxel51/FloorPlanCAD`) contains conflicting license declarations: repository metadata header specifies `license: cc-by-sa-4.0`, while README text lines 109 & 130 declare `CC-BY-NC 4.0` ("Out-of-Scope Use: Commercial applications"). The ICCV 2021 publication (Zheng et al.) declared non-commercial research use, and the original project host (`floorplancad.github.io`) closed in 2022.
+- **Pipeline Enforcement:**
+  - `FloorPlanCadFrozenHandler` yields an empty iterator (0 items generated).
+  - `LegalFilter` routes 100% of FloorPlanCAD raw records to `restricted/legal_review/floorplancad/` and `RESTRICTED_MANIFEST.jsonl`.
+  - `MasterDatasetBuilder` enforces `legal_status == APPROVED`, rejecting all 741 records (`RESTRICTED_LICENSE`).
+  - **Zero FloorPlanCAD records exist in Master Dataset v2 (0 / 65,342) and zero exist in any partition (`train`, `validation`, `test`).**
+  - **Zero FloorPlanCAD records exist in Dataset A, Gold Set V3, or `experiment_package`.**
+- **Training Boundary:** Formally certified as excluded from active training configurations in [`configs/training_corpus_cleared.json`](configs/training_corpus_cleared.json).
+- **Provenance Decision Record:** Formally governed by [`docs/datasets/PROVENANCE_DECISION_RECORD_FLOORPLANCAD.md`](docs/datasets/PROVENANCE_DECISION_RECORD_FLOORPLANCAD.md) (PDR-2026-001). Re-integration is prohibited absent formal written legal counsel review and copyright clearance.
 
 ---
 

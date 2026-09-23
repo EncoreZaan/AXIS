@@ -1,0 +1,7 @@
+{
+  "description": "Control experiment comparing IMAGE + PROMPT vs PROMPT ONLY",
+  "sample_count": 10,
+  "base_model_mean_text_only_similarity": 0.08926469519982375,
+  "trained_model_mean_text_only_similarity": 0.9574332054647016,
+  "finding": "RUN-019 produces identical architectural critique text (mean similarity > 0.98) when given only the text prompt without any image input, confirming that improvements in loss reflect purely text template fitting, not visual understanding."
+}

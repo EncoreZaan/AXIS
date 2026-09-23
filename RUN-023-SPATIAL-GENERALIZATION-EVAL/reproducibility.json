@@ -1,0 +1,148 @@
+{
+  "samples_tested": 20,
+  "exact_matches": 20,
+  "concordance_rate": 1.0,
+  "reproducibility": "PASS",
+  "sample_comparisons": [
+    {
+      "sample_idx": 0,
+      "example_id": "archi_pilot_0001_RESBIM_DOOR_COUNT",
+      "run1": "Cette unit\u00e9 comprend exactement 5 blocs-portes au total (1 ext\u00e9rieure(s) et 3 int\u00e9rieure(s)).",
+      "run2": "Cette unit\u00e9 comprend exactement 5 blocs-portes au total (1 ext\u00e9rieure(s) et 3 int\u00e9rieure(s)).",
+      "match": true
+    },
+    {
+      "sample_idx": 1,
+      "example_id": "archi_pilot_0001_RESBIM_WINDOW_COUNT",
+      "run1": "L'unit\u00e9 unit_000 compte exactement 4 fen\u00eatres r\u00e9pertori\u00e9es dans sa structure IFC.",
+      "run2": "L'unit\u00e9 unit_000 compte exactement 4 fen\u00eatres r\u00e9pertori\u00e9es dans sa structure IFC.",
+      "match": true
+    },
+    {
+      "sample_idx": 2,
+      "example_id": "archi_pilot_0001_RESBIM_WALL_COUNT",
+      "run1": "La maquette num\u00e9rique d\u00e9nombre 17 parois murales principales.",
+      "run2": "La maquette num\u00e9rique d\u00e9nombre 17 parois murales principales.",
+      "match": true
+    },
+    {
+      "sample_idx": 3,
+      "example_id": "archi_pilot_0005_RESBIM_DOOR_COUNT",
+      "run1": "Cette unit\u00e9 comprend exactement 5 blocs-portes au total (1 ext\u00e9rieure(s) et 3 int\u00e9rieure(s)).",
+      "run2": "Cette unit\u00e9 comprend exactement 5 blocs-portes au total (1 ext\u00e9rieure(s) et 3 int\u00e9rieure(s)).",
+      "match": true
+    },
+    {
+      "sample_idx": 4,
+      "example_id": "archi_pilot_0005_RESBIM_WINDOW_COUNT",
+      "run1": "L'unit\u00e9 unit_004 compte exactement 4 fen\u00eatres r\u00e9pertori\u00e9es dans sa structure IFC.",
+      "run2": "L'unit\u00e9 unit_004 compte exactement 4 fen\u00eatres r\u00e9pertori\u00e9es dans sa structure IFC.",
+      "match": true
+    },
+    {
+      "sample_idx": 5,
+      "example_id": "archi_pilot_0005_RESBIM_WALL_COUNT",
+      "run1": "La maquette num\u00e9rique d\u00e9nombre 17 parois murales principales.",
+      "run2": "La maquette num\u00e9rique d\u00e9nombre 17 parois murales principales.",
+      "match": true
+    },
+    {
+      "sample_idx": 6,
+      "example_id": "archi_pilot_0013_TASK_A_ROOM_COUNT",
+      "run1": "Ce plan d'\u00e9tage comprend exactement 8 pi\u00e8ces int\u00e9rieures distinctes.",
+      "run2": "Ce plan d'\u00e9tage comprend exactement 8 pi\u00e8ces int\u00e9rieures distinctes.",
+      "match": true
+    },
+    {
+      "sample_idx": 7,
+      "example_id": "archi_pilot_0013_TASK_A_DOOR_COUNT",
+      "run1": "Ce plan comporte exactement 7 portes identifi\u00e9es.",
+      "run2": "Ce plan comporte exactement 7 portes identifi\u00e9es.",
+      "match": true
+    },
+    {
+      "sample_idx": 8,
+      "example_id": "archi_pilot_0013_TASK_B_DIRECTION",
+      "run1": "La pi\u00e8ce [33, 146, 53, 182] est situ\u00e9e au-dessus de la pi\u00e8ce [204, 143, 224, 182].",
+      "run2": "La pi\u00e8ce [33, 146, 53, 182] est situ\u00e9e au-dessus de la pi\u00e8ce [204, 143, 224, 182].",
+      "match": true
+    },
+    {
+      "sample_idx": 9,
+      "example_id": "archi_pilot_0013_TASK_D_CONNECTED_POS",
+      "run1": "Oui, ces deux pi\u00e8ces sont directement reli\u00e9es par une porte franchissable.",
+      "run2": "Oui, ces deux pi\u00e8ces sont directement reli\u00e9es par une porte franchissable.",
+      "match": true
+    },
+    {
+      "sample_idx": 10,
+      "example_id": "archi_pilot_0013_TASK_D_CONNECTED_NEG",
+      "run1": "Non, il n'existe aucune porte directe reliant ces deux pi\u00e8ces.",
+      "run2": "Non, il n'existe aucune porte directe reliant ces deux pi\u00e8ces.",
+      "match": true
+    },
+    {
+      "sample_idx": 11,
+      "example_id": "archi_pilot_0013_TASK_F_LARGEST_ROOM",
+      "run1": "La pi\u00e8ce de surface maximale est d\u00e9limit\u00e9e par la bo\u00eete englobante [68, 82, 195, 160] (7102 pixels).",
+      "run2": "La pi\u00e8ce de surface maximale est d\u00e9limit\u00e9e par la bo\u00eete englobante [68, 82, 195, 160] (7102 pixels).",
+      "match": true
+    },
+    {
+      "sample_idx": 12,
+      "example_id": "archi_pilot_0013_TASK_G_SHORTEST_PATH",
+      "run1": "Le trajet le plus court n\u00e9cessite de franchir exactement 3 portes.",
+      "run2": "Le trajet le plus court n\u00e9cessite de franchir exactement 3 portes.",
+      "match": true
+    },
+    {
+      "sample_idx": 13,
+      "example_id": "archi_pilot_0013_TASK_G_CIRCULATION_HUB",
+      "run1": "Le noyau de circulation central est la pi\u00e8ce d\u00e9limit\u00e9e par [68, 82, 195, 169], distribuant directement 6 portes d'acc\u00e8s.",
+      "run2": "Le noyau de circulation central est la pi\u00e8ce d\u00e9limit\u00e9e par [68, 82, 195, 169], distribuant directement 6 portes d'acc\u00e8s.",
+      "match": true
+    },
+    {
+      "sample_idx": 14,
+      "example_id": "archi_pilot_0018_TASK_A_ROOM_COUNT",
+      "run1": "Ce plan d'\u00e9tage comprend exactement 7 pi\u00e8ces int\u00e9rieures distinctes.",
+      "run2": "Ce plan d'\u00e9tage comprend exactement 7 pi\u00e8ces int\u00e9rieures distinctes.",
+      "match": true
+    },
+    {
+      "sample_idx": 15,
+      "example_id": "archi_pilot_0018_TASK_A_DOOR_COUNT",
+      "run1": "Ce plan comporte exactement 7 portes identifi\u00e9es.",
+      "run2": "Ce plan comporte exactement 7 portes identifi\u00e9es.",
+      "match": true
+    },
+    {
+      "sample_idx": 16,
+      "example_id": "archi_pilot_0018_TASK_B_DIRECTION",
+      "run1": "La pi\u00e8ce [37, 110, 77, 144] est situ\u00e9e au-dessus de la pi\u00e8ce [209, 69, 220, 139].",
+      "run2": "La pi\u00e8ce [37, 110, 77, 144] est situ\u00e9e au-dessus de la pi\u00e8ce [209, 69, 220, 139].",
+      "match": true
+    },
+    {
+      "sample_idx": 17,
+      "example_id": "archi_pilot_0018_TASK_D_CONNECTED_POS",
+      "run1": "Oui, ces deux pi\u00e8ces sont directement reli\u00e9es par une porte franchissable.",
+      "run2": "Oui, ces deux pi\u00e8ces sont directement reli\u00e9es par une porte franchissable.",
+      "match": true
+    },
+    {
+      "sample_idx": 18,
+      "example_id": "archi_pilot_0018_TASK_D_CONNECTED_NEG",
+      "run1": "Non, il n'existe aucune porte directe reliant ces deux pi\u00e8ces.",
+      "run2": "Non, il n'existe aucune porte directe reliant ces deux pi\u00e8ces.",
+      "match": true
+    },
+    {
+      "sample_idx": 19,
+      "example_id": "archi_pilot_0018_TASK_F_LARGEST_ROOM",
+      "run1": "La pi\u00e8ce de surface maximale est d\u00e9limit\u00e9e par la bo\u00eete englobante [72, 66, 197, 163] (7734 pixels).",
+      "run2": "La pi\u00e8ce de surface maximale est d\u00e9limit\u00e9e par la bo\u00eete englobante [72, 66, 197, 163] (7734 pixels).",
+      "match": true
+    }
+  ]
+}

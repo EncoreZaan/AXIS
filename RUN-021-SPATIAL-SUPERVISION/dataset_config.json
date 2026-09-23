@@ -1,0 +1,60 @@
+{
+  "dataset_name": "AXIS_SPATIAL_SUPERVISION_V1",
+  "dataset_version": "1.0.0",
+  "creation_date": "2026-09-23",
+  "operational_status": "LOCKED",
+  "training_allowed": false,
+  "split_seed": 42,
+  "split_strategy": "project_group_id_deterministic_hash",
+  "total_examples": 7950,
+  "total_unique_assets": 1000,
+  "splits": {
+    "train": 6160,
+    "validation": 784,
+    "test": 1006
+  },
+  "source_breakdown": {
+    "CORE_RESBIM_PAIRED": 30,
+    "CORE_RPLAN": 7920
+  },
+  "task_family_distribution": {
+    "TASK_A_IDENTIFICATION": 2010,
+    "TASK_B_SPATIAL_RELATION": 990,
+    "TASK_D_CONNECTIVITY": 1980,
+    "TASK_F_COMPARATIVE_SPATIAL": 990,
+    "TASK_G_LAYOUT_REASONING": 1980
+  },
+  "task_type_distribution": {
+    "BIM_ELEMENT_CARDINALITY": 30,
+    "ROOM_CARDINALITY": 990,
+    "DOOR_CARDINALITY": 990,
+    "DIRECTIONAL_RELATION": 990,
+    "DOOR_CONNECTIVITY": 990,
+    "DOOR_CONNECTIVITY_NEGATIVE": 990,
+    "LARGEST_ROOM_IDENTIFICATION": 990,
+    "MULTI_HOP_REACHABILITY": 990,
+    "CIRCULATION_HUB_IDENTIFICATION": 990
+  },
+  "difficulty_distribution": {
+    "EASY": 4980,
+    "MEDIUM": 990,
+    "HARD": 1980
+  },
+  "visual_requirement_distribution": {
+    "VISUAL_REQUIRED": 7950,
+    "VISUAL_HELPFUL": 0,
+    "VISUAL_NOT_REQUIRED": 0
+  },
+  "answer_length_words": {
+    "min": 7,
+    "max": 19,
+    "mean": 12.53,
+    "median": 11.0
+  },
+  "leakage_invariants": {
+    "cross_split_examples": 0,
+    "cross_split_images": 0,
+    "cross_split_assets": 0,
+    "gold_v3_overlap": 0
+  }
+}

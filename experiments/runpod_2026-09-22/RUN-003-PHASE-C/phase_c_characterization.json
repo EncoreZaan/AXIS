@@ -1,0 +1,71 @@
+{
+  "run_id": "RUN-003-PHASE-C",
+  "timestamp": "2026-09-22 21:54:16 UTC",
+  "results": [
+    {
+      "name": "C1_Baseline_BS1_Seq1536_Res512",
+      "batch_size": 1,
+      "max_seq_len": 1536,
+      "max_pixels": 262144,
+      "loss": 1.8006905317306519,
+      "step_time_sec": 1.704094648361206,
+      "samples_per_sec": 0.586821865183181,
+      "peak_vram_mib": 10546.19921875,
+      "vram_util_pct": 42.91259447733562,
+      "oom": false,
+      "status": "PASS"
+    },
+    {
+      "name": "C2_BatchSize2_Seq1536_Res512",
+      "batch_size": 2,
+      "max_seq_len": 1536,
+      "max_pixels": 262144,
+      "loss": 1.8531320095062256,
+      "step_time_sec": 3.269481897354126,
+      "samples_per_sec": 0.6117177163814633,
+      "peak_vram_mib": 13325.40673828125,
+      "vram_util_pct": 54.2212188243866,
+      "oom": false,
+      "status": "PASS"
+    },
+    {
+      "name": "C3_BatchSize4_Seq1536_Res512",
+      "batch_size": 4,
+      "max_seq_len": 1536,
+      "max_pixels": 262144,
+      "loss": 1.9219046831130981,
+      "step_time_sec": 6.197578191757202,
+      "samples_per_sec": 0.6454133979818136,
+      "peak_vram_mib": 18810.4375,
+      "vram_util_pct": 76.53986612955728,
+      "oom": false,
+      "status": "PASS"
+    },
+    {
+      "name": "C4_BatchSize2_Seq2048_Res512",
+      "batch_size": 2,
+      "max_seq_len": 2048,
+      "max_pixels": 262144,
+      "loss": 1.8531320095062256,
+      "step_time_sec": 3.3065266609191895,
+      "samples_per_sec": 0.6048643199035979,
+      "peak_vram_mib": 13509.2099609375,
+      "vram_util_pct": 54.96911605199178,
+      "oom": false,
+      "status": "PASS"
+    },
+    {
+      "name": "C5_BatchSize1_Seq1536_Res768",
+      "batch_size": 1,
+      "max_seq_len": 1536,
+      "max_pixels": 589824,
+      "loss": 1.7989388704299927,
+      "step_time_sec": 3.3455796241760254,
+      "samples_per_sec": 0.29890186823644577,
+      "peak_vram_mib": 11984.01318359375,
+      "vram_util_pct": 48.76307447751363,
+      "oom": false,
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "run_id": "RUN-010-B1-LORA_RANK_ABLATION",
+  "timestamp": "2026-09-22 22:25:26 UTC",
+  "status": "PASS",
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "learning_rate": 0.0001,
+  "max_pixels": 262144,
+  "trainable_parameters": 40370176,
+  "total_parameters": 8331745792,
+  "trainable_pct": 0.48453441820995974,
+  "train_runtime_sec": 67.8969931602478,
+  "eval_runtime_sec": 2.454336404800415,
+  "peak_vram_mib": 11962.509765625,
+  "samples_per_sec": 0.592,
+  "steps_per_sec": 0.089,
+  "train_loss": 1.8992897470792134,
+  "eval_loss": 1.8879073858261108,
+  "step_telemetry": [
+    {
+      "step": 1,
+      "epoch": 0.4,
+      "logs": {
+        "loss": 1.9617747068405151,
+        "grad_norm": 0.4523925483226776,
+        "learning_rate": 0.0,
+        "epoch": 0.4
+      },
+      "peak_vram_mib": 11922.15380859375
+    },
+    {
+      "step": 2,
+      "epoch": 0.8,
+      "logs": {
+        "loss": 1.9653558731079102,
+        "grad_norm": 0.4168715476989746,
+        "learning_rate": 0.0001,
+        "epoch": 0.8
+      },
+      "peak_vram_mib": 11922.15380859375
+    },
+    {
+      "step": 3,
+      "epoch": 1.0,
+      "logs": {
+        "loss": 1.948000192642212,
+        "grad_norm": 0.43587028980255127,
+        "learning_rate": 9.045084971874738e-05,
+        "epoch": 1.0
+      },
+      "peak_vram_mib": 11922.15380859375
+    },
+    {
+      "step": 3,
+      "epoch": 1.0,
+      "logs": {
+        "eval_loss": 1.9278618097305298,
+        "eval_runtime": 2.3822,
+        "eval_samples_per_second": 2.099,
+        "eval_steps_per_second": 2.099,
+        "epoch": 1.0
+      },
+      "peak_vram_mib": 11922.15380859375
+    },
+    {
+      "step": 4,
+      "epoch": 1.4,
+      "logs": {
+        "loss": 1.839747667312622,
+        "grad_norm": 0.3905898928642273,
+        "learning_rate": 6.545084971874738e-05,
+        "epoch": 1.4
+      },
+      "peak_vram_mib": 11922.15380859375
+    },
+    {
+      "step": 5,
+      "epoch": 1.8,
+      "logs": {
+        "loss": 1.8697071075439453,
+        "grad_norm": 0.39042210578918457,
+        "learning_rate": 3.4549150281252636e-05,
+        "epoch": 1.8
+      },
+      "peak_vram_mib": 11962.509765625
+    },
+    {
+      "step": 6,
+      "epoch": 2.0,
+      "logs": {
+        "loss": 1.8111529350280762,
+        "grad_norm": 0.4787486493587494,
+        "learning_rate": 9.549150281252633e-06,
+        "epoch": 2.0
+      },
+      "peak_vram_mib": 11962.509765625
+    },
+    {
+      "step": 6,
+      "epoch": 2.0,
+      "logs": {
+        "eval_loss": 1.8879073858261108,
+        "eval_runtime": 2.399,
+        "eval_samples_per_second": 2.084,
+        "eval_steps_per_second": 2.084,
+        "epoch": 2.0
+      },
+      "peak_vram_mib": 11962.509765625
+    },
+    {
+      "step": 6,
+      "epoch": 2.0,
+      "logs": {
+        "train_runtime": 67.5426,
+        "train_samples_per_second": 0.592,
+        "train_steps_per_second": 0.089,
+        "total_flos": 1785563705776128.0,
+        "train_loss": 1.8992897470792134,
+        "epoch": 2.0
+      },
+      "peak_vram_mib": 11962.509765625
+    },
+    {
+      "step": 6,
+      "epoch": 2.0,
+      "logs": {
+        "eval_loss": 1.8879073858261108,
+        "eval_runtime": 2.4533,
+        "eval_samples_per_second": 2.038,
+        "eval_steps_per_second": 2.038,
+        "epoch": 2.0
+      },
+      "peak_vram_mib": 11962.509765625
+    }
+  ],
+  "adapter_size_bytes": 161539072,
+  "adapter_sha256": "fdc1cd3b322e4d229e2a3483c575d7d67def5a0a1fe5c9fc460336cb5a5bea6f",
+  "sample_generation": "Ce salon est bien organis\u00e9 et pr\u00e9sente plusieurs points forts :\n\n1. **Lumi\u00e8re naturelle abondante** : Les grandes fen\u00eatres permettent une entr\u00e9e abondante de lumi\u00e8re naturelle, ce qui rend l'espace lumineux et accueillant.\n\n2. **Espace de vie ouvert** : Le salon est ouvert sur la cuisine et l'espace"
+}

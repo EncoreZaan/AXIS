@@ -1,0 +1,16 @@
+{
+  "dataset_version": "AXIS_SPATIAL_SUPERVISION_V1",
+  "dataset_root": "RUN-021-SPATIAL-SUPERVISION",
+  "dataset_config_hash": "9c0908c4c2bc25c647cfde7d885e4d8fe9ba507fb00fb79ce42852942ea60d6c",
+  "manifest_hash": "6560747bccaa696a2ac7488bd5594d3c7a482c2aa4eb58460fcbcc99f830ea06",
+  "dataset_manifest_hash": "6560747bccaa696a2ac7488bd5594d3c7a482c2aa4eb58460fcbcc99f830ea06",
+  "train_hash": "227ba7db7769e3f25d365a33efd03126e18612cf5821f1f23dcd2342a701e849",
+  "validation_hash": "c543a319321534f016c94aeb8ee74503bc8f01511c232ec91394d69a307467d2",
+  "test_hash": "aaba73433c9ccea7a5c6134154577ea80591e23755665794bec603ebdf53053f",
+  "total_samples": 7950,
+  "train_samples": 6160,
+  "validation_samples": 784,
+  "test_samples": 1006,
+  "immutability_status": "LOCKED",
+  "training_allowed": true
+}

@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "AXIS Cleared Training Corpus Configuration",
+  "version": "1.0.0",
+  "date": "2026-09-22",
+  "description": "Explicit training corpus boundary configuration establishing legally cleared and quarantined source definitions for training pipelines.",
+  "cleared_sources": [
+    {
+      "source_id": "CORE_RPLAN",
+      "license": "Academic Research Only / Open Research",
+      "commercial_use": false,
+      "research_training": true,
+      "tasks": ["plan_topology", "room_reading"]
+    },
+    {
+      "source_id": "CORE_IL3D",
+      "license": "Apache-2.0",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["spatial_relations", "clearance_check"]
+    },
+    {
+      "source_id": "CORE_STRUCTSCAN3D",
+      "license": "CC-BY-4.0",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["perspective", "depth"]
+    },
+    {
+      "source_id": "CORE_IFC_BENCH",
+      "license": "CC-BY-4.0",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["bim_entities", "axonometric"]
+    },
+    {
+      "source_id": "CORE_BUILDINGSMART_IFC",
+      "license": "Open Standard",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["ifc_schema_validation"]
+    },
+    {
+      "source_id": "CORE_RESBIM_PAIRED",
+      "license": "CC-BY-4.0 / MIT",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["multimodal_2d_3d_pairing"]
+    },
+    {
+      "source_id": "CORE_POLYHAVEN_MATERIALS",
+      "license": "CC0-1.0",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["material_identification"]
+    },
+    {
+      "source_id": "CORE_POLYHAVEN_LIGHTING",
+      "license": "CC0-1.0",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["lighting_reasoning"]
+    },
+    {
+      "source_id": "CORE_AMBIENTCG",
+      "license": "CC0-1.0",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["material_textures"]
+    },
+    {
+      "source_id": "CORE_MOMA_COLLECTION",
+      "license": "Public Domain",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["design_history"]
+    },
+    {
+      "source_id": "CORE_MET_OPENACCESS",
+      "license": "CC0-1.0",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["architectural_history"]
+    },
+    {
+      "source_id": "CORE_NORMES_FR",
+      "license": "Licence Ouverte v2.0",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["clearance_regulations"]
+    },
+    {
+      "source_id": "CORE_ERGONOMIE",
+      "license": "CC0-1.0 / Open Reference",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["spatial_tolerances"]
+    },
+    {
+      "source_id": "CORE_TRENDS_2026",
+      "license": "Public Reference / Internal Curation",
+      "commercial_use": true,
+      "research_training": true,
+      "tasks": ["stylistic_reference"]
+    }
+  ],
+  "quarantined_sources": [
+    {
+      "source_id": "CORE_FLOORPLANCAD",
+      "quarantine_type": "LEGAL_AND_PROVENANCE_QUARANTINE",
+      "declared_licenses": ["CC-BY-SA 4.0 (HF YAML header)", "CC-BY-NC 4.0 (README & ICCV 2021)"],
+      "status": "STRICTLY_EXCLUDED",
+      "training_inclusion": false,
+      "evaluation_inclusion": false,
+      "splits_admitted_count": 0,
+      "rationale": "License contradiction between repository card metadata and body text, defunct upstream repository (floorplancad.github.io closed in 2022), unclarified copyright of underlying CAD vector drawings, and potential copyleft or non-commercial contamination of downstream model weights.",
+      "reintegration_prerequisites": [
+        "Formal written legal opinion resolving CC-BY-SA 4.0 vs CC-BY-NC 4.0 discrepancy",
+        "Verification of downstream copyright clearance for architectural vector primitives",
+        "Explicit affirmative sign-off from project legal lead"
+      ]
+    },
+    {
+      "source_id": "CORE_RESPLAN",
+      "quarantine_type": "SCIENTIFIC_METRIC_QUARANTINE",
+      "declared_licenses": ["CC-BY 4.0 (data)", "MIT (code)"],
+      "status": "PARTIALLY_QUARANTINED",
+      "training_inclusion": true,
+      "permitted_tasks": ["room_topology", "graph_adjacency", "room_count"],
+      "prohibited_tasks": ["metric_area_m2", "physical_dimension_regression"],
+      "rationale": "Arbitrary canvas normalization (max dimension 256.0) without physical scale preservation (std=173.2, 32.1% net-area-null)."
+    }
+  ],
+  "evaluation_holdout_sources": [
+    {
+      "source_id": "CORE_MMMU_ARCHITECTURE",
+      "status": "BENCHMARK_SANCTUARY",
+      "training_inclusion": false,
+      "evaluation_inclusion": true
+    }
+  ]
+}

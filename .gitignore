@@ -27,6 +27,8 @@ env/
 # Datasets and Large Binary Assets (> 4 GB of images, rasters, point clouds, BIM files)
 dataset/
 ARCHI_AI/dataset/
+transformed_images/
+**/transformed_images/
 *.pkl
 *.zip
 *.tar
@@ -42,6 +44,9 @@ ARCHI_AI/dataset/
 *.safetensors
 *.ckpt
 outputs/
+**/outputs/
+outputs*/
+**/outputs*/
 ARCHI_AI/outputs/
 !outputs/**/summary.json
 !outputs/**/curves.json

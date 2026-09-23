@@ -1,0 +1,17 @@
+{
+  "run_id": "RUN-023-SPATIAL-GENERALIZATION-EVAL",
+  "evaluation_date": "2026-09-23T15:39:35.003244+00:00",
+  "git_commit": "f4d5e949053743d97091ea35080de5d365899df7",
+  "models": {
+    "base_model": "Qwen/Qwen2-VL-7B-Instruct @ eed13092ef92e448dd6875b2a00151bd3f7db0ac",
+    "run_019_adapter": "/workspace/AXIS/RUN-019-FIRST-REAL-DATA-QLORA/checkpoints/final_adapter",
+    "run_022_adapter": "/workspace/AXIS/RUN-022-SPATIAL-GROUNDING-PILOT/checkpoints/final_adapter",
+    "run_022_adapter_hash": "71c3f3eaf8de758bc9c843fdb70c6c03538789a7c1fddc7ab1af198b40ee8479"
+  },
+  "test_dataset": "RUN-021-SPATIAL-SUPERVISION/test.jsonl",
+  "test_dataset_sha256": "aaba73433c9ccea7a5c6134154577ea80591e23755665794bec603ebdf53053f",
+  "total_test_samples": 1006,
+  "ablation_samples": 100,
+  "reproducibility_concordance": 1.0,
+  "seed": 42
+}

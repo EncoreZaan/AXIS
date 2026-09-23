@@ -8,20 +8,22 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Tests: 9/9 CI gate](https://img.shields.io/badge/CI%20gate-9%2F9%20passing-brightgreen.svg)](REPRODUCIBILITY.md#4-automated-test-suite-what-actually-runs-on-a-fresh-clone)
 [![Master Dataset v2](https://img.shields.io/badge/Master%20Dataset%20v2-65%2C342%20assets-blueviolet.svg)](DATASET.md)
-[![Gold Set V3](https://img.shields.io/badge/Gold%20Set%20V3-0.0517m%20MAE-informational.svg)](EVALUATION.md)
+[![Phase 6B: RUN-023](https://img.shields.io/badge/RUN--023-Acc%2063.12%25%20%7C%20VDI%201.28%20(FAIL)-orange.svg)](docs/experiments/RUN-023/README.md)
 [![Research Status](https://img.shields.io/badge/Statut-Recherche%20en%20cours-yellow.svg)](PROJECT_STATUS.md)
+[![Timeline](https://img.shields.io/badge/Timeline-2026--09--23-blue.svg)](docs/SCIENTIFIC_TIMELINE.md)
 
 > Projet de recherche open source visant à développer une intelligence artificielle spécialisée dans le raisonnement spatial, géométrique et architectural — publié sous licence MIT.
 
-> **Dépôt officiel :** [github.com/EncoreZaan/AXIS](https://github.com/EncoreZaan/AXIS)
-> **Évolution du projet :** AXIS est la suite publique du travail de recherche mené précédemment sous le nom de code `ARCHI-AI`. Toute la traçabilité scientifique historique (identifiants, hashs, journaux d'expériences) est conservée intégralement — voir [`docs/history/project-history.md`](docs/history/project-history.md).
+> **Dépôt officiel :** [github.com/EncoreZaan/AXIS](https://github.com/EncoreZaan/AXIS)  
+> **Dernier jalon scientifique (2026-09-23) :** Évaluation de l'ancrage spatial Phase 6B ([`RUN-023`](docs/experiments/RUN-023/README.md)) — Gain de précision de +48,61 pp sur le modèle de base (63,12 %), mais dépendance visuelle **non prouvée** sous le protocole VDI officiel ($\text{VDI} = 1,28 < 3,0$).  
+> **Évolution du projet :** AXIS est la suite publique du travail de recherche mené précédemment sous le nom de code `ARCHI-AI`. Toute la traçabilité scientifique historique est conservée intégralement — voir [`docs/history/project-history.md`](docs/history/project-history.md) et la [`Frise chronologique`](docs/SCIENTIFIC_TIMELINE.md).  
 > **Nouveau sur le projet ?** Commencez par [`START_HERE.md`](START_HERE.md).
 
 ---
 
 ## ⚠️ Statut
 
-**AXIS est actuellement un projet de recherche en développement actif.** Certaines capacités sont validées expérimentalement sur un périmètre étroit et précisément défini (voir [Résultats actuels](#-résultats-actuels)). Plusieurs axes majeurs restent expérimentaux, bloqués par la disponibilité ou la licence des données, ou simplement non commencés. AXIS n'est **pas** un modèle de production, et un seul résultat positif sur un benchmark restreint ne doit jamais être lu comme une preuve de compréhension générale de l'architecture. Voir [État actuel de la recherche](#-état-actuel-de-la-recherche) pour le détail complet, sans filtre.
+**AXIS est actuellement un projet de recherche en développement actif.** Certaines capacités sont validées expérimentalement sur un périmètre étroit et précisément défini (voir [Résultats actuels](#-résultats-actuels)). Plusieurs axes majeurs restent expérimentaux, bloqués par la disponibilité ou la licence des données, ou simplement non commencés. AXIS n'est **pas** un modèle de production, et un résultat positif sur un benchmark restreint ne doit jamais être lu comme une preuve de compréhension générale de l'architecture. Voir [État actuel de la recherche](#-état-actuel-de-la-recherche) pour le détail complet, sans filtre.
 
 ---
 
@@ -31,11 +33,12 @@
 - [Pourquoi AXIS ?](#-pourquoi-axis-)
 - [Vision](#-vision)
 - [État actuel de la recherche](#-état-actuel-de-la-recherche)
-- [Résultats actuels](#-résultats-actuels)
+- [Résultats actuels & Jalons scientifiques](#-résultats-actuels)
 - [Master Dataset v2](#-master-dataset-v2)
 - [Architecture du système](#-architecture-du-système)
 - [Structure du dépôt](#-structure-du-dépôt)
 - [Reproduire les expériences](#-reproduire-les-expériences)
+- [Politique de documentation](#-politique-de-documentation)
 - [Roadmap](#-roadmap)
 - [Contribuer](#-contribuer)
 - [Limites scientifiques](#-limites-scientifiques)
@@ -59,12 +62,12 @@ Le code et la documentation originaux d'AXIS sont publiés sous **licence MIT**.
 
 ## 🎯 Pourquoi AXIS ?
 
-Les grands modèles de langage (LLM) et modèles vision-langage (VLM) génralistes démontrent des capacités linguistiques et perceptives remarquables. Pourtant, dans le domaine architectural, ils échouent de façon récurrente sur des tâches physiques fondamentales :
+Les grands modèles de langage (LLM) et modèles vision-langage (VLM) généralistes démontrent des capacités linguistiques et perceptives remarquables. Pourtant, dans le domaine architectural, ils échouent de façon récurrente sur des tâches physiques fondamentales :
 
 * **Hallucination métrique :** les modèles inventent régulièrement des surfaces (m²) ou des épaisseurs de murs à partir de rasters 2D non calibrés, sans échelle physique de référence.
 * **Incohérence topologique :** ils échouent à préserver les graphes de cloisonnement, confondant partitions non porteuses et murs structurels, ou générant des circulations discontinues.
 * **Aveuglement normatif :** ils ne détectent pas de façon fiable qu'un passage de 85 cm viole une réglementation d'accessibilité PMR.
-* **Raccourcis d'artefacts de dataset :** les modèles standards exploitent des raccourcis de métadonnées (dimensions typiques de pièces, noms de fichiers) plutôt que d'apprendre une véritable géométrie spatiale.
+* **Raccourcis d'artefacts de dataset :** les modèles standards exploitent des raccourcis de métadonnées plutôt que d'apprendre une véritable géométrie spatiale.
 
 **AXIS ne cherche pas à cloner un chatbot généraliste.** Le projet est construit depuis zéro pour explorer une intelligence architecturale spécialisée et mathématiquement fondée — s'appuyant sur des contrats de cibles falsifiables, des audits de données multi-dimensionnels, des découpages sans fuite (« zero-leakage splits ») et des benchmarks immuables.
 
@@ -83,18 +86,21 @@ Le projet distingue strictement ce qui est validé, expérimental, bloqué ou si
 | Sous-système / Jalon | Statut | Description |
 | :--- | :---: | :--- |
 | **Master Dataset v2** | ✅ `DONE` | **65 342 assets uniques** sur 19 sources. 0 fuite SHA256, 0 fuite de projet. |
-| **Partitionnement des données** | ✅ `DONE` | 53 720 train / 5 724 val / 5 898 test (= 65 342) + 1 563 en file de revue isolée (non comptée dans le total). Seed = 42. |
-| **Suite de tests automatisés** | 🟡 `PARTIEL` | 93 tests collectés sur un clone neuf sans données privées : **35 passent, 19 échouent, 38 erreurs, 1 ignoré** — tous les échecs/erreurs proviennent de données privées non redistribuées. Le sous-ensemble indépendant des données (9 tests) passe à 9/9 en CI. |
-| **Sélection des tâches Phase 4** | ✅ `DONE` | 4/69 tâches approuvées (`FLOORPLAN_READING`, `ROOM_TOPOLOGY`, `OBJECT_RELATION`, `CLEARANCE_CHECK`). 65 exclues. |
-| **Gold Set V3** | ✅ `DONE` | 200 instances certifiées + 200 négatifs adverses. Immuable, lecture seule. **Non téléchargeable publiquement.** |
-| **Benchmark Clearance** | ✅ `DONE` | **MAE 0.0517 m** sur le Gold Set (vs Baseline 0 : 2,7739 m), réduction relative de **98,14 %**. Voir les réserves statistiques ci-dessous. |
+| **Partitionnement des données** | ✅ `DONE` | 53 720 train / 5 724 val / 5 898 test (= 65 342) + 1 563 en file de revue isolée. Seed = 42. |
+| **Suite de tests automatisés** | 🟡 `PARTIEL` | 9/9 tests passent en CI autonome. Tests exhaustifs (99) requièrent l'environnement complet de données. |
+| **Gold Set V3** | ✅ `DONE` | 200 instances certifiées + 200 négatifs adverses. Immuable, lecture seule. SHA256: `81561f...`. |
+| **Benchmark Clearance (MLP)** | ✅ `DONE` | **MAE 0.0517 m** sur le Gold Set (vs Baseline 0 : 2,7739 m), réduction de **98,14 %**. Tâche étroite 3D. |
 | **ResPlan (échelle métrique)** | 🔴 `BLOQUÉ` | Distorsion d'échelle prouvée sur 17k plans. Mis en quarantaine pour toute tâche métrique (m²). |
-| **FloorPlanCAD** | 🔴 `BLOQUÉ` | 741 dessins vectoriels CAO en quarantaine, revue légale requise. |
-| **Modèle vision 2D (`ROOM_TOPOLOGY`)** | 🟡 `NON ÉVALUÉ` | Baseline 0 calibrée (34 % exact match). Entraînement du modèle prévu pour une phase ultérieure. |
-| **Preuve de concept VLM QLoRA** | 🟡 `EXPÉRIMENTAL` | Dry-run et 6 pas sur Qwen2-VL-7B (perte 1,893 → 1,769, 0 OOM). **N'est pas un modèle final.** |
-| **Raisonnement multimodal 2D↔3D** | 🟡 `NON ÉVALUÉ` | Entraînement synthétique rejeté faute de paires réelles suffisantes (10 paires vraies dans le corpus brut). |
-| **Pre-Training Gate** | 🔴 `BLOQUÉ` | Statut `CONDITIONAL` (`TRAINING_ALLOWED: NO`) tant que 50 à 100 paires IFC OpenBIM sous licence ouverte n'ont pas été acquises. |
-| **Accélération DSpark** | 🔵 `PLANIFIÉ` | Piste de recherche prospective ; aucune affirmation avant benchmarks physiques réels. |
+| **FloorPlanCAD** | 🔴 `BLOQUÉ` | 741 dessins vectoriels CAO en quarantaine légale (`PDR-2026-001`), exclus de tout entraînement. |
+| **Phase 4: RUN-019 (Pilote Réel)** | ✅ `DONE` | Entraînement QLoRA 194 pas sur 1 000 plans réels. Loss divisée par 10 (-98.59 %). |
+| **Phase 5: RUN-020 (Falsification)** | ❌ `FALSIFIÉ` | Révélation d'apprentissage par template (85.3 %) et cécité visuelle ($\text{VDI} \approx 1.0$). |
+| **Phase 6A: RUN-021 (Dataset Spatial)**| ✅ `DONE` | 7 950 exemples de raisonnement spatial (100% `VISUAL_REQUIRED`). 0 fuite. Audit géométrique PASS. |
+| **Phase 6B: RUN-022 (Pilote Grounding)**| ✅ `DONE` | Entraînement 2 310 pas (3 époques) sur Qwen2-VL-7B. Reprise déterministe au pas 750 validée. |
+| **Phase 6B: RUN-023 (Évaluation)** | ⚠️ `COMPLÉTÉ` | Précision spatiale : **63,12 %** (+48,61 pp vs base), format 100 %, 0 % hallucination. **VDI : 1,28 (VDI_PASS : NON)**. |
+| **Raisonnement multimodal 2D↔3D** | 🟡 `NON ÉVALUÉ` | En attente de paires IFC OpenBIM réelles supplémentaires sous licence libre. |
+| **Prochaine étape autorisée** | 🛑 `EN ATTENTE` | Revue humaine obligatoire avant toute nouvelle phase d'entraînement. |
+
+Détail complet et sources vérifiables : [`PROJECT_STATUS.md`](PROJECT_STATUS.md), [`SCIENTIFIC_TIMELINE.md`](docs/SCIENTIFIC_TIMELINE.md), et [`GATES_AND_DECISIONS.md`](docs/GATES_AND_DECISIONS.md).
 
 Détail complet et sources vérifiables : [`PROJECT_STATUS.md`](PROJECT_STATUS.md).
 
@@ -124,6 +130,38 @@ Checkpoint sélectionné A-Full(005)0,0517 m      0,0412 m      0,0703 m      +9
 > ⚠️ **Ce chiffre de 100 % doit être lu avec prudence.** L'ensemble de test comporte 99 positifs pour 1 seul négatif : une stratégie triviale consistant à toujours répondre « PASS » obtiendrait déjà 99 % de précision. Ce résultat ne constitue donc **pas** une preuve de robustesse générale du classifieur, et encore moins une preuve d'une quelconque « compréhension de l'architecture » par le modèle. Il démontre une régression spatiale précise sur une tâche étroite et bien définie (`CLEARANCE_CHECK`), rien de plus. Détail statistique complet : [`EVALUATION.md` §3.2](EVALUATION.md#32-why-100-accuracy-is-not-a-robustness-proof).
 
 Le checkpoint entraîné n'est **pas publiquement disponible** (voir [`EVALUATION.md` §4](EVALUATION.md#4-artifact-availability)). Le hash SHA256 est documenté pour la traçabilité scientifique uniquement.
+
+### Évaluation VLM d'Ancrage Spatial Phase 6B (`RUN-023`)
+
+Sur le modèle vision-langage `Qwen/Qwen2-VL-7B-Instruct` adapté en 4-bit NF4 (`final_adapter`, SHA-256: `71c3f3eaf8de758bc9c843fdb70c6c03538789a7c1fddc7ab1af198b40ee8479`), l'évaluation sur **1 006 exemples de test tenus à l'écart** ([`RUN-023`](docs/experiments/RUN-023/README.md)) a mesuré :
+
+```text
+========================================================================================
+DIMENSION ÉVALUÉE                  BASE MODEL      RUN-019 PILOTE    RUN-022 (PHASE 6B)
+========================================================================================
+Relations Directionnelles          3,20 %          10,40 %           98,40 % (+95,2 pp)
+Connectivité Portes (Pos/Nég)      50,00 %         50,40 %           94,00 % (+44,0 pp)
+Adjacence Topologique              0,00 %          0,00 %            94,00 % (+94,0 pp)
+Cardinalité Pièces & Portes        6,40 %          8,00 %            69,20 % (+61,2 pp)
+Chemin le Plus Court (Multi-Hop)   0,00 %          0,00 %            80,00 % (+80,0 pp)
+Noyau de Circulation Central       0,00 %          0,00 %            0,00 %  (sensibilité métrique)
+----------------------------------------------------------------------------------------
+PRÉCISION D'ANCRAGE GLOBALE        14,51 %         15,81 %           63,12 % (+48,61 pp)
+ADHÉRENCE DE FORMAT / SYNTAXE      65,61 %         56,06 %           100,00 %
+TAUX D'HALLUCINATION D'ID          0,00 %          100,00 %          0,00 % (éradiqué)
+REPRODUCTIBILITÉ (SEED 42)         —               —                 100 % (20/20 bit-exact)
+========================================================================================
+INDICE DE DÉPENDANCE VISUELLE (VDI):  1,28  (Seuil requis: >= 3,0  |  VERDICT: NON / FAIL)
+ABLATIONS: Original 64% | Noir 50% | Masque 46% | Bruit 51% | Texte seul 47%
+========================================================================================
+```
+
+> ⚠️ **Limites méthodologiques & Honnêteté scientifique :**
+> 1. **Dépendance visuelle non démontrée ($\text{VDI} = 1,28 < 3,0$) :** Le modèle réussit de façon spectaculaire les requêtes relationnelles discrètes, mais l'évaluation par ablation d'image montre un plancher de 50 % sur les questions binaires et une présence de coordonnées textuelles dans les prompts permettant une inférence linguistique sans regarder l'image. L'ancrage purement visuel n'est donc **pas prouvé**.
+> 2. **Noyau de circulation (0,00 %) :** L'évaluation imposait une égalité entière stricte sur la boîte englobante 4-tuple. Les prédictions du modèle identifiaient correctement l'espace et le nombre de portes, mais divergeaient de quelques pixels d'arrondi. Conformément à nos règles de traçabilité, cette métrique n'a pas été modifiée rétroactivement.
+> 3. **Revue humaine aveugle :** `HUMAN_BLIND_EVALUATION = NOT_PERFORMED`. L'analyse qualitative est une compilation comparative automatisée.
+> 
+> Voir le rapport complet : [`docs/experiments/RUN-023/README.md`](docs/experiments/RUN-023/README.md).
 
 ---
 
@@ -173,7 +211,7 @@ AXIS/
 ├── GOVERNANCE.md                  # Modèle de gouvernance
 ├── CITATION.cff                   # Métadonnées de citation académique
 ├── ROADMAP.md                     # Feuille de route (terminé / en cours / bloqué / planifié)
-├── PROJECT_STATUS.md              # Matrice de statut détaillée
+├── PROJECT_STATUS.md              # Matrice de statut faisant autorité (2026-09-23)
 ├── CHANGELOG.md                   # Historique des versions
 ├── RESEARCH.md                    # Méthodologie scientifique et falsifiabilité
 ├── ARCHITECTURE.md                # Architecture du système et pipeline de données
@@ -183,22 +221,39 @@ AXIS/
 ├── DEVELOPMENT.md                 # Guide développeur
 ├── REPRODUCIBILITY.md             # Guide de reproduction
 ├── pyproject.toml / requirements.txt
-├── .github/                       # Templates d'issues/PR et CI
-├── dataset_tools/                 # Ingestion, validation, moteur de supervision
+├── RUN-019-FIRST-REAL-DATA-QLORA/ # Éléments probants Phase 4 (Pilote réel)
+├── RUN-020-SCIENTIFIC-GENERALIZATION/ # Éléments probants Phase 5 (Falsification)
+├── RUN-021-SPATIAL-SUPERVISION/   # Dataset de supervision spatiale verrouillé
+├── RUN-022-SPATIAL-GROUNDING-PILOT/ # Checkpoints & métriques entraînement Phase 6B
+├── RUN-023-SPATIAL-GENERALIZATION-EVAL/ # Évaluation complète & ablations visuelles
+├── dataset_tools/                 # Ingestion, validation, constructeur spatial
 ├── evaluation/                    # Harnais de benchmark et baselines
 ├── experiment_package/            # Reproduction portable du micro-pilote QLoRA
 ├── tests/                         # Suite de tests automatisés
 ├── configs/                       # Fichiers de configuration
-├── scripts/                       # Scripts d'entrée (build/evaluate/validate)
+├── scripts/                       # Scripts d'entraînement, audit et évaluation
 └── docs/
-    ├── research/                  # Rapports de recherche et readiness scientifique
-    ├── datasets/                  # Audits, matrices d'acquisition, licences
+    ├── DOCUMENTATION_POLICY.md    # Politique stricte d'archivage scientifique
+    ├── PROJECT_STATUS.md          # Statut scientifique détaillé & 11 invariants
+    ├── SCIENTIFIC_TIMELINE.md     # Frise chronologique complète Phases 1-6B
+    ├── GATES_AND_DECISIONS.md     # Registre des portes de décision et audits
+    ├── experiments/               # Documentation détaillée des runs (RUN-019 à RUN-023)
+    ├── datasets/                  # Audits, matrices d'acquisition, licences, PDR
     ├── evaluation/                # Audits indépendants du Gold Set
-    ├── experiments/                # Plans d'ablation, sélection de phase
-    ├── history/                   # Traçabilité historique (codename ARCHI-AI)
-    ├── CONTRIBUTOR_GUIDE.md       # Guide d'orientation pour nouveaux contributeurs
-    └── RESEARCH_CONTRIBUTION_PROTOCOL.md  # Protocole pour proposer une expérience
+    └── research/                  # Rapports de recherche et readiness scientifique
 ```
+
+---
+
+## 📜 Politique de documentation
+
+Le projet applique une règle de traçabilité absolue ([`docs/DOCUMENTATION_POLICY.md`](docs/DOCUMENTATION_POLICY.md)) :
+
+> **« Une exécution scientifique sans documentation d'archivage n'est pas considérée comme terminée. »**
+
+Chaque expérience (entraînement, évaluation, ablation) doit impérativement faire l'objet d'un rapport dédié, d'un scellement cryptographique des métriques (`hashes.json`), d'une mise à jour de la frise chronologique et d'un commit Git dédié avant toute autorisation de l'étape suivante. Tout résultat négatif ou défavorable doit être consigné avec la même visibilité qu'un résultat positif.
+
+---
 
 ---
 

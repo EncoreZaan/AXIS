@@ -1,0 +1,37 @@
+[
+  {
+    "prompt_id": "PROMPT-RPLAN-STD",
+    "task_type": "in_domain_plan_critique",
+    "text": "Contexte : Plan d'architecte matriciel segmenté issu du corpus certifié RPLAN. Représente les cloisons, baies et distributions spatiales fonctionnelles.\n\nQuestion : Analysez l'organisation spatiale, la topologie des pièces et les circulations visibles sur ce plan d'architecte.",
+    "expected_signal": "Structural and spatial critique of floorplan layout, identifying rooms, partitions, and circulations",
+    "evaluation_method": "Lexical structure check (5 sections), spatial keyword count, template exact-match analysis, hallucination detection"
+  },
+  {
+    "prompt_id": "PROMPT-RESBIM-STD",
+    "task_type": "paired_cad_ifc_analysis",
+    "text": "Contexte : Unité résidentielle certifiée OpenBIM issue de ResBIM-IFC, appariée à sa maquette numérique 3D native.\n\nQuestion : Analysez la composition spatiale, les parois et la distribution fonctionnelle de cette unité résidentielle appariée.",
+    "expected_signal": "Multimodal 2D/3D BIM analysis of residential unit layout, partitions, and functional distribution",
+    "evaluation_method": "Format adherence, BIM/IFC entity grounding, cross-source template replication audit"
+  },
+  {
+    "prompt_id": "PROMPT-SPATIAL-TOPOLOGY",
+    "task_type": "spatial_topology_reasoning",
+    "text": "Question : Identifiez et décrivez précisément les relations spatiales entre les différentes pièces (adjacence, connexions de circulation, pièces situées à gauche, à droite, en haut et en bas) sur ce plan.",
+    "expected_signal": "Specific directional and topological relations between rooms grounded in the visual floorplan",
+    "evaluation_method": "Verification of directional terms (left/right, above/below) and adjacency statements against ground-truth layout"
+  },
+  {
+    "prompt_id": "PROMPT-TEXT-ONLY-RPLAN",
+    "task_type": "linguistic_prior_control_rplan",
+    "text": "Contexte : Plan d'architecte matriciel segmenté issu du corpus certifié RPLAN. Représente les cloisons, baies et distributions spatiales fonctionnelles.\n\nQuestion : Analysez l'organisation spatiale, la topologie des pièces et les circulations visibles sur ce plan d'architecte.",
+    "expected_signal": "Assessment of language model output without any visual input to measure pure linguistic priors and template regurgitation",
+    "evaluation_method": "Comparison of generated text with Condition 1 (Original image) to quantify visual dependency"
+  },
+  {
+    "prompt_id": "PROMPT-TEXT-ONLY-RESBIM",
+    "task_type": "linguistic_prior_control_resbim",
+    "text": "Contexte : Unité résidentielle certifiée OpenBIM issue de ResBIM-IFC, appariée à sa maquette numérique 3D native.\n\nQuestion : Analysez la composition spatiale, les parois et la distribution fonctionnelle de cette unité résidentielle appariée.",
+    "expected_signal": "Assessment of language model output without any visual input on BIM prompt",
+    "evaluation_method": "Comparison of generated text with Condition 1 (Original image) to quantify visual dependency"
+  }
+]

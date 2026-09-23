@@ -1,0 +1,157 @@
+{
+  "model_id": "Qwen/Qwen2-VL-7B-Instruct",
+  "model_revision": "eed13092ef92e448dd6875b2a00151bd3f7db0ac",
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "quantization": "4-bit NF4",
+  "dataset": "REAL_DATA_PILOT",
+  "total_train_samples": 775,
+  "dry_run_steps": 8,
+  "effective_batch_size": 8,
+  "avg_loss": 2.3594212234020233,
+  "peak_vram_mib": 10052.17236328125,
+  "optimizer_step_called": false,
+  "weights_updated": false,
+  "loss_finite": true,
+  "cuda_errors": 0,
+  "oom_errors": 0,
+  "batch_records": [
+    {
+      "step": 1,
+      "sample_id": "archi_pilot_0002",
+      "source_id": "CORE_RESBIM_PAIRED",
+      "input_ids_shape": [
+        1,
+        642
+      ],
+      "pixel_values_shape": [
+        1248,
+        1176
+      ],
+      "loss": 2.3580267429351807,
+      "grad_norm": 0.12155446235130961,
+      "duration_sec": 2.033724546432495,
+      "allocated_mib": 8493.6591796875
+    },
+    {
+      "step": 2,
+      "sample_id": "archi_pilot_0003",
+      "source_id": "CORE_RESBIM_PAIRED",
+      "input_ids_shape": [
+        1,
+        642
+      ],
+      "pixel_values_shape": [
+        1248,
+        1176
+      ],
+      "loss": 2.3561196327209473,
+      "grad_norm": 0.24008616938709149,
+      "duration_sec": 1.404597282409668,
+      "allocated_mib": 8494.0302734375
+    },
+    {
+      "step": 3,
+      "sample_id": "archi_pilot_0004",
+      "source_id": "CORE_RESBIM_PAIRED",
+      "input_ids_shape": [
+        1,
+        642
+      ],
+      "pixel_values_shape": [
+        1248,
+        1176
+      ],
+      "loss": 2.3504605293273926,
+      "grad_norm": 0.35933492642455683,
+      "duration_sec": 1.3523142337799072,
+      "allocated_mib": 8494.0302734375
+    },
+    {
+      "step": 4,
+      "sample_id": "archi_pilot_0006",
+      "source_id": "CORE_RESBIM_PAIRED",
+      "input_ids_shape": [
+        1,
+        642
+      ],
+      "pixel_values_shape": [
+        1248,
+        1176
+      ],
+      "loss": 2.3433892726898193,
+      "grad_norm": 0.4767945868439396,
+      "duration_sec": 1.3595709800720215,
+      "allocated_mib": 8494.0302734375
+    },
+    {
+      "step": 5,
+      "sample_id": "archi_pilot_0007",
+      "source_id": "CORE_RESBIM_PAIRED",
+      "input_ids_shape": [
+        1,
+        642
+      ],
+      "pixel_values_shape": [
+        1248,
+        1176
+      ],
+      "loss": 2.3527350425720215,
+      "grad_norm": 0.5945769600683067,
+      "duration_sec": 1.355750322341919,
+      "allocated_mib": 8494.0302734375
+    },
+    {
+      "step": 6,
+      "sample_id": "archi_pilot_0008",
+      "source_id": "CORE_RESBIM_PAIRED",
+      "input_ids_shape": [
+        1,
+        642
+      ],
+      "pixel_values_shape": [
+        1248,
+        1176
+      ],
+      "loss": 2.3829355239868164,
+      "grad_norm": 0.7116178893599934,
+      "duration_sec": 1.3568379878997803,
+      "allocated_mib": 8494.0302734375
+    },
+    {
+      "step": 7,
+      "sample_id": "archi_pilot_0009",
+      "source_id": "CORE_RESBIM_PAIRED",
+      "input_ids_shape": [
+        1,
+        642
+      ],
+      "pixel_values_shape": [
+        1248,
+        1176
+      ],
+      "loss": 2.3683996200561523,
+      "grad_norm": 0.829055426574568,
+      "duration_sec": 1.3597955703735352,
+      "allocated_mib": 8494.0302734375
+    },
+    {
+      "step": 8,
+      "sample_id": "archi_pilot_0010",
+      "source_id": "CORE_RESBIM_PAIRED",
+      "input_ids_shape": [
+        1,
+        642
+      ],
+      "pixel_values_shape": [
+        1248,
+        1176
+      ],
+      "loss": 2.3633034229278564,
+      "grad_norm": 0.9477961826870734,
+      "duration_sec": 1.3778319358825684,
+      "allocated_mib": 8494.0302734375
+    }
+  ],
+  "verdict": "PASS"
+}

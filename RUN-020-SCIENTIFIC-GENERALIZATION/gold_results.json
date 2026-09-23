@@ -1,0 +1,14 @@
+{
+  "gold_benchmark": "Gold Set V3",
+  "expected_sha256": "81561fae5b524fa26622e5fac27d612f7d75a11e6ff0be774448fef04b9f2aca",
+  "manifest_path_checked": [
+    "/workspace/AXIS/dataset/supervision/v1/manifests/GOLD_V3_MANIFEST.jsonl",
+    "/workspace/AXIS/dataset/gold_set/GOLD_V3_MANIFEST.jsonl",
+    "/workspace/AXIS/dataset/master/v1/supervision/gold_set/gold_set_manifest.json"
+  ],
+  "manifest_found": false,
+  "status": "NOT_AVAILABLE",
+  "gold_evaluation_gate": "BLOCKED",
+  "documentation_reference": "EVALUATION.md \u00a74 line 103: 'Gold Set V3 manifest (GOLD_V3_MANIFEST.jsonl) | NOT PUBLIC | Excluded via .gitignore (dataset/). Only its SHA256 hash is published here, for verification against an independently-obtained or independently-reconstructed copy \u2014 it cannot be downloaded from this repository.'",
+  "conclusion": "Per Protocol \u00a716 and \u00a721: No synthetic Gold Set benchmark was fabricated. Gold evaluation is logged as NOT_AVAILABLE / BLOCKED with strict cryptographic audit."
+}

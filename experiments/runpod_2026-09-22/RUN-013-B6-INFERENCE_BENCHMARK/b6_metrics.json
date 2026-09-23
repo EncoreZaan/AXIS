@@ -1,0 +1,188 @@
+{
+  "Base_Qwen2_VL_7B_ZeroAdapter": [
+    {
+      "test_case": "T1_Interior_Spatial_Analysis",
+      "type": "image_text",
+      "input_tokens": 362,
+      "greedy": {
+        "output_tokens": 150,
+        "elapsed_sec": 6.30583381652832,
+        "tokens_per_sec": 23.787496525333832,
+        "peak_vram_mib": 14195.0302734375,
+        "output_sha256": "81bf615e32529c81cabb3511c462ea1e357de55908e5cd2492a278d6e8a31e50",
+        "sample_text": "L'organisation spatiale du salon contemporain est bien pens\u00e9e et offre une ambiance chaleureuse et accueillante. Voici les points forts de cette pi\u00e8ce :\n\n1. **Lumi\u00e8re naturelle** : Les grandes fen\u00eatre"
+      },
+      "sampling": {
+        "output_tokens": 150,
+        "elapsed_sec": 7.220460653305054,
+        "tokens_per_sec": 20.774297818704937,
+        "peak_vram_mib": 14195.0341796875,
+        "sample_text": "La pi\u00e8ce de salon contemporaine pr\u00e9sente une organisation spatiale efficace et une esth\u00e9tique \u00e9l\u00e9gante. Voici les points forts de cette pi\u00e8ce :\n\n1. **Lumi\u00e8re naturelle** : La pi\u00e8ce est bien \u00e9clair\u00e9e g"
+      }
+    },
+    {
+      "test_case": "T2_Clearance_And_Ergonomics",
+      "type": "image_text",
+      "input_tokens": 376,
+      "greedy": {
+        "output_tokens": 56,
+        "elapsed_sec": 2.656388759613037,
+        "tokens_per_sec": 21.08125167950103,
+        "peak_vram_mib": 14196.62744140625,
+        "output_sha256": "9da5c547445d1dbbf133db1c6e5409cba371fd9e4dd00eb9cab77347c8a691ec",
+        "sample_text": "La largeur des passages et la circulation entre le canap\u00e9 et la table basse sont suffisantes pour permettre une circulation facile et sans obstacle. Il n'y a pas de meubles ou d'obstacles qui pourraie"
+      },
+      "sampling": {
+        "output_tokens": 56,
+        "elapsed_sec": 2.574709892272949,
+        "tokens_per_sec": 21.750023242643195,
+        "peak_vram_mib": 14196.626953125,
+        "sample_text": "La largeur des passages et la circulation entre le canap\u00e9 et la table basse sont suffisantes pour permettre une circulation facile et sans obstacle. Il n'y a pas de meubles ou d'obstacles qui pourraie"
+      }
+    },
+    {
+      "test_case": "T3_Architectural_Norms_TextOnly",
+      "type": "text_only",
+      "input_tokens": 50,
+      "greedy": {
+        "output_tokens": 150,
+        "elapsed_sec": 6.330404281616211,
+        "tokens_per_sec": 23.695169111964457,
+        "peak_vram_mib": 14004.83740234375,
+        "output_sha256": "44d01f64b796c679ce91c85a01746dae65effe92dd798d4cf56373466bfef1c6",
+        "sample_text": "Selon les normes d'accessibilit\u00e9 PMR (Personnes \u00e0 Mobilit\u00e9 R\u00e9duite) en France, les dimensions minimales recommand\u00e9es pour une circulation principale dans un logement sont les suivantes :\n\n- Pour une c"
+      },
+      "sampling": {
+        "output_tokens": 150,
+        "elapsed_sec": 5.715599536895752,
+        "tokens_per_sec": 26.243966014712743,
+        "peak_vram_mib": 14011.30224609375,
+        "sample_text": "Selon les normes d'accessibilit\u00e9 PMR (Personnes \u00e0 Mobilit\u00e9 R\u00e9duite), les dimensions minimales recommand\u00e9es pour une circulation principale dans un logement sont les suivantes :\n\n- Pour une circulation"
+      }
+    }
+  ],
+  "RUN-007-E1_r8_8ep": [
+    {
+      "test_case": "T1_Interior_Spatial_Analysis",
+      "type": "image_text",
+      "input_tokens": 362,
+      "greedy": {
+        "output_tokens": 150,
+        "elapsed_sec": 12.61630129814148,
+        "tokens_per_sec": 11.889379973994174,
+        "peak_vram_mib": 14272.0341796875,
+        "output_sha256": "a3f486f0b3e1e976dc885d4f5134d42e17310132a717738b8be5cff0f3f18992",
+        "sample_text": "L'image montre un salon contemporain bien agenc\u00e9. Voici une analyse d\u00e9taill\u00e9e :\n\n1. **Organisation spatiale** :\n   - **Zone de relaxation** : Le canap\u00e9 en cuir marron et les fauteuils blancs cr\u00e9ent un"
+      },
+      "sampling": {
+        "output_tokens": 150,
+        "elapsed_sec": 12.793174028396606,
+        "tokens_per_sec": 11.725002698083346,
+        "peak_vram_mib": 14272.0361328125,
+        "sample_text": "L'image montre un salon contemporain bien agenc\u00e9. Voici une analyse d\u00e9taill\u00e9e :\n\n1. **Organisation spatiale** :\n   - **Zone de relaxation** : Le canap\u00e9 en cuir marron et les fauteuils blancs cr\u00e9ent un"
+      }
+    },
+    {
+      "test_case": "T2_Clearance_And_Ergonomics",
+      "type": "image_text",
+      "input_tokens": 376,
+      "greedy": {
+        "output_tokens": 36,
+        "elapsed_sec": 3.3844754695892334,
+        "tokens_per_sec": 10.636803346182694,
+        "peak_vram_mib": 14273.62744140625,
+        "output_sha256": "f9ba8412777e0ef263fc10d1574eec373b02531686bcd95996010bba4e03f4e1",
+        "sample_text": "R\u00e9ponse : La largeur des passages et la circulation entre le canap\u00e9 et la table basse est suffisante pour permettre une circulation facile et sans obstacle."
+      },
+      "sampling": {
+        "output_tokens": 36,
+        "elapsed_sec": 3.1400699615478516,
+        "tokens_per_sec": 11.464712710494618,
+        "peak_vram_mib": 14273.626953125,
+        "sample_text": "R\u00e9ponse : La largeur des passages et la circulation entre le canap\u00e9 et la table basse est suffisante pour permettre une circulation facile et sans obstacle."
+      }
+    },
+    {
+      "test_case": "T3_Architectural_Norms_TextOnly",
+      "type": "text_only",
+      "input_tokens": 50,
+      "greedy": {
+        "output_tokens": 138,
+        "elapsed_sec": 9.424712896347046,
+        "tokens_per_sec": 14.642355848684563,
+        "peak_vram_mib": 14085.5859375,
+        "output_sha256": "4894c4469e192f25c95579d2c192754bbe0537c644bea9f1a9b2ecf36bafc75f",
+        "sample_text": "Selon les normes d'accessibilit\u00e9 PMR (Personnes \u00e0 Mobilit\u00e9 R\u00e9duite), les dimensions minimales recommand\u00e9es pour une circulation principale dans un logement sont les suivantes :\n\n- Largeur minimale : 1"
+      },
+      "sampling": {
+        "output_tokens": 138,
+        "elapsed_sec": 9.041993856430054,
+        "tokens_per_sec": 15.262120522440274,
+        "peak_vram_mib": 14087.642578125,
+        "sample_text": "Selon les normes d'accessibilit\u00e9 PMR (Personnes \u00e0 Mobilit\u00e9 R\u00e9duite), les dimensions minimales recommand\u00e9es pour une circulation principale dans un logement sont les suivantes :\n\n- Largeur minimale : 1"
+      }
+    }
+  ],
+  "RUN-010-B1_r16_2ep": [
+    {
+      "test_case": "T1_Interior_Spatial_Analysis",
+      "type": "image_text",
+      "input_tokens": 362,
+      "greedy": {
+        "output_tokens": 150,
+        "elapsed_sec": 12.55870246887207,
+        "tokens_per_sec": 11.943909044090276,
+        "peak_vram_mib": 14354.92822265625,
+        "output_sha256": "63b90a91dfe45655663c86ffb3c1c3fd640a34ad1675aff61d5c8cda5aa507f4",
+        "sample_text": "L'organisation spatiale du salon contemporain est bien pens\u00e9e. Voici les points forts de cette pi\u00e8ce :\n\n1. **Lumi\u00e8re naturelle** : La pi\u00e8ce est bien \u00e9clair\u00e9e gr\u00e2ce \u00e0 la pr\u00e9sence d'une grande fen\u00eatre q"
+      },
+      "sampling": {
+        "output_tokens": 150,
+        "elapsed_sec": 12.463361978530884,
+        "tokens_per_sec": 12.035275895732367,
+        "peak_vram_mib": 14354.9306640625,
+        "sample_text": "L'organisation spatiale du salon contemporain est bien pens\u00e9e. Voici les points forts de cette pi\u00e8ce :\n\n1. **Lumi\u00e8re naturelle** : La pi\u00e8ce est bien \u00e9clair\u00e9e gr\u00e2ce \u00e0 la pr\u00e9sence d'une grande fen\u00eatre q"
+      }
+    },
+    {
+      "test_case": "T2_Clearance_And_Ergonomics",
+      "type": "image_text",
+      "input_tokens": 376,
+      "greedy": {
+        "output_tokens": 33,
+        "elapsed_sec": 2.800417423248291,
+        "tokens_per_sec": 11.783957536488355,
+        "peak_vram_mib": 14357.1142578125,
+        "output_sha256": "910ac97c970f239a3887edd27cede7f8b894b8515225e6549bbfcfdc55a0db4b",
+        "sample_text": "La largeur des passages et la circulation entre le canap\u00e9 et la table basse sont suffisantes pour permettre une circulation facile et sans obstacle."
+      },
+      "sampling": {
+        "output_tokens": 33,
+        "elapsed_sec": 2.80743670463562,
+        "tokens_per_sec": 11.754494748006474,
+        "peak_vram_mib": 14357.11376953125,
+        "sample_text": "La largeur des passages et la circulation entre le canap\u00e9 et la table basse sont suffisantes pour permettre une circulation facile et sans obstacle."
+      }
+    },
+    {
+      "test_case": "T3_Architectural_Norms_TextOnly",
+      "type": "text_only",
+      "input_tokens": 50,
+      "greedy": {
+        "output_tokens": 150,
+        "elapsed_sec": 11.856532096862793,
+        "tokens_per_sec": 12.651254074510506,
+        "peak_vram_mib": 14168.15966796875,
+        "output_sha256": "13b6f0f682df7edc7669b14fc7607b387e8ccca5038c484a894c3b7eae88b8e3",
+        "sample_text": "Selon les normes d'accessibilit\u00e9 PMR (Personnes \u00e0 Mobilit\u00e9 R\u00e9duite), les dimensions minimales recommand\u00e9es pour une circulation principale dans un logement sont les suivantes :\n\n- Pour une circulation"
+      },
+      "sampling": {
+        "output_tokens": 150,
+        "elapsed_sec": 11.097288608551025,
+        "tokens_per_sec": 13.516815259217227,
+        "peak_vram_mib": 14170.716796875,
+        "sample_text": "Selon les normes d'accessibilit\u00e9 PMR (Personnes \u00e0 Mobilit\u00e9 R\u00e9duite), les dimensions minimales recommand\u00e9es pour une circulation principale dans un logement sont les suivantes :\n\n- Pour une circulation"
+      }
+    }
+  ]
+}

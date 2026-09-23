@@ -1,0 +1,50 @@
+{
+  "manifest.jsonl": {
+    "sha256": "6560747bccaa696a2ac7488bd5594d3c7a482c2aa4eb58460fcbcc99f830ea06",
+    "size_bytes": 12008657
+  },
+  "dataset_manifest.jsonl": {
+    "sha256": "6560747bccaa696a2ac7488bd5594d3c7a482c2aa4eb58460fcbcc99f830ea06",
+    "size_bytes": 12008657
+  },
+  "train.jsonl": {
+    "sha256": "227ba7db7769e3f25d365a33efd03126e18612cf5821f1f23dcd2342a701e849",
+    "size_bytes": 9302614
+  },
+  "validation.jsonl": {
+    "sha256": "c543a319321534f016c94aeb8ee74503bc8f01511c232ec91394d69a307467d2",
+    "size_bytes": 1187887
+  },
+  "test.jsonl": {
+    "sha256": "aaba73433c9ccea7a5c6134154577ea80591e23755665794bec603ebdf53053f",
+    "size_bytes": 1518156
+  },
+  "dataset_config.json": {
+    "sha256": "9c0908c4c2bc25c647cfde7d885e4d8fe9ba507fb00fb79ce42852942ea60d6c",
+    "size_bytes": 1556
+  },
+  "DATA_CAPABILITY_AUDIT.md": {
+    "sha256": "826db52b3a1b015e11c65eb101abb1c673bdbaef8f62354b7c482cd2db8149b2",
+    "size_bytes": 8588
+  },
+  "SPATIAL_RELATION_DEFINITIONS.md": {
+    "sha256": "75fd23aa072ef9f3a5866e58edec80cf788d652221f47ee2e987efac06bc49b8",
+    "size_bytes": 7068
+  },
+  "SPLIT_REPORT.md": {
+    "sha256": "18977a6f1bfbf8f24c033723debd94c4c600eac39c7a480188375474284ebf49",
+    "size_bytes": 2923
+  },
+  "LEAKAGE_REPORT.md": {
+    "sha256": "4da1829cd14ed3d2439645ad9c19fcaa6b37b58de8a8ae159e9d06a710323aba",
+    "size_bytes": 3359
+  },
+  "DATA_QUALITY_REPORT.md": {
+    "sha256": "b4bb16307f96e718598eaf3819cb969435ec675b0b1de2b6de9922ab337afdea",
+    "size_bytes": 3559
+  },
+  "MANUAL_AUDIT.md": {
+    "sha256": "2c4ca1ae1b5d21f488b858ee25176f11cec33e1d8bab5587eca5b8343f9ac3bb",
+    "size_bytes": 12016
+  }
+}

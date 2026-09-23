@@ -49,7 +49,7 @@ publishers, under the original publishers' terms.
 | `CORE_RPLAN` (RPLAN) | Plan topology & room reading | Academic Research Only [^1] | Non-commercial, research use, no raw redistribution |
 | `CORE_IL3D` (IL3D) | 3D Cartesian coordinates & clearance | Academic Research Only [^1] | Same as above |
 | `CORE_STRUCTSCAN3D` | Subjective perspective & depth | Open Research | See upstream release for exact terms |
-| `CORE_FLOORPLANCAD` | Quarantined (`LEGAL_REVIEW_REQUIRED`) | CC-BY-SA 4.0 | Not used in any trained/evaluated pathway pending legal review — see [`DATASET.md` §3.2](DATASET.md#32-floorplancad-legal-quarantine) |
+| `CORE_FLOORPLANCAD` | Quarantined & Excluded (`LEGAL_REVIEW_REQUIRED`) | CC-BY-SA 4.0 / CC-BY-NC 4.0 (Conflicting upstream) [^2] | Strictly excluded from active training corpus; 0 assets in splits — see [`DATASET.md` §3.2](DATASET.md#32-floorplancad-legal-quarantine) and [`PDR-2026-001`](docs/datasets/PROVENANCE_DECISION_RECORD_FLOORPLANCAD.md) |
 | `CORE_IFC_BENCH` | BIM schema entities & axonometric views | CC-BY 4.0 / Open | |
 | `CORE_BUILDINGSMART_IFC` | IFC schema validation & testbeds | Open Standard (buildingSMART) | |
 | `CORE_RESBIM_PAIRED` | Ground-truth multimodal 2D/3D pairs | CC-BY 4.0 / MIT (per sub-source) | Only 10 genuine pairs exist in RAW |
@@ -69,6 +69,14 @@ non-commercial use for research/academic purposes, no redistribution of raw
 assets. AXIS does not alter or sublicense these terms — see
 [`DATASET.md` footnote 1](DATASET.md#1-physical-sources--distribution) for
 the full text of this caveat.
+
+[^2]: Upstream Voxel51 Hugging Face repository metadata specifies `cc-by-sa-4.0`,
+while repository README text (lines 109, 130) and the original ICCV 2021
+publication specify `CC-BY-NC 4.0` / non-commercial research use only. The
+original hosting project (`floorplancad.github.io`) shut down in 2022. Due to this
+contradiction, FloorPlanCAD is quarantined under `LEGAL_REVIEW_REQUIRED` and
+strictly excluded from all active training configurations. See
+[`docs/datasets/PROVENANCE_DECISION_RECORD_FLOORPLANCAD.md`](docs/datasets/PROVENANCE_DECISION_RECORD_FLOORPLANCAD.md).
 
 This table is a convenience index, not a legal opinion. See
 [`DATASET.md`](DATASET.md) §1 for the authoritative, actively maintained

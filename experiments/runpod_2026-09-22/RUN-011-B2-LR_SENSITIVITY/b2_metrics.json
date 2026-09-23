@@ -1,0 +1,27 @@
+{
+  "run_id": "RUN-011-B2-LR_SENSITIVITY",
+  "timestamp": "2026-09-22 22:28:38 UTC",
+  "tested_learning_rates": {
+    "5e-5": {
+      "train_loss": 1.9516800045967102,
+      "eval_loss": 1.9667564630508423,
+      "runtime_sec": 68.81230187416077,
+      "peak_vram_mib": 13835.16162109375,
+      "gradient_norm_max": 0.3660118281841278
+    },
+    "1e-4_reference_run002": {
+      "train_loss": 1.9310751557350159,
+      "eval_loss": 1.9337265491485596,
+      "runtime_sec": 66.2427,
+      "peak_vram_mib": 11756.6728515625
+    },
+    "2e-4": {
+      "train_loss": 1.8924736976623535,
+      "eval_loss": 1.8701330423355103,
+      "runtime_sec": 67.97566342353821,
+      "peak_vram_mib": 15915.16162109375,
+      "gradient_norm_max": 0.4112309217453003
+    }
+  },
+  "verdict": "STABLE_ACROSS_GRID"
+}

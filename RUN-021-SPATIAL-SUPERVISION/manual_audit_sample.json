@@ -1,0 +1,3468 @@
+[
+  {
+    "example_id": "archi_pilot_0662_TASK_A_ROOM_COUNT",
+    "asset_id": "archi_pilot_0662",
+    "source_id": "CORE_RPLAN",
+    "split": "validation",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "ROOM_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de pièces intérieures distinctes (surfaces blanches closes) composent ce plan d'étage ?",
+    "answer": "Ce plan d'étage comprend exactement 7 pièces intérieures distinctes.",
+    "short_answer": "7",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "room_count": 7
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "ROOMS",
+      "value": 7
+    },
+    "geometry_reference": {
+      "room_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/52759.png",
+      "sha256": "1198786b7c424f321affe30f6ac4f3e2b29586baf0e5b360bdb62c0306c1546a",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0662.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0662.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de pièces intérieures distinctes (surfaces blanches closes) composent ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan d'étage comprend exactement 7 pièces intérieures distinctes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0121_TASK_B_DIRECTION",
+    "asset_id": "archi_pilot_0121",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_B_SPATIAL_RELATION",
+    "task_type": "DIRECTIONAL_RELATION",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle est la position relative de la pièce délimitée par la boîte englobante [57, 135, 64, 184] par rapport à la pièce délimitée par la boîte [196, 138, 200, 178] ?",
+    "answer": "La pièce [57, 135, 64, 184] est située au-dessus de la pièce [196, 138, 200, 178].",
+    "short_answer": "au-dessus de",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "relation": "ABOVE",
+      "subject_center": [
+        159.5,
+        60.4
+      ],
+      "object_center": [
+        158.0,
+        198.0
+      ]
+    },
+    "relation": {
+      "type": "ABOVE",
+      "subject_id": 1,
+      "object_id": 6
+    },
+    "geometry_reference": {
+      "subject_bbox": [
+        57,
+        135,
+        64,
+        184
+      ],
+      "object_bbox": [
+        196,
+        138,
+        200,
+        178
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/19577.png",
+      "sha256": "a3d640a846f84de16cf019cd172d67c14e2fc2af74205a97f490e8d330b54f14",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0121.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0121.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle est la position relative de la pièce délimitée par la boîte englobante [57, 135, 64, 184] par rapport à la pièce délimitée par la boîte [196, 138, 200, 178] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce [57, 135, 64, 184] est située au-dessus de la pièce [196, 138, 200, 178]."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0032_TASK_G_SHORTEST_PATH",
+    "asset_id": "archi_pilot_0032",
+    "source_id": "CORE_RPLAN",
+    "split": "test",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "MULTI_HOP_REACHABILITY",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [36, 118, 57, 170] à la pièce [209, 87, 221, 170] ?",
+    "answer": "Le trajet le plus court nécessite de franchir exactement 3 portes.",
+    "short_answer": "3 portes",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "shortest_path_doors": 3
+    },
+    "relation": {
+      "type": "SHORTEST_PATH_LENGTH",
+      "subject_id": 2,
+      "object_id": 5,
+      "doors": 3
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        36,
+        118,
+        57,
+        170
+      ],
+      "room2_bbox": [
+        209,
+        87,
+        221,
+        170
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/64566.png",
+      "sha256": "ea941fd5d40004ef670d966789a920f97d2c57bf93fa9dc661f48c1de72b720e",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0032.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0032.png"
+          },
+          {
+            "type": "text",
+            "text": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [36, 118, 57, 170] à la pièce [209, 87, 221, 170] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le trajet le plus court nécessite de franchir exactement 3 portes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0766_TASK_D_CONNECTED_NEG",
+    "asset_id": "archi_pilot_0766",
+    "source_id": "CORE_RPLAN",
+    "split": "validation",
+    "task_family": "TASK_D_CONNECTIVITY",
+    "task_type": "DOOR_CONNECTIVITY_NEGATIVE",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "La pièce délimitée par [29, 108, 42, 146] et la pièce délimitée par [49, 150, 100, 188] sont-elles directement reliées par une porte de passage (repère vert) ?",
+    "answer": "Non, il n'existe aucune porte directe reliant ces deux pièces.",
+    "short_answer": "Non",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "connected": false
+    },
+    "relation": {
+      "type": "NOT_CONNECTED_TO",
+      "subject_id": 1,
+      "object_id": 3
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        29,
+        108,
+        42,
+        146
+      ],
+      "room2_bbox": [
+        49,
+        150,
+        100,
+        188
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/53022.png",
+      "sha256": "4d61db65feaeb1300805b2b909b80cbca4db55947c5f7418c9b126e5fdd8d7b2",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0766.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0766.png"
+          },
+          {
+            "type": "text",
+            "text": "La pièce délimitée par [29, 108, 42, 146] et la pièce délimitée par [49, 150, 100, 188] sont-elles directement reliées par une porte de passage (repère vert) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Non, il n'existe aucune porte directe reliant ces deux pièces."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0288_TASK_G_CIRCULATION_HUB",
+    "asset_id": "archi_pilot_0288",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "CIRCULATION_HUB_IDENTIFICATION",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quel espace joue le rôle de noyau de distribution central en connectant le plus grand nombre de portes d'accès ?",
+    "answer": "Le noyau de circulation central est la pièce délimitée par [47, 51, 161, 151], distribuant directement 6 portes d'accès.",
+    "short_answer": "[47, 51, 161, 151] (6 portes)",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "hub_room_id": 2,
+      "door_connections": 6,
+      "bbox": [
+        47,
+        51,
+        161,
+        151
+      ]
+    },
+    "relation": {
+      "type": "CIRCULATION_HUB",
+      "room_id": 2,
+      "degree": 6
+    },
+    "geometry_reference": {
+      "bbox": [
+        47,
+        51,
+        161,
+        151
+      ],
+      "door_degree": 6
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/70913.png",
+      "sha256": "3bd2f0a483a68a771f733452f4ea2af7fa7eb1151b4535bdb162f9fa0d690fe1",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0288.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0288.png"
+          },
+          {
+            "type": "text",
+            "text": "Quel espace joue le rôle de noyau de distribution central en connectant le plus grand nombre de portes d'accès ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le noyau de circulation central est la pièce délimitée par [47, 51, 161, 151], distribuant directement 6 portes d'accès."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0258_TASK_A_ROOM_COUNT",
+    "asset_id": "archi_pilot_0258",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "ROOM_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de pièces intérieures distinctes (surfaces blanches closes) composent ce plan d'étage ?",
+    "answer": "Ce plan d'étage comprend exactement 6 pièces intérieures distinctes.",
+    "short_answer": "6",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "room_count": 6
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "ROOMS",
+      "value": 6
+    },
+    "geometry_reference": {
+      "room_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/55078.png",
+      "sha256": "aa1a7f22ee9b4d480c09563531f5c7dce2a512d4c32839afdb81b21454f88d6c",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0258.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0258.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de pièces intérieures distinctes (surfaces blanches closes) composent ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan d'étage comprend exactement 6 pièces intérieures distinctes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0235_TASK_G_SHORTEST_PATH",
+    "asset_id": "archi_pilot_0235",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "MULTI_HOP_REACHABILITY",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [69, 57, 107, 104] à la pièce [69, 108, 89, 135] ?",
+    "answer": "Le trajet le plus court nécessite de franchir exactement 2 portes.",
+    "short_answer": "2 portes",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "shortest_path_doors": 2
+    },
+    "relation": {
+      "type": "SHORTEST_PATH_LENGTH",
+      "subject_id": 1,
+      "object_id": 2,
+      "doors": 2
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        69,
+        57,
+        107,
+        104
+      ],
+      "room2_bbox": [
+        69,
+        108,
+        89,
+        135
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/45143.png",
+      "sha256": "2918558d5ae319b8ac82449538b9588927392f39f658002e685558de08a51e83",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0235.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0235.png"
+          },
+          {
+            "type": "text",
+            "text": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [69, 57, 107, 104] à la pièce [69, 108, 89, 135] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le trajet le plus court nécessite de franchir exactement 2 portes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0150_TASK_A_DOOR_COUNT",
+    "asset_id": "archi_pilot_0150",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "DOOR_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?",
+    "answer": "Ce plan comporte exactement 6 portes identifiées.",
+    "short_answer": "6",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "door_count": 6
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "DOORS",
+      "value": 6
+    },
+    "geometry_reference": {
+      "door_count": 6
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/56857.png",
+      "sha256": "b48c544644069137155a503872409d766b0b56e02f0fa6bfe664725d5c28b348",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0150.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0150.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan comporte exactement 6 portes identifiées."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0761_TASK_D_CONNECTED_POS",
+    "asset_id": "archi_pilot_0761",
+    "source_id": "CORE_RPLAN",
+    "split": "test",
+    "task_family": "TASK_D_CONNECTIVITY",
+    "task_type": "DOOR_CONNECTIVITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "La pièce délimitée par [45, 102, 82, 138] et la pièce délimitée par [86, 107, 212, 180] sont-elles directement reliées par une porte de passage (repère vert) ?",
+    "answer": "Oui, ces deux pièces sont directement reliées par une porte franchissable.",
+    "short_answer": "Oui",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "connected": true
+    },
+    "relation": {
+      "type": "CONNECTED_TO",
+      "subject_id": 1,
+      "object_id": 4
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        45,
+        102,
+        82,
+        138
+      ],
+      "room2_bbox": [
+        86,
+        107,
+        212,
+        180
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/46949.png",
+      "sha256": "54df6cc0507948200503e2e5e6ea733b5db59d4b3eb7d176d138a974345a76e9",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0761.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0761.png"
+          },
+          {
+            "type": "text",
+            "text": "La pièce délimitée par [45, 102, 82, 138] et la pièce délimitée par [86, 107, 212, 180] sont-elles directement reliées par une porte de passage (repère vert) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oui, ces deux pièces sont directement reliées par une porte franchissable."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0112_TASK_A_DOOR_COUNT",
+    "asset_id": "archi_pilot_0112",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "DOOR_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?",
+    "answer": "Ce plan comporte exactement 8 portes identifiées.",
+    "short_answer": "8",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "door_count": 8
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "DOORS",
+      "value": 8
+    },
+    "geometry_reference": {
+      "door_count": 8
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/22332.png",
+      "sha256": "55e471cc7c9c5ae83ddd4d2313b28f61298acd5bd795a3cbb5c3230e8319b4e3",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0112.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0112.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan comporte exactement 8 portes identifiées."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0700_TASK_A_DOOR_COUNT",
+    "asset_id": "archi_pilot_0700",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "DOOR_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?",
+    "answer": "Ce plan comporte exactement 7 portes identifiées.",
+    "short_answer": "7",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "door_count": 7
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "DOORS",
+      "value": 7
+    },
+    "geometry_reference": {
+      "door_count": 7
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/80230.png",
+      "sha256": "fdd46d215e1095153b20a00ef67a4f1d10b956997a21f55658b0973330052f0b",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0700.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0700.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan comporte exactement 7 portes identifiées."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0765_TASK_F_LARGEST_ROOM",
+    "asset_id": "archi_pilot_0765",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_F_COMPARATIVE_SPATIAL",
+    "task_type": "LARGEST_ROOM_IDENTIFICATION",
+    "difficulty": "MEDIUM",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?",
+    "answer": "La pièce de surface maximale est délimitée par la boîte englobante [95, 73, 138, 167] (4158 pixels).",
+    "short_answer": "[95, 73, 138, 167]",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "largest_room_id": 3,
+      "pixel_area": 4158,
+      "bbox": [
+        95,
+        73,
+        138,
+        167
+      ]
+    },
+    "relation": {
+      "type": "LARGEST_ROOM",
+      "room_id": 3
+    },
+    "geometry_reference": {
+      "bbox": [
+        95,
+        73,
+        138,
+        167
+      ],
+      "pixel_area": 4158
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/62283.png",
+      "sha256": "8aadbcc6455e6b0fe5042b04e06206456a598d80f8ae9bb4d8d48c05da602934",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0765.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0765.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce de surface maximale est délimitée par la boîte englobante [95, 73, 138, 167] (4158 pixels)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0920_TASK_G_SHORTEST_PATH",
+    "asset_id": "archi_pilot_0920",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "MULTI_HOP_REACHABILITY",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [47, 71, 74, 110] à la pièce [78, 71, 99, 88] ?",
+    "answer": "Le trajet le plus court nécessite de franchir exactement 3 portes.",
+    "short_answer": "3 portes",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "shortest_path_doors": 3
+    },
+    "relation": {
+      "type": "SHORTEST_PATH_LENGTH",
+      "subject_id": 1,
+      "object_id": 3,
+      "doors": 3
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        47,
+        71,
+        74,
+        110
+      ],
+      "room2_bbox": [
+        78,
+        71,
+        99,
+        88
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/38614.png",
+      "sha256": "870427cbf3095324f2ed0e91ee5e72e3a2afb53e978b0748816a04cffbaca525",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0920.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0920.png"
+          },
+          {
+            "type": "text",
+            "text": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [47, 71, 74, 110] à la pièce [78, 71, 99, 88] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le trajet le plus court nécessite de franchir exactement 3 portes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0565_TASK_F_LARGEST_ROOM",
+    "asset_id": "archi_pilot_0565",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_F_COMPARATIVE_SPATIAL",
+    "task_type": "LARGEST_ROOM_IDENTIFICATION",
+    "difficulty": "MEDIUM",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?",
+    "answer": "La pièce de surface maximale est délimitée par la boîte englobante [60, 47, 132, 171] (7526 pixels).",
+    "short_answer": "[60, 47, 132, 171]",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "largest_room_id": 2,
+      "pixel_area": 7526,
+      "bbox": [
+        60,
+        47,
+        132,
+        171
+      ]
+    },
+    "relation": {
+      "type": "LARGEST_ROOM",
+      "room_id": 2
+    },
+    "geometry_reference": {
+      "bbox": [
+        60,
+        47,
+        132,
+        171
+      ],
+      "pixel_area": 7526
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/6702.png",
+      "sha256": "87e368e0193fff8534ab1f68c5fc19479422d09b947447f5c1ab869cc951de55",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0565.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0565.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce de surface maximale est délimitée par la boîte englobante [60, 47, 132, 171] (7526 pixels)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0096_TASK_B_DIRECTION",
+    "asset_id": "archi_pilot_0096",
+    "source_id": "CORE_RPLAN",
+    "split": "test",
+    "task_family": "TASK_B_SPATIAL_RELATION",
+    "task_type": "DIRECTIONAL_RELATION",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle est la position relative de la pièce délimitée par la boîte englobante [122, 198, 163, 205] par rapport à la pièce délimitée par la boîte [169, 52, 196, 98] ?",
+    "answer": "La pièce [122, 198, 163, 205] est située à droite de la pièce [169, 52, 196, 98].",
+    "short_answer": "à droite de",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "relation": "RIGHT_OF",
+      "subject_center": [
+        201.5,
+        142.5
+      ],
+      "object_center": [
+        75.0,
+        182.5
+      ]
+    },
+    "relation": {
+      "type": "RIGHT_OF",
+      "subject_id": 5,
+      "object_id": 7
+    },
+    "geometry_reference": {
+      "subject_bbox": [
+        122,
+        198,
+        163,
+        205
+      ],
+      "object_bbox": [
+        169,
+        52,
+        196,
+        98
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/80763.png",
+      "sha256": "65330252a79b2cd7bcac2213d49d807a55549fd622515f5dc51c94abaed55514",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0096.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0096.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle est la position relative de la pièce délimitée par la boîte englobante [122, 198, 163, 205] par rapport à la pièce délimitée par la boîte [169, 52, 196, 98] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce [122, 198, 163, 205] est située à droite de la pièce [169, 52, 196, 98]."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0611_TASK_G_CIRCULATION_HUB",
+    "asset_id": "archi_pilot_0611",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "CIRCULATION_HUB_IDENTIFICATION",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quel espace joue le rôle de noyau de distribution central en connectant le plus grand nombre de portes d'accès ?",
+    "answer": "Le noyau de circulation central est la pièce délimitée par [37, 68, 189, 175], distribuant directement 7 portes d'accès.",
+    "short_answer": "[37, 68, 189, 175] (7 portes)",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "hub_room_id": 2,
+      "door_connections": 7,
+      "bbox": [
+        37,
+        68,
+        189,
+        175
+      ]
+    },
+    "relation": {
+      "type": "CIRCULATION_HUB",
+      "room_id": 2,
+      "degree": 7
+    },
+    "geometry_reference": {
+      "bbox": [
+        37,
+        68,
+        189,
+        175
+      ],
+      "door_degree": 7
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/12187.png",
+      "sha256": "63bfaccbfad5eed768f5bf00d72e3a6ae70a36c1c96788f8b2cb6242234b8fc4",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0611.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0611.png"
+          },
+          {
+            "type": "text",
+            "text": "Quel espace joue le rôle de noyau de distribution central en connectant le plus grand nombre de portes d'accès ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le noyau de circulation central est la pièce délimitée par [37, 68, 189, 175], distribuant directement 7 portes d'accès."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0439_TASK_B_DIRECTION",
+    "asset_id": "archi_pilot_0439",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_B_SPATIAL_RELATION",
+    "task_type": "DIRECTIONAL_RELATION",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle est la position relative de la pièce délimitée par la boîte englobante [43, 119, 74, 153] par rapport à la pièce délimitée par la boîte [198, 57, 214, 92] ?",
+    "answer": "La pièce [43, 119, 74, 153] est située au-dessus de la pièce [198, 57, 214, 92].",
+    "short_answer": "au-dessus de",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "relation": "ABOVE",
+      "subject_center": [
+        136.0,
+        58.3
+      ],
+      "object_center": [
+        74.2,
+        206.0
+      ]
+    },
+    "relation": {
+      "type": "ABOVE",
+      "subject_id": 1,
+      "object_id": 7
+    },
+    "geometry_reference": {
+      "subject_bbox": [
+        43,
+        119,
+        74,
+        153
+      ],
+      "object_bbox": [
+        198,
+        57,
+        214,
+        92
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/18762.png",
+      "sha256": "3b5c76916be55fa5d3c0c83ab91557cf190c88762ffceca647150040d784ba66",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0439.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0439.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle est la position relative de la pièce délimitée par la boîte englobante [43, 119, 74, 153] par rapport à la pièce délimitée par la boîte [198, 57, 214, 92] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce [43, 119, 74, 153] est située au-dessus de la pièce [198, 57, 214, 92]."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0039_TASK_G_SHORTEST_PATH",
+    "asset_id": "archi_pilot_0039",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "MULTI_HOP_REACHABILITY",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [30, 110, 57, 127] à la pièce [136, 148, 156, 173] ?",
+    "answer": "Le trajet le plus court nécessite de franchir exactement 2 portes.",
+    "short_answer": "2 portes",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "shortest_path_doors": 2
+    },
+    "relation": {
+      "type": "SHORTEST_PATH_LENGTH",
+      "subject_id": 2,
+      "object_id": 5,
+      "doors": 2
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        30,
+        110,
+        57,
+        127
+      ],
+      "room2_bbox": [
+        136,
+        148,
+        156,
+        173
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/80214.png",
+      "sha256": "5927de95fa30f64460e0089f86516e283a3a1a56ddeb6bca548caf93759b1ece",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0039.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0039.png"
+          },
+          {
+            "type": "text",
+            "text": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [30, 110, 57, 127] à la pièce [136, 148, 156, 173] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le trajet le plus court nécessite de franchir exactement 2 portes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0037_TASK_G_SHORTEST_PATH",
+    "asset_id": "archi_pilot_0037",
+    "source_id": "CORE_RPLAN",
+    "split": "test",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "MULTI_HOP_REACHABILITY",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [54, 62, 99, 93] à la pièce [54, 119, 99, 135] ?",
+    "answer": "Le trajet le plus court nécessite de franchir exactement 2 portes.",
+    "short_answer": "2 portes",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "shortest_path_doors": 2
+    },
+    "relation": {
+      "type": "SHORTEST_PATH_LENGTH",
+      "subject_id": 1,
+      "object_id": 3,
+      "doors": 2
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        54,
+        62,
+        99,
+        93
+      ],
+      "room2_bbox": [
+        54,
+        119,
+        99,
+        135
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/60243.png",
+      "sha256": "38b6dafbc41c2c81ef126cc266a5a8ffe45ab1f2050b4175869b76813fd5ff5c",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0037.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0037.png"
+          },
+          {
+            "type": "text",
+            "text": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [54, 62, 99, 93] à la pièce [54, 119, 99, 135] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le trajet le plus court nécessite de franchir exactement 2 portes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0103_TASK_A_DOOR_COUNT",
+    "asset_id": "archi_pilot_0103",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "DOOR_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?",
+    "answer": "Ce plan comporte exactement 7 portes identifiées.",
+    "short_answer": "7",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "door_count": 7
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "DOORS",
+      "value": 7
+    },
+    "geometry_reference": {
+      "door_count": 7
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/19269.png",
+      "sha256": "9a6ad474761ba4c76fbbacc5b4b37426042ce90badc18df3d6f3307071712762",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0103.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0103.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan comporte exactement 7 portes identifiées."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0231_TASK_A_DOOR_COUNT",
+    "asset_id": "archi_pilot_0231",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "DOOR_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?",
+    "answer": "Ce plan comporte exactement 8 portes identifiées.",
+    "short_answer": "8",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "door_count": 8
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "DOORS",
+      "value": 8
+    },
+    "geometry_reference": {
+      "door_count": 8
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/35021.png",
+      "sha256": "734cc1ee40a392def790bda98e1e9495e7a253204aa6907dcbff5936e65ce783",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0231.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0231.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan comporte exactement 8 portes identifiées."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0245_TASK_D_CONNECTED_POS",
+    "asset_id": "archi_pilot_0245",
+    "source_id": "CORE_RPLAN",
+    "split": "test",
+    "task_family": "TASK_D_CONNECTIVITY",
+    "task_type": "DOOR_CONNECTIVITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "La pièce délimitée par [67, 89, 190, 213] et la pièce délimitée par [75, 89, 125, 128] sont-elles directement reliées par une porte de passage (repère vert) ?",
+    "answer": "Oui, ces deux pièces sont directement reliées par une porte franchissable.",
+    "short_answer": "Oui",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "connected": true
+    },
+    "relation": {
+      "type": "CONNECTED_TO",
+      "subject_id": 1,
+      "object_id": 2
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        67,
+        89,
+        190,
+        213
+      ],
+      "room2_bbox": [
+        75,
+        89,
+        125,
+        128
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/57771.png",
+      "sha256": "73a60decd318d1f5e8b98db110cc421083613f40496e12e21ebb8098adbc26e9",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0245.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0245.png"
+          },
+          {
+            "type": "text",
+            "text": "La pièce délimitée par [67, 89, 190, 213] et la pièce délimitée par [75, 89, 125, 128] sont-elles directement reliées par une porte de passage (repère vert) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oui, ces deux pièces sont directement reliées par une porte franchissable."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0524_TASK_F_LARGEST_ROOM",
+    "asset_id": "archi_pilot_0524",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_F_COMPARATIVE_SPATIAL",
+    "task_type": "LARGEST_ROOM_IDENTIFICATION",
+    "difficulty": "MEDIUM",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?",
+    "answer": "La pièce de surface maximale est délimitée par la boîte englobante [71, 75, 189, 209] (8119 pixels).",
+    "short_answer": "[71, 75, 189, 209]",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "largest_room_id": 4,
+      "pixel_area": 8119,
+      "bbox": [
+        71,
+        75,
+        189,
+        209
+      ]
+    },
+    "relation": {
+      "type": "LARGEST_ROOM",
+      "room_id": 4
+    },
+    "geometry_reference": {
+      "bbox": [
+        71,
+        75,
+        189,
+        209
+      ],
+      "pixel_area": 8119
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/56054.png",
+      "sha256": "2c43c74fe78907e1dd82ea12332c194b5ac8ed63a5e9b44a91700329abd90924",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0524.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0524.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce de surface maximale est délimitée par la boîte englobante [71, 75, 189, 209] (8119 pixels)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0623_TASK_F_LARGEST_ROOM",
+    "asset_id": "archi_pilot_0623",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_F_COMPARATIVE_SPATIAL",
+    "task_type": "LARGEST_ROOM_IDENTIFICATION",
+    "difficulty": "MEDIUM",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?",
+    "answer": "La pièce de surface maximale est délimitée par la boîte englobante [63, 86, 194, 183] (7413 pixels).",
+    "short_answer": "[63, 86, 194, 183]",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "largest_room_id": 2,
+      "pixel_area": 7413,
+      "bbox": [
+        63,
+        86,
+        194,
+        183
+      ]
+    },
+    "relation": {
+      "type": "LARGEST_ROOM",
+      "room_id": 2
+    },
+    "geometry_reference": {
+      "bbox": [
+        63,
+        86,
+        194,
+        183
+      ],
+      "pixel_area": 7413
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/7461.png",
+      "sha256": "14cb3e6322f6c447c7d0f4a59e6acf0d8b35cc9bf356a7689d6843ae5aa27d4e",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0623.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0623.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce de surface maximale est délimitée par la boîte englobante [63, 86, 194, 183] (7413 pixels)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0034_TASK_D_CONNECTED_POS",
+    "asset_id": "archi_pilot_0034",
+    "source_id": "CORE_RPLAN",
+    "split": "test",
+    "task_family": "TASK_D_CONNECTIVITY",
+    "task_type": "DOOR_CONNECTIVITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "La pièce délimitée par [32, 124, 62, 159] et la pièce délimitée par [66, 106, 204, 178] sont-elles directement reliées par une porte de passage (repère vert) ?",
+    "answer": "Oui, ces deux pièces sont directement reliées par une porte franchissable.",
+    "short_answer": "Oui",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "connected": true
+    },
+    "relation": {
+      "type": "CONNECTED_TO",
+      "subject_id": 1,
+      "object_id": 3
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        32,
+        124,
+        62,
+        159
+      ],
+      "room2_bbox": [
+        66,
+        106,
+        204,
+        178
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/21653.png",
+      "sha256": "5f1a606ae4eec21b2df889994a8c8e0e4efee15eb6aaa9aa54724f84255ddc9d",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0034.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0034.png"
+          },
+          {
+            "type": "text",
+            "text": "La pièce délimitée par [32, 124, 62, 159] et la pièce délimitée par [66, 106, 204, 178] sont-elles directement reliées par une porte de passage (repère vert) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oui, ces deux pièces sont directement reliées par une porte franchissable."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0581_TASK_G_CIRCULATION_HUB",
+    "asset_id": "archi_pilot_0581",
+    "source_id": "CORE_RPLAN",
+    "split": "test",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "CIRCULATION_HUB_IDENTIFICATION",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quel espace joue le rôle de noyau de distribution central en connectant le plus grand nombre de portes d'accès ?",
+    "answer": "Le noyau de circulation central est la pièce délimitée par [73, 67, 181, 149], distribuant directement 5 portes d'accès.",
+    "short_answer": "[73, 67, 181, 149] (5 portes)",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "hub_room_id": 3,
+      "door_connections": 5,
+      "bbox": [
+        73,
+        67,
+        181,
+        149
+      ]
+    },
+    "relation": {
+      "type": "CIRCULATION_HUB",
+      "room_id": 3,
+      "degree": 5
+    },
+    "geometry_reference": {
+      "bbox": [
+        73,
+        67,
+        181,
+        149
+      ],
+      "door_degree": 5
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/13161.png",
+      "sha256": "163610a6782600174dc62c82ed81420576359dcff2de920ace99dad875404cf1",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0581.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0581.png"
+          },
+          {
+            "type": "text",
+            "text": "Quel espace joue le rôle de noyau de distribution central en connectant le plus grand nombre de portes d'accès ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le noyau de circulation central est la pièce délimitée par [73, 67, 181, 149], distribuant directement 5 portes d'accès."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0210_TASK_G_SHORTEST_PATH",
+    "asset_id": "archi_pilot_0210",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "MULTI_HOP_REACHABILITY",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [91, 59, 129, 83] à la pièce [92, 135, 134, 198] ?",
+    "answer": "Le trajet le plus court nécessite de franchir exactement 2 portes.",
+    "short_answer": "2 portes",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "shortest_path_doors": 2
+    },
+    "relation": {
+      "type": "SHORTEST_PATH_LENGTH",
+      "subject_id": 2,
+      "object_id": 3,
+      "doors": 2
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        91,
+        59,
+        129,
+        83
+      ],
+      "room2_bbox": [
+        92,
+        135,
+        134,
+        198
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/9963.png",
+      "sha256": "7435daaf211600529a96811f950efeddef68851c2faf6418c565986d4fe6dba3",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0210.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0210.png"
+          },
+          {
+            "type": "text",
+            "text": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [91, 59, 129, 83] à la pièce [92, 135, 134, 198] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le trajet le plus court nécessite de franchir exactement 2 portes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0740_TASK_D_CONNECTED_POS",
+    "asset_id": "archi_pilot_0740",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_D_CONNECTIVITY",
+    "task_type": "DOOR_CONNECTIVITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "La pièce délimitée par [67, 60, 109, 103] et la pièce délimitée par [67, 107, 167, 171] sont-elles directement reliées par une porte de passage (repère vert) ?",
+    "answer": "Oui, ces deux pièces sont directement reliées par une porte franchissable.",
+    "short_answer": "Oui",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "connected": true
+    },
+    "relation": {
+      "type": "CONNECTED_TO",
+      "subject_id": 1,
+      "object_id": 2
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        67,
+        60,
+        109,
+        103
+      ],
+      "room2_bbox": [
+        67,
+        107,
+        167,
+        171
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/40776.png",
+      "sha256": "ac2655d8f524d61db4678dfd15471078c497165a26597d3c5d8cb41dc3e50fd4",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0740.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0740.png"
+          },
+          {
+            "type": "text",
+            "text": "La pièce délimitée par [67, 60, 109, 103] et la pièce délimitée par [67, 107, 167, 171] sont-elles directement reliées par une porte de passage (repère vert) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oui, ces deux pièces sont directement reliées par une porte franchissable."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0672_TASK_F_LARGEST_ROOM",
+    "asset_id": "archi_pilot_0672",
+    "source_id": "CORE_RPLAN",
+    "split": "validation",
+    "task_family": "TASK_F_COMPARATIVE_SPATIAL",
+    "task_type": "LARGEST_ROOM_IDENTIFICATION",
+    "difficulty": "MEDIUM",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?",
+    "answer": "La pièce de surface maximale est délimitée par la boîte englobante [46, 112, 165, 185] (7552 pixels).",
+    "short_answer": "[46, 112, 165, 185]",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "largest_room_id": 3,
+      "pixel_area": 7552,
+      "bbox": [
+        46,
+        112,
+        165,
+        185
+      ]
+    },
+    "relation": {
+      "type": "LARGEST_ROOM",
+      "room_id": 3
+    },
+    "geometry_reference": {
+      "bbox": [
+        46,
+        112,
+        165,
+        185
+      ],
+      "pixel_area": 7552
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/75299.png",
+      "sha256": "5e1340790aeb8cdd71167bcdb5c5d600e53a072f44786c963ddc77fa8ff0a9e2",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0672.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0672.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce de surface maximale est délimitée par la boîte englobante [46, 112, 165, 185] (7552 pixels)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0725_TASK_D_CONNECTED_POS",
+    "asset_id": "archi_pilot_0725",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_D_CONNECTIVITY",
+    "task_type": "DOOR_CONNECTIVITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "La pièce délimitée par [32, 145, 67, 174] et la pièce délimitée par [49, 65, 144, 174] sont-elles directement reliées par une porte de passage (repère vert) ?",
+    "answer": "Oui, ces deux pièces sont directement reliées par une porte franchissable.",
+    "short_answer": "Oui",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "connected": true
+    },
+    "relation": {
+      "type": "CONNECTED_TO",
+      "subject_id": 1,
+      "object_id": 3
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        32,
+        145,
+        67,
+        174
+      ],
+      "room2_bbox": [
+        49,
+        65,
+        144,
+        174
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/77663.png",
+      "sha256": "0aec1e929ac8f504d2a656cd6608a9f7ff1d5cca168342f8a2f340ef94fa0d45",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0725.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0725.png"
+          },
+          {
+            "type": "text",
+            "text": "La pièce délimitée par [32, 145, 67, 174] et la pièce délimitée par [49, 65, 144, 174] sont-elles directement reliées par une porte de passage (repère vert) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oui, ces deux pièces sont directement reliées par une porte franchissable."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0565_TASK_B_DIRECTION",
+    "asset_id": "archi_pilot_0565",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_B_SPATIAL_RELATION",
+    "task_type": "DIRECTIONAL_RELATION",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle est la position relative de la pièce délimitée par la boîte englobante [60, 47, 77, 77] par rapport à la pièce délimitée par la boîte [105, 175, 132, 210] ?",
+    "answer": "La pièce [60, 47, 77, 77] est située à gauche de la pièce [105, 175, 132, 210].",
+    "short_answer": "à gauche de",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "relation": "LEFT_OF",
+      "subject_center": [
+        62.0,
+        68.3
+      ],
+      "object_center": [
+        192.5,
+        118.5
+      ]
+    },
+    "relation": {
+      "type": "LEFT_OF",
+      "subject_id": 1,
+      "object_id": 4
+    },
+    "geometry_reference": {
+      "subject_bbox": [
+        60,
+        47,
+        77,
+        77
+      ],
+      "object_bbox": [
+        105,
+        175,
+        132,
+        210
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/6702.png",
+      "sha256": "87e368e0193fff8534ab1f68c5fc19479422d09b947447f5c1ab869cc951de55",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0565.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0565.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle est la position relative de la pièce délimitée par la boîte englobante [60, 47, 77, 77] par rapport à la pièce délimitée par la boîte [105, 175, 132, 210] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce [60, 47, 77, 77] est située à gauche de la pièce [105, 175, 132, 210]."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0436_TASK_G_SHORTEST_PATH",
+    "asset_id": "archi_pilot_0436",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "MULTI_HOP_REACHABILITY",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [57, 130, 84, 152] à la pièce [125, 61, 144, 84] ?",
+    "answer": "Le trajet le plus court nécessite de franchir exactement 2 portes.",
+    "short_answer": "2 portes",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "shortest_path_doors": 2
+    },
+    "relation": {
+      "type": "SHORTEST_PATH_LENGTH",
+      "subject_id": 1,
+      "object_id": 4,
+      "doors": 2
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        57,
+        130,
+        84,
+        152
+      ],
+      "room2_bbox": [
+        125,
+        61,
+        144,
+        84
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/66122.png",
+      "sha256": "03284ac4db3bd038de3dff626b26e309b58180a5d9895f43e0082218b18f1f93",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0436.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0436.png"
+          },
+          {
+            "type": "text",
+            "text": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [57, 130, 84, 152] à la pièce [125, 61, 144, 84] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le trajet le plus court nécessite de franchir exactement 2 portes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0232_TASK_G_CIRCULATION_HUB",
+    "asset_id": "archi_pilot_0232",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "CIRCULATION_HUB_IDENTIFICATION",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quel espace joue le rôle de noyau de distribution central en connectant le plus grand nombre de portes d'accès ?",
+    "answer": "Le noyau de circulation central est la pièce délimitée par [80, 61, 183, 150], distribuant directement 5 portes d'accès.",
+    "short_answer": "[80, 61, 183, 150] (5 portes)",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "hub_room_id": 3,
+      "door_connections": 5,
+      "bbox": [
+        80,
+        61,
+        183,
+        150
+      ]
+    },
+    "relation": {
+      "type": "CIRCULATION_HUB",
+      "room_id": 3,
+      "degree": 5
+    },
+    "geometry_reference": {
+      "bbox": [
+        80,
+        61,
+        183,
+        150
+      ],
+      "door_degree": 5
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/78157.png",
+      "sha256": "4d783943aff4c648e0ffbb1b6747811ffbb784c33ed22c6c7948e63175396335",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0232.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0232.png"
+          },
+          {
+            "type": "text",
+            "text": "Quel espace joue le rôle de noyau de distribution central en connectant le plus grand nombre de portes d'accès ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le noyau de circulation central est la pièce délimitée par [80, 61, 183, 150], distribuant directement 5 portes d'accès."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0467_TASK_A_DOOR_COUNT",
+    "asset_id": "archi_pilot_0467",
+    "source_id": "CORE_RPLAN",
+    "split": "test",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "DOOR_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?",
+    "answer": "Ce plan comporte exactement 7 portes identifiées.",
+    "short_answer": "7",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "door_count": 7
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "DOORS",
+      "value": 7
+    },
+    "geometry_reference": {
+      "door_count": 7
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/48844.png",
+      "sha256": "572ee1b9f7edcf3a8834fb769aa741b45907be7ac95d2b1b70a8509801ba0f02",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0467.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0467.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan comporte exactement 7 portes identifiées."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0610_TASK_F_LARGEST_ROOM",
+    "asset_id": "archi_pilot_0610",
+    "source_id": "CORE_RPLAN",
+    "split": "test",
+    "task_family": "TASK_F_COMPARATIVE_SPATIAL",
+    "task_type": "LARGEST_ROOM_IDENTIFICATION",
+    "difficulty": "MEDIUM",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?",
+    "answer": "La pièce de surface maximale est délimitée par la boîte englobante [71, 86, 141, 164] (4790 pixels).",
+    "short_answer": "[71, 86, 141, 164]",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "largest_room_id": 4,
+      "pixel_area": 4790,
+      "bbox": [
+        71,
+        86,
+        141,
+        164
+      ]
+    },
+    "relation": {
+      "type": "LARGEST_ROOM",
+      "room_id": 4
+    },
+    "geometry_reference": {
+      "bbox": [
+        71,
+        86,
+        141,
+        164
+      ],
+      "pixel_area": 4790
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/59056.png",
+      "sha256": "217e4c3c26988d4c7d063c6d633fb0a77c67240644c8620b2301a68824f638ff",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0610.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0610.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce de surface maximale est délimitée par la boîte englobante [71, 86, 141, 164] (4790 pixels)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0292_TASK_A_ROOM_COUNT",
+    "asset_id": "archi_pilot_0292",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "ROOM_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de pièces intérieures distinctes (surfaces blanches closes) composent ce plan d'étage ?",
+    "answer": "Ce plan d'étage comprend exactement 5 pièces intérieures distinctes.",
+    "short_answer": "5",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "room_count": 5
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "ROOMS",
+      "value": 5
+    },
+    "geometry_reference": {
+      "room_ids": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/75854.png",
+      "sha256": "0431491906ae129eae041d935a380ed3768d043a47846da5c9d8b00cafd2328f",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0292.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0292.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de pièces intérieures distinctes (surfaces blanches closes) composent ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan d'étage comprend exactement 5 pièces intérieures distinctes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0836_TASK_A_ROOM_COUNT",
+    "asset_id": "archi_pilot_0836",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "ROOM_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de pièces intérieures distinctes (surfaces blanches closes) composent ce plan d'étage ?",
+    "answer": "Ce plan d'étage comprend exactement 6 pièces intérieures distinctes.",
+    "short_answer": "6",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "room_count": 6
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "ROOMS",
+      "value": 6
+    },
+    "geometry_reference": {
+      "room_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/26488.png",
+      "sha256": "72d383d0c755f3466237ef461fe42005582ca2bde98fd502a82925dc3ae26fbc",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0836.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0836.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de pièces intérieures distinctes (surfaces blanches closes) composent ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan d'étage comprend exactement 6 pièces intérieures distinctes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0897_TASK_D_CONNECTED_POS",
+    "asset_id": "archi_pilot_0897",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_D_CONNECTIVITY",
+    "task_type": "DOOR_CONNECTIVITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "La pièce délimitée par [58, 86, 101, 120] et la pièce délimitée par [67, 87, 190, 194] sont-elles directement reliées par une porte de passage (repère vert) ?",
+    "answer": "Oui, ces deux pièces sont directement reliées par une porte franchissable.",
+    "short_answer": "Oui",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "connected": true
+    },
+    "relation": {
+      "type": "CONNECTED_TO",
+      "subject_id": 1,
+      "object_id": 3
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        58,
+        86,
+        101,
+        120
+      ],
+      "room2_bbox": [
+        67,
+        87,
+        190,
+        194
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/45464.png",
+      "sha256": "eb2b14939d3b7e0363f8ad178d113fc17bcac23a3c47a54e0e46713310a1a0e4",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0897.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0897.png"
+          },
+          {
+            "type": "text",
+            "text": "La pièce délimitée par [58, 86, 101, 120] et la pièce délimitée par [67, 87, 190, 194] sont-elles directement reliées par une porte de passage (repère vert) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oui, ces deux pièces sont directement reliées par une porte franchissable."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0013_TASK_G_CIRCULATION_HUB",
+    "asset_id": "archi_pilot_0013",
+    "source_id": "CORE_RPLAN",
+    "split": "test",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "CIRCULATION_HUB_IDENTIFICATION",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quel espace joue le rôle de noyau de distribution central en connectant le plus grand nombre de portes d'accès ?",
+    "answer": "Le noyau de circulation central est la pièce délimitée par [57, 75, 147, 182], distribuant directement 6 portes d'accès.",
+    "short_answer": "[57, 75, 147, 182] (6 portes)",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "hub_room_id": 4,
+      "door_connections": 6,
+      "bbox": [
+        57,
+        75,
+        147,
+        182
+      ]
+    },
+    "relation": {
+      "type": "CIRCULATION_HUB",
+      "room_id": 4,
+      "degree": 6
+    },
+    "geometry_reference": {
+      "bbox": [
+        57,
+        75,
+        147,
+        182
+      ],
+      "door_degree": 6
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/2168.png",
+      "sha256": "c131ab23b94d3fe37c019fbc4ab1a435adf266c9645ff77918d46119c9b9399f",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0013.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0013.png"
+          },
+          {
+            "type": "text",
+            "text": "Quel espace joue le rôle de noyau de distribution central en connectant le plus grand nombre de portes d'accès ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le noyau de circulation central est la pièce délimitée par [57, 75, 147, 182], distribuant directement 6 portes d'accès."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0784_TASK_B_DIRECTION",
+    "asset_id": "archi_pilot_0784",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_B_SPATIAL_RELATION",
+    "task_type": "DIRECTIONAL_RELATION",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle est la position relative de la pièce délimitée par la boîte englobante [58, 174, 105, 208] par rapport à la pièce délimitée par la boîte [111, 49, 128, 66] ?",
+    "answer": "La pièce [58, 174, 105, 208] est située à droite de la pièce [111, 49, 128, 66].",
+    "short_answer": "à droite de",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "relation": "RIGHT_OF",
+      "subject_center": [
+        189.8,
+        78.3
+      ],
+      "object_center": [
+        57.2,
+        119.5
+      ]
+    },
+    "relation": {
+      "type": "RIGHT_OF",
+      "subject_id": 3,
+      "object_id": 6
+    },
+    "geometry_reference": {
+      "subject_bbox": [
+        58,
+        174,
+        105,
+        208
+      ],
+      "object_bbox": [
+        111,
+        49,
+        128,
+        66
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/22592.png",
+      "sha256": "56dd5938f131837623ae0cc71347428aad69e24f360f420c0c8488a36b477716",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0784.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0784.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle est la position relative de la pièce délimitée par la boîte englobante [58, 174, 105, 208] par rapport à la pièce délimitée par la boîte [111, 49, 128, 66] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce [58, 174, 105, 208] est située à droite de la pièce [111, 49, 128, 66]."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0832_TASK_D_CONNECTED_POS",
+    "asset_id": "archi_pilot_0832",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_D_CONNECTIVITY",
+    "task_type": "DOOR_CONNECTIVITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "La pièce délimitée par [45, 85, 73, 103] et la pièce délimitée par [45, 58, 138, 199] sont-elles directement reliées par une porte de passage (repère vert) ?",
+    "answer": "Oui, ces deux pièces sont directement reliées par une porte franchissable.",
+    "short_answer": "Oui",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "connected": true
+    },
+    "relation": {
+      "type": "CONNECTED_TO",
+      "subject_id": 1,
+      "object_id": 2
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        45,
+        85,
+        73,
+        103
+      ],
+      "room2_bbox": [
+        45,
+        58,
+        138,
+        199
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/4739.png",
+      "sha256": "b49b685747ce3887d10083ca84143bfd034914bea392a5e5d662055b7b8be2f8",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0832.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0832.png"
+          },
+          {
+            "type": "text",
+            "text": "La pièce délimitée par [45, 85, 73, 103] et la pièce délimitée par [45, 58, 138, 199] sont-elles directement reliées par une porte de passage (repère vert) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oui, ces deux pièces sont directement reliées par une porte franchissable."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0170_TASK_F_LARGEST_ROOM",
+    "asset_id": "archi_pilot_0170",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_F_COMPARATIVE_SPATIAL",
+    "task_type": "LARGEST_ROOM_IDENTIFICATION",
+    "difficulty": "MEDIUM",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?",
+    "answer": "La pièce de surface maximale est délimitée par la boîte englobante [54, 75, 201, 152] (7336 pixels).",
+    "short_answer": "[54, 75, 201, 152]",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "largest_room_id": 3,
+      "pixel_area": 7336,
+      "bbox": [
+        54,
+        75,
+        201,
+        152
+      ]
+    },
+    "relation": {
+      "type": "LARGEST_ROOM",
+      "room_id": 3
+    },
+    "geometry_reference": {
+      "bbox": [
+        54,
+        75,
+        201,
+        152
+      ],
+      "pixel_area": 7336
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/23875.png",
+      "sha256": "add83a8ba538a108e017fc7b38af05f985e7f8566ea75d9fdc2a86e42924c35b",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0170.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0170.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce de surface maximale est délimitée par la boîte englobante [54, 75, 201, 152] (7336 pixels)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0722_TASK_A_DOOR_COUNT",
+    "asset_id": "archi_pilot_0722",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "DOOR_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?",
+    "answer": "Ce plan comporte exactement 6 portes identifiées.",
+    "short_answer": "6",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "door_count": 6
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "DOORS",
+      "value": 6
+    },
+    "geometry_reference": {
+      "door_count": 6
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/68976.png",
+      "sha256": "af7107695844b5c9f4abc503073496346849d78211d5c11575e22546c799facb",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0722.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0722.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de portes ou passages de liaison (marqués en vert) sont répertoriés sur ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan comporte exactement 6 portes identifiées."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0440_TASK_A_ROOM_COUNT",
+    "asset_id": "archi_pilot_0440",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "ROOM_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de pièces intérieures distinctes (surfaces blanches closes) composent ce plan d'étage ?",
+    "answer": "Ce plan d'étage comprend exactement 6 pièces intérieures distinctes.",
+    "short_answer": "6",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "room_count": 6
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "ROOMS",
+      "value": 6
+    },
+    "geometry_reference": {
+      "room_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/15263.png",
+      "sha256": "1da2ac84d4f7e8b2c5923c088ba12904b506249f616c4366ea671f8214c85d1c",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0440.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0440.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de pièces intérieures distinctes (surfaces blanches closes) composent ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan d'étage comprend exactement 6 pièces intérieures distinctes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0355_TASK_F_LARGEST_ROOM",
+    "asset_id": "archi_pilot_0355",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_F_COMPARATIVE_SPATIAL",
+    "task_type": "LARGEST_ROOM_IDENTIFICATION",
+    "difficulty": "MEDIUM",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?",
+    "answer": "La pièce de surface maximale est délimitée par la boîte englobante [36, 104, 128, 203] (7238 pixels).",
+    "short_answer": "[36, 104, 128, 203]",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "largest_room_id": 2,
+      "pixel_area": 7238,
+      "bbox": [
+        36,
+        104,
+        128,
+        203
+      ]
+    },
+    "relation": {
+      "type": "LARGEST_ROOM",
+      "room_id": 2
+    },
+    "geometry_reference": {
+      "bbox": [
+        36,
+        104,
+        128,
+        203
+      ],
+      "pixel_area": 7238
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/57326.png",
+      "sha256": "fde669cff078069403d0d55886b972375d3ae170b4360375fc350c156844bbe3",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0355.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0355.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce de surface maximale est délimitée par la boîte englobante [36, 104, 128, 203] (7238 pixels)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0291_TASK_G_SHORTEST_PATH",
+    "asset_id": "archi_pilot_0291",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_G_LAYOUT_REASONING",
+    "task_type": "MULTI_HOP_REACHABILITY",
+    "difficulty": "HARD",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [50, 72, 84, 131] à la pièce [117, 92, 136, 114] ?",
+    "answer": "Le trajet le plus court nécessite de franchir exactement 2 portes.",
+    "short_answer": "2 portes",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "shortest_path_doors": 2
+    },
+    "relation": {
+      "type": "SHORTEST_PATH_LENGTH",
+      "subject_id": 1,
+      "object_id": 4,
+      "doors": 2
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        50,
+        72,
+        84,
+        131
+      ],
+      "room2_bbox": [
+        117,
+        92,
+        136,
+        114
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/2329.png",
+      "sha256": "b6da0a652b4b263bb56d9992e8b0906454f52f7c01a755449a63f3f19b3e7e90",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0291.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0291.png"
+          },
+          {
+            "type": "text",
+            "text": "En naviguant uniquement à travers les portes intérieures, quel est le nombre minimal de portes à franchir pour passer de la pièce [50, 72, 84, 131] à la pièce [117, 92, 136, 114] ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le trajet le plus court nécessite de franchir exactement 2 portes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0166_TASK_D_CONNECTED_POS",
+    "asset_id": "archi_pilot_0166",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_D_CONNECTIVITY",
+    "task_type": "DOOR_CONNECTIVITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "La pièce délimitée par [60, 60, 117, 104] et la pièce délimitée par [85, 96, 181, 191] sont-elles directement reliées par une porte de passage (repère vert) ?",
+    "answer": "Oui, ces deux pièces sont directement reliées par une porte franchissable.",
+    "short_answer": "Oui",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "connected": true
+    },
+    "relation": {
+      "type": "CONNECTED_TO",
+      "subject_id": 1,
+      "object_id": 2
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        60,
+        60,
+        117,
+        104
+      ],
+      "room2_bbox": [
+        85,
+        96,
+        181,
+        191
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/72630.png",
+      "sha256": "d2aac318be9a57941b5bc877a011dd314901a1e158a7869c44c1ba910c788677",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0166.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0166.png"
+          },
+          {
+            "type": "text",
+            "text": "La pièce délimitée par [60, 60, 117, 104] et la pièce délimitée par [85, 96, 181, 191] sont-elles directement reliées par une porte de passage (repère vert) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oui, ces deux pièces sont directement reliées par une porte franchissable."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0227_TASK_F_LARGEST_ROOM",
+    "asset_id": "archi_pilot_0227",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_F_COMPARATIVE_SPATIAL",
+    "task_type": "LARGEST_ROOM_IDENTIFICATION",
+    "difficulty": "MEDIUM",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?",
+    "answer": "La pièce de surface maximale est délimitée par la boîte englobante [47, 84, 194, 160] (7934 pixels).",
+    "short_answer": "[47, 84, 194, 160]",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "largest_room_id": 2,
+      "pixel_area": 7934,
+      "bbox": [
+        47,
+        84,
+        194,
+        160
+      ]
+    },
+    "relation": {
+      "type": "LARGEST_ROOM",
+      "room_id": 2
+    },
+    "geometry_reference": {
+      "bbox": [
+        47,
+        84,
+        194,
+        160
+      ],
+      "pixel_area": 7934
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/70629.png",
+      "sha256": "263875d2fc49123b06e6b6f86cdbc7c48090dd4a8aa6a1e1673a8d8f00cc6c78",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0227.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0227.png"
+          },
+          {
+            "type": "text",
+            "text": "Quelle pièce du logement présente la plus grande surface utile (en nombre de pixels) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "La pièce de surface maximale est délimitée par la boîte englobante [47, 84, 194, 160] (7934 pixels)."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0987_TASK_D_CONNECTED_POS",
+    "asset_id": "archi_pilot_0987",
+    "source_id": "CORE_RPLAN",
+    "split": "train",
+    "task_family": "TASK_D_CONNECTIVITY",
+    "task_type": "DOOR_CONNECTIVITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "La pièce délimitée par [69, 46, 105, 109] et la pièce délimitée par [69, 113, 105, 127] sont-elles directement reliées par une porte de passage (repère vert) ?",
+    "answer": "Oui, ces deux pièces sont directement reliées par une porte franchissable.",
+    "short_answer": "Oui",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "connected": true
+    },
+    "relation": {
+      "type": "CONNECTED_TO",
+      "subject_id": 1,
+      "object_id": 2
+    },
+    "geometry_reference": {
+      "room1_bbox": [
+        69,
+        46,
+        105,
+        109
+      ],
+      "room2_bbox": [
+        69,
+        113,
+        105,
+        127
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/42417.png",
+      "sha256": "b5c40253b2dd0d3dc0449ae02d983a1a69c3170bd948b4755f4321afc0d86f08",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0987.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0987.png"
+          },
+          {
+            "type": "text",
+            "text": "La pièce délimitée par [69, 46, 105, 109] et la pièce délimitée par [69, 113, 105, 127] sont-elles directement reliées par une porte de passage (repère vert) ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oui, ces deux pièces sont directement reliées par une porte franchissable."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "example_id": "archi_pilot_0789_TASK_A_ROOM_COUNT",
+    "asset_id": "archi_pilot_0789",
+    "source_id": "CORE_RPLAN",
+    "split": "test",
+    "task_family": "TASK_A_IDENTIFICATION",
+    "task_type": "ROOM_CARDINALITY",
+    "difficulty": "EASY",
+    "visual_requirement": "VISUAL_REQUIRED",
+    "question": "Combien de pièces intérieures distinctes (surfaces blanches closes) composent ce plan d'étage ?",
+    "answer": "Ce plan d'étage comprend exactement 6 pièces intérieures distinctes.",
+    "short_answer": "6",
+    "ground_truth_type": "DERIVED_GROUND_TRUTH",
+    "ground_truth": {
+      "room_count": 6
+    },
+    "relation": {
+      "type": "CARDINALITY",
+      "entity": "ROOMS",
+      "value": 6
+    },
+    "geometry_reference": {
+      "room_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "provenance": {
+      "source_dataset": "CORE_RPLAN",
+      "source_archive": "rplan_dataset.zip",
+      "source_member": "image/5132.png",
+      "sha256": "ed04636c1c08f71d61b44e0a4a94534bb97a41a91eede543891b24e0b3b162dd",
+      "width": 256,
+      "height": 256,
+      "format": "PNG"
+    },
+    "image": "images/archi_pilot_0789.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "image": "images/archi_pilot_0789.png"
+          },
+          {
+            "type": "text",
+            "text": "Combien de pièces intérieures distinctes (surfaces blanches closes) composent ce plan d'étage ?"
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ce plan d'étage comprend exactement 6 pièces intérieures distinctes."
+          }
+        ]
+      }
+    ]
+  }
+]

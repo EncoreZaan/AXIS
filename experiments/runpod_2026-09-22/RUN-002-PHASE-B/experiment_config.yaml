@@ -1,0 +1,51 @@
+dataset:
+  images_base_dir: /workspace/AXIS/experiment_package/dataset
+  max_pixels: 262144
+  max_seq_length: 1536
+  min_pixels: 200704
+  train_file: /workspace/AXIS/experiment_package/dataset/train.jsonl
+  validation_file: /workspace/AXIS/experiment_package/dataset/validation.jsonl
+lora:
+  bias: none
+  freeze_vision_tower: true
+  lora_alpha: 16
+  lora_dropout: 0.05
+  r: 8
+  target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+  task_type: CAUSAL_LM
+model:
+  device_map: auto
+  low_cpu_mem_usage: true
+  name_or_path: Qwen/Qwen2-VL-7B-Instruct
+  torch_dtype: bfloat16
+quantization:
+  bnb_4bit_compute_dtype: bfloat16
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_use_double_quant: true
+  load_in_4bit: true
+training:
+  bf16: true
+  dataloader_num_workers: 0
+  eval_strategy: epoch
+  fp16: false
+  gradient_accumulation_steps: 8
+  gradient_checkpointing: true
+  learning_rate: 0.0001
+  logging_steps: 1
+  lr_scheduler_type: cosine
+  num_train_epochs: 2
+  optim: paged_adamw_8bit
+  output_dir: /workspace/AXIS/experiments/runpod_2026-09-22/RUN-002-PHASE-B/outputs
+  per_device_eval_batch_size: 1
+  per_device_train_batch_size: 1
+  report_to: none
+  save_strategy: epoch
+  save_total_limit: 2
+  warmup_ratio: 0.05

@@ -1,0 +1,28 @@
+{
+  "run_id": "RUN-023-SPATIAL-GENERALIZATION-EVAL",
+  "timestamp": "2026-09-23T15:39:35.002264+00:00",
+  "total_test_samples": 1006,
+  "models": {
+    "BASE_MODEL": {
+      "id_hallucination_rate": 0.0,
+      "training_id_reuse_rate": 0.0,
+      "any_hallucination_rate": 0.0,
+      "id_hallucinated_samples": 0,
+      "training_id_reuse_samples": 0
+    },
+    "RUN-019": {
+      "id_hallucination_rate": 0.0,
+      "training_id_reuse_rate": 0.0,
+      "any_hallucination_rate": 0.0477,
+      "id_hallucinated_samples": 0,
+      "training_id_reuse_samples": 0
+    },
+    "RUN-022": {
+      "id_hallucination_rate": 0.0,
+      "training_id_reuse_rate": 0.0,
+      "any_hallucination_rate": 0.0,
+      "id_hallucinated_samples": 0,
+      "training_id_reuse_samples": 0
+    }
+  }
+}

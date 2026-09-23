@@ -1,0 +1,15 @@
+{
+  "run_id": "RUN-022-SPATIAL-GROUNDING-PILOT",
+  "total_train_samples": 6160,
+  "total_val_samples": 784,
+  "initial_val_loss": 1.3966630697250366,
+  "final_val_loss": 0.13969998061656952,
+  "val_loss_delta": -1.256963089108467,
+  "train_loss": 0.10546600310317365,
+  "total_steps": 2310,
+  "num_epochs": 3,
+  "total_train_duration_sec": 13941.3,
+  "samples_per_second": 1.326,
+  "steps_per_second": 0.166,
+  "timestamp": "2026-09-23T12:42:46.487909+00:00"
+}

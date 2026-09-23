@@ -1,0 +1,50 @@
+{
+  "manifest.json": {
+    "sha256": "8bec124e95a185565443b8b9d1aa58f0843338ea35f77c551bc6fc1b35696100",
+    "size_bytes": 834
+  },
+  "evaluation_config.json": {
+    "sha256": "01c0f85607ed953f6c9b955f91f47e3e578361f061c6e3e638a9243c03396342",
+    "size_bytes": 294
+  },
+  "results.json": {
+    "sha256": "c06544bd92353e5a5a4febd7970b560f4f1e3f389fe90063d210e35c79df6ffe",
+    "size_bytes": 3020104
+  },
+  "metrics.json": {
+    "sha256": "0a8dcaf4b4bcdc84d3792a980284aad24da316f5a366d8a874af6e84a4e51ad3",
+    "size_bytes": 13391
+  },
+  "predictions.jsonl": {
+    "sha256": "2db396416ee232ec6977a1321dd62d3af1fb9fa0e3ff42335d9dfe2063c378f8",
+    "size_bytes": 961380
+  },
+  "summary.json": {
+    "sha256": "663a1738fa26aa253a9bce7e9b03ea8cba5ca329f6b8f4b62d574ff4ec14ad98",
+    "size_bytes": 716
+  },
+  "reproducibility.json": {
+    "sha256": "c96eb4efc87f6bb8dcdfad1e6599854b341289fbbe7f0a2e8ac22bc70624bbab",
+    "size_bytes": 6731
+  },
+  "visual_dependency.json": {
+    "sha256": "5d987f42b5b2b6426ee96bc6da6a966c28062bfe9d672a1f96086f8ef91d8db3",
+    "size_bytes": 2017
+  },
+  "hallucination_analysis.json": {
+    "sha256": "9952eb2d5cec26fa71cc6e31be32e1ded4a47e847c8b711cf7ab78f8a248ad85",
+    "size_bytes": 779
+  },
+  "qualitative_evaluation.json": {
+    "sha256": "73cb43ec0294d1e380dec8f391bbaba684440c2d19cd24fed7c2dd78e444e670",
+    "size_bytes": 12138
+  },
+  "EVALUATION_REPORT.md": {
+    "sha256": "589b36a2bab6cb04230e7a2675508dbba09ebefbc4acb40c22fcae8eff539154",
+    "size_bytes": 4490
+  },
+  "WALKTHROUGH.md": {
+    "sha256": "694d45f162e029cbd8af501e831959654da737476f99c911f544beec3c6043cd",
+    "size_bytes": 655
+  }
+}

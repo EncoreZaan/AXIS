@@ -1,0 +1,242 @@
+{
+  "dataset_name": "AXIS_SPATIAL_SUPERVISION_V1",
+  "dataset_train_file": "C:\\Users\\teoba\\Documents\\Devs\\AXIS\\RUN-021-SPATIAL-SUPERVISION\\train.jsonl",
+  "total_train_samples": 6160,
+  "dry_run_steps_executed": 8,
+  "batch_size": 2,
+  "avg_loss": 6.4766,
+  "loss_finite": true,
+  "optimizer_step_called": false,
+  "weights_updated": false,
+  "weights_unmodified": true,
+  "initial_weights_sha256": "69d0872fa01b1144596e80a3c61ad3fea7f976d80f698dec553440c92a73018f",
+  "post_weights_sha256": "69d0872fa01b1144596e80a3c61ad3fea7f976d80f698dec553440c92a73018f",
+  "training_allowed": false,
+  "dry_run_verdict": "PASS",
+  "batch_records": [
+    {
+      "step": 1,
+      "sample_ids": [
+        "archi_pilot_0002_RESBIM_DOOR_COUNT",
+        "archi_pilot_0002_RESBIM_WINDOW_COUNT"
+      ],
+      "source_ids": [
+        "CORE_RESBIM_PAIRED",
+        "CORE_RESBIM_PAIRED"
+      ],
+      "task_types": [
+        "BIM_ELEMENT_CARDINALITY",
+        "BIM_ELEMENT_CARDINALITY"
+      ],
+      "images_shape": [
+        2,
+        3,
+        256,
+        256
+      ],
+      "input_ids_shape": [
+        2,
+        234
+      ],
+      "loss": 6.4980621337890625,
+      "avg_grad_norm": 0.6795,
+      "duration_sec": 0.0091
+    },
+    {
+      "step": 2,
+      "sample_ids": [
+        "archi_pilot_0002_RESBIM_WALL_COUNT",
+        "archi_pilot_0003_RESBIM_DOOR_COUNT"
+      ],
+      "source_ids": [
+        "CORE_RESBIM_PAIRED",
+        "CORE_RESBIM_PAIRED"
+      ],
+      "task_types": [
+        "BIM_ELEMENT_CARDINALITY",
+        "BIM_ELEMENT_CARDINALITY"
+      ],
+      "images_shape": [
+        2,
+        3,
+        256,
+        256
+      ],
+      "input_ids_shape": [
+        2,
+        234
+      ],
+      "loss": 6.475730895996094,
+      "avg_grad_norm": 0.6675,
+      "duration_sec": 0.0036
+    },
+    {
+      "step": 3,
+      "sample_ids": [
+        "archi_pilot_0003_RESBIM_WINDOW_COUNT",
+        "archi_pilot_0003_RESBIM_WALL_COUNT"
+      ],
+      "source_ids": [
+        "CORE_RESBIM_PAIRED",
+        "CORE_RESBIM_PAIRED"
+      ],
+      "task_types": [
+        "BIM_ELEMENT_CARDINALITY",
+        "BIM_ELEMENT_CARDINALITY"
+      ],
+      "images_shape": [
+        2,
+        3,
+        256,
+        256
+      ],
+      "input_ids_shape": [
+        2,
+        196
+      ],
+      "loss": 6.448603630065918,
+      "avg_grad_norm": 0.67,
+      "duration_sec": 0.0034
+    },
+    {
+      "step": 4,
+      "sample_ids": [
+        "archi_pilot_0004_RESBIM_DOOR_COUNT",
+        "archi_pilot_0004_RESBIM_WINDOW_COUNT"
+      ],
+      "source_ids": [
+        "CORE_RESBIM_PAIRED",
+        "CORE_RESBIM_PAIRED"
+      ],
+      "task_types": [
+        "BIM_ELEMENT_CARDINALITY",
+        "BIM_ELEMENT_CARDINALITY"
+      ],
+      "images_shape": [
+        2,
+        3,
+        256,
+        256
+      ],
+      "input_ids_shape": [
+        2,
+        234
+      ],
+      "loss": 6.490557670593262,
+      "avg_grad_norm": 0.6795,
+      "duration_sec": 0.0031
+    },
+    {
+      "step": 5,
+      "sample_ids": [
+        "archi_pilot_0004_RESBIM_WALL_COUNT",
+        "archi_pilot_0006_RESBIM_DOOR_COUNT"
+      ],
+      "source_ids": [
+        "CORE_RESBIM_PAIRED",
+        "CORE_RESBIM_PAIRED"
+      ],
+      "task_types": [
+        "BIM_ELEMENT_CARDINALITY",
+        "BIM_ELEMENT_CARDINALITY"
+      ],
+      "images_shape": [
+        2,
+        3,
+        256,
+        256
+      ],
+      "input_ids_shape": [
+        2,
+        234
+      ],
+      "loss": 6.471303462982178,
+      "avg_grad_norm": 0.6675,
+      "duration_sec": 0.0034
+    },
+    {
+      "step": 6,
+      "sample_ids": [
+        "archi_pilot_0006_RESBIM_WINDOW_COUNT",
+        "archi_pilot_0006_RESBIM_WALL_COUNT"
+      ],
+      "source_ids": [
+        "CORE_RESBIM_PAIRED",
+        "CORE_RESBIM_PAIRED"
+      ],
+      "task_types": [
+        "BIM_ELEMENT_CARDINALITY",
+        "BIM_ELEMENT_CARDINALITY"
+      ],
+      "images_shape": [
+        2,
+        3,
+        256,
+        256
+      ],
+      "input_ids_shape": [
+        2,
+        196
+      ],
+      "loss": 6.452662467956543,
+      "avg_grad_norm": 0.6696,
+      "duration_sec": 0.0045
+    },
+    {
+      "step": 7,
+      "sample_ids": [
+        "archi_pilot_0007_RESBIM_DOOR_COUNT",
+        "archi_pilot_0007_RESBIM_WINDOW_COUNT"
+      ],
+      "source_ids": [
+        "CORE_RESBIM_PAIRED",
+        "CORE_RESBIM_PAIRED"
+      ],
+      "task_types": [
+        "BIM_ELEMENT_CARDINALITY",
+        "BIM_ELEMENT_CARDINALITY"
+      ],
+      "images_shape": [
+        2,
+        3,
+        256,
+        256
+      ],
+      "input_ids_shape": [
+        2,
+        234
+      ],
+      "loss": 6.4980621337890625,
+      "avg_grad_norm": 0.6795,
+      "duration_sec": 0.0049
+    },
+    {
+      "step": 8,
+      "sample_ids": [
+        "archi_pilot_0007_RESBIM_WALL_COUNT",
+        "archi_pilot_0008_RESBIM_DOOR_COUNT"
+      ],
+      "source_ids": [
+        "CORE_RESBIM_PAIRED",
+        "CORE_RESBIM_PAIRED"
+      ],
+      "task_types": [
+        "BIM_ELEMENT_CARDINALITY",
+        "BIM_ELEMENT_CARDINALITY"
+      ],
+      "images_shape": [
+        2,
+        3,
+        256,
+        256
+      ],
+      "input_ids_shape": [
+        2,
+        234
+      ],
+      "loss": 6.4774556159973145,
+      "avg_grad_norm": 0.6677,
+      "duration_sec": 0.0048
+    }
+  ]
+}

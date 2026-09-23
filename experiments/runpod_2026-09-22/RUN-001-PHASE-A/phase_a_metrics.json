@@ -1,0 +1,43 @@
+{
+  "run_id": "RUN-001-PHASE-A",
+  "timestamp": "2026-09-22 21:51:11 UTC",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "stability_test": {
+    "iterations": 1846,
+    "elapsed_sec": 15.008331775665283,
+    "peak_temp_c": 58.0,
+    "peak_power_w": 320.5,
+    "avg_util_pct": 79.5,
+    "status": "PASS"
+  },
+  "memory_profiling": {
+    "idle": {
+      "torch_allocated_mib": 8.125,
+      "torch_reserved_mib": 20.0,
+      "smi_used_mib": 298.0
+    },
+    "processor_init": {
+      "torch_allocated_mib": 8.125
+    },
+    "model_loaded_4bit": {
+      "torch_allocated_mib": 5694.9619140625,
+      "smi_used_mib": 6074.0,
+      "load_time_sec": 265.6124954223633
+    },
+    "lora_injected": {
+      "torch_allocated_mib": 7857.505859375,
+      "smi_used_mib": 10314.0
+    },
+    "first_forward": {
+      "loss": 1.8006905317306519,
+      "torch_allocated_mib": 9506.78271484375,
+      "smi_used_mib": 10328.0
+    },
+    "first_backward": {
+      "torch_allocated_mib": 8515.89111328125,
+      "peak_torch_allocated_mib": 10566.775390625,
+      "smi_used_mib": 11474.0
+    }
+  },
+  "verdict": "PHASE_A_PASS"
+}

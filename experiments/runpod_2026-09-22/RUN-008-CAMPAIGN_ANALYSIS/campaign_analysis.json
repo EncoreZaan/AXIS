@@ -1,0 +1,90 @@
+{
+  "run_id": "RUN-008-CAMPAIGN_ANALYSIS",
+  "timestamp": "2026-09-22 22:30:00 UTC",
+  "target_model": "Qwen/Qwen2-VL-7B-Instruct",
+  "model_revision": "eed13092ef92e448dd6875b2a00151bd3f7db0ac",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "vram_total_mib": 24576,
+    "driver_version": "580.159.04",
+    "cuda_runtime": "12.4",
+    "pytorch_version": "2.6.0+cu124"
+  },
+  "prior_runs_audited": [
+    "RUN-001-PHASE-A",
+    "RUN-002-PHASE-B",
+    "RUN-003-PHASE-C",
+    "RUN-004-D1",
+    "RUN-005-D2",
+    "RUN-006-F",
+    "RUN-007-E1"
+  ],
+  "core_questions": {
+    "1_what_has_been_proven": {
+      "category": "ENGINEERING_EVIDENCE",
+      "findings": [
+        "CUDA 12.4 runtime and NVIDIA driver 580.159.04 are completely stable under continuous matmul load.",
+        "RTX 3090 thermal envelope remains safe (max 58.0?C at 320.5W peak under continuous load).",
+        "BitsAndBytes 4-bit NF4 quantization functions properly with bfloat16 compute dtype.",
+        "PEFT LoRA injection on attention and MLP projections (q, k, v, o, gate, up, down) works with frozen vision tower.",
+        "PyTorch 2.6.0 backward pass with activation checkpointing and paged_adamw_8bit executes without OOM (11.75 GiB peak VRAM at BS=1, Seq=1536, Res=512).",
+        "Hugging Face Trainer optimization loop, cosine schedule, warmup, and gradient accumulation operate stably.",
+        "Checkpoint serialization, state restoration, and training resume reproduce numerical trajectories without drift.",
+        "Seed stability (seed 42 vs 123) confirms deterministic training dynamics.",
+        "Qualitative multimodal inference pipeline generates formatted French architectural critique text."
+      ]
+    },
+    "2_what_has_not_been_proven": {
+      "category": "SCIENTIFIC_EVIDENCE_GAPS",
+      "findings": [
+        "Generalizable visual-spatial comprehension across diverse architectural layouts.",
+        "Multimodal spatial grounding (bounding box regression, dimensional estimation, topological verification).",
+        "Performance on the 14 cleared sources of Master Dataset v2 (65,342 assets).",
+        "Robustness against visual distribution shifts (plans, elevations, cross-sections, IFC renders).",
+        "Resistance to catastrophic forgetting of base vision-language capabilities.",
+        "Statistical significance of loss decrease on out-of-distribution held-out validation samples."
+      ]
+    },
+    "3_scientifically_meaningful_results": {
+      "verdict": "LIMITED_TO_OPTIMIZER_DYNAMICS",
+      "details": "Only the optimization trajectory consistency across seeds (RUN-005-D2) provides scientific signal regarding QLoRA hyperparameter convergence properties on small datasets. All other results represent engineering/runtime validation."
+    },
+    "4_engineering_vs_runtime_evidence": {
+      "engineering_evidence": [
+        "RUN-001-PHASE-A: Hardware, thermal, and step-by-step memory breakdown.",
+        "RUN-002-PHASE-B: End-to-end forward/backward pipeline execution.",
+        "RUN-003-PHASE-C: VRAM scaling envelope (BS=1 to 4, Res=512 to 768).",
+        "RUN-004-D1: Loss monotonicity over 3 epochs.",
+        "RUN-006-F: Checkpoint stop/resume state preservation.",
+        "RUN-007-E1: Multi-epoch trainer stability and qualitative inference pipeline."
+      ]
+    },
+    "5_loss_decrease_interpretation": {
+      "observation": "Train loss decreased from 1.9618 to 1.5130; eval loss decreased from 1.9584 to 1.7271 over 8 epochs in RUN-007-E1.",
+      "scientific_interpretation": "ARTIFICIAL_MEMORIZATION_AND_TEXT_ADAPTATION",
+      "explanation": "Because all 25 images (20 train, 5 validation) are byte-for-byte identical duplicates of sample_interior.jpg, the vision encoder generated an identical static token sequence for every sample. The LoRA adapter adapted purely to the textual formatting of French architectural critique templates. The eval loss decrease reflects memorization of stylistic syntactic patterns, not multimodal reasoning."
+    },
+    "6_highest_information_value_next": {
+      "recommended_focus": "CONTROLLED_ENGINEERING_ABLATIONS_AND_INFERENCE_BENCHMARKING",
+      "rationale": "Without a representative multi-image dataset, large runs cannot yield scientific domain insights. Controlled ablations (LoRA rank r=8 vs r=16, learning rate sensitivity, resolution scaling, inference profiling) deliver rigorous, reproducible engineering knowledge."
+    },
+    "7_dataset_actually_available": {
+      "classification": "RUNTIME_TEST_CORPUS",
+      "train_samples": 20,
+      "validation_samples": 5,
+      "test_samples": 0,
+      "unique_images": 1,
+      "total_images": 25,
+      "image_hash_sha256": "e6b036c6081a5c4f4219173c238d02beec00e00216e3dbbc5782230b95f3e350"
+    },
+    "8_can_real_cleared_corpus_be_reconstructed": {
+      "possible": false,
+      "reason": "Master Dataset v2 private image binaries and full parquets are excluded from git and not hosted on the pod. No external storage volume is mounted."
+    },
+    "9_largest_scientifically_valid_run_possible": {
+      "valid_scope": "ENGINEERING_ABLATION_CAMPAIGN",
+      "recommendation": "Execute Path B: LoRA Rank ablation (r=8 vs r=16), LR sensitivity (5e-5, 1e-4, 2e-4), Resolution comparison (512 vs 768), and Multimodal Inference Benchmarking, without fabricating claims of dataset scale."
+    }
+  },
+  "verdict": "COMPLETE"
+}

@@ -1,0 +1,17 @@
+{
+  "seed": 42,
+  "batch_size": 1,
+  "max_new_tokens": 64,
+  "temperature": 0.0,
+  "do_sample": false,
+  "min_pixels": 200704,
+  "max_pixels": 262144,
+  "vdi_conditions": [
+    "ORIGINAL",
+    "BLACK",
+    "ARCHITECTURAL_MASK",
+    "UNIFORM_NOISE",
+    "TEXT_ONLY"
+  ],
+  "vdi_threshold": 3.0
+}

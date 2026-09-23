@@ -1,0 +1,68 @@
+[
+  {
+    "run": "RUN-002-PHASE-B",
+    "path": "/workspace/AXIS/experiments/runpod_2026-09-22/RUN-002-PHASE-B/outputs/adapter_model.safetensors",
+    "r": 8,
+    "lr": 0.0001,
+    "res": 512,
+    "epochs": 2,
+    "exists": true,
+    "size_bytes": 80797976,
+    "sha256": "bbfca98b48d88a4ec46f12c79f67ae71049ccf7f7a5030b81d36f5ec8aa07c1d"
+  },
+  {
+    "run": "RUN-007-E1",
+    "path": "/workspace/AXIS/experiments/runpod_2026-09-22/RUN-007-E1/outputs/adapter_model.safetensors",
+    "r": 8,
+    "lr": 0.0001,
+    "res": 512,
+    "epochs": 8,
+    "exists": true,
+    "size_bytes": 80797976,
+    "sha256": "aff4e7f5761f5e320738d2a575fdf15722f63bbd5b9e9f53a88a5604954cb1b0"
+  },
+  {
+    "run": "RUN-010-B1",
+    "path": "/workspace/AXIS/experiments/runpod_2026-09-22/RUN-010-B1-LORA_RANK_ABLATION/outputs/adapter_model.safetensors",
+    "r": 16,
+    "lr": 0.0001,
+    "res": 512,
+    "epochs": 2,
+    "exists": true,
+    "size_bytes": 161539072,
+    "sha256": "fdc1cd3b322e4d229e2a3483c575d7d67def5a0a1fe5c9fc460336cb5a5bea6f"
+  },
+  {
+    "run": "RUN-011-LR5e-5",
+    "path": "/workspace/AXIS/experiments/runpod_2026-09-22/RUN-011-B2-LR_SENSITIVITY/outputs_lr_5e5/adapter_model.safetensors",
+    "r": 8,
+    "lr": 5e-05,
+    "res": 512,
+    "epochs": 2,
+    "exists": true,
+    "size_bytes": 80797976,
+    "sha256": "304c930d5f4799c60ac0590a2495a82a9e633897efa897585d58bded69727117"
+  },
+  {
+    "run": "RUN-011-LR2e-4",
+    "path": "/workspace/AXIS/experiments/runpod_2026-09-22/RUN-011-B2-LR_SENSITIVITY/outputs_lr_2e4/adapter_model.safetensors",
+    "r": 8,
+    "lr": 0.0002,
+    "res": 512,
+    "epochs": 2,
+    "exists": true,
+    "size_bytes": 80797976,
+    "sha256": "d0e8cda1c019401392102b1cd2b661fa0898123bbb0ac97378ba20da9ead52ce"
+  },
+  {
+    "run": "RUN-012-Res768",
+    "path": "/workspace/AXIS/experiments/runpod_2026-09-22/RUN-012-B3-RESOLUTION_SENSITIVITY/outputs/adapter_model.safetensors",
+    "r": 8,
+    "lr": 0.0001,
+    "res": 768,
+    "epochs": 2,
+    "exists": true,
+    "size_bytes": 80797976,
+    "sha256": "5834ec7445fe2e9b4f14129f9b7619f9b6dbc968fe4e92d960aef5c7fa0df683"
+  }
+]

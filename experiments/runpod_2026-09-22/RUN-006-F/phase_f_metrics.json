@@ -1,0 +1,13 @@
+{
+  "run_id": "RUN-006-F",
+  "checkpoint_used": "/workspace/AXIS/experiments/runpod_2026-09-22/RUN-006-F/outputs/checkpoint-3",
+  "resume_time_sec": 34.72648763656616,
+  "resume_status": "PASS",
+  "eval_metrics": {
+    "eval_loss": 1.9581905603408813,
+    "eval_runtime": 2.436,
+    "eval_samples_per_second": 2.053,
+    "eval_steps_per_second": 2.053,
+    "epoch": 2.0
+  }
+}

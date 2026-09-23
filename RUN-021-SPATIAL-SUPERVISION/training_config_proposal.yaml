@@ -1,0 +1,94 @@
+# ==============================================================================
+# AXIS — CANDIDATE TRAINING CONFIGURATION PROPOSAL (PHASE 6B CANDIDATE)
+# ==============================================================================
+# STATUS: PROPOSAL
+# TRAINING_ALLOWED: NO
+# EXECUTION_ALLOWED: NO
+# ==============================================================================
+
+proposal_metadata:
+  target_run_id: "RUN-022-SPATIAL-QLORA-PILOT"
+  proposal_date: "2026-09-23"
+  status: "PROPOSAL"
+  training_allowed: false
+  author: "AXIS Dataset Engineering & Scientific Preparation Agent"
+  objective: "Supervise VLM on grounded spatial and topological reasoning without template shortcuts."
+
+model:
+  base_model: "Qwen/Qwen2-VL-7B-Instruct"
+  model_revision: "eed13092ef92e448dd6875b2a00151bd3f7db0ac"
+  torch_dtype: "bfloat16"
+  device_map: "auto"
+  attn_implementation: "flash_attention_2"
+  quantization:
+    load_in_4bit: true
+    bnb_4bit_quant_type: "nf4"
+    bnb_4bit_compute_dtype: "bfloat16"
+    bnb_4bit_use_double_quant: true
+
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  bias: "none"
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  task_type: "CAUSAL_LM"
+
+vision_processing:
+  min_pixels: 200704    # ~448x448 px equivalent
+  max_pixels: 262144    # ~512x512 px (preserves exact 256x256 pixel grid of RPLAN)
+  fps: 1.0
+
+dataset:
+  name: "AXIS_SPATIAL_SUPERVISION_V1"
+  dataset_root: "RUN-021-SPATIAL-SUPERVISION"
+  train_file: "RUN-021-SPATIAL-SUPERVISION/train.jsonl"
+  validation_file: "RUN-021-SPATIAL-SUPERVISION/validation.jsonl"
+  test_file: "RUN-021-SPATIAL-SUPERVISION/test.jsonl"
+  images_base_dir: "RUN-021-SPATIAL-SUPERVISION/dataset"
+  seed: 42
+
+training_hyperparameters:
+  learning_rate: 1.0e-4
+  min_learning_rate: 1.0e-6
+  lr_scheduler_type: "cosine"
+  warmup_ratio: 0.05
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 8   # Effective batch size = 16
+  num_train_epochs: 3
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  gradient_checkpointing: true
+  logging_steps: 10
+  eval_steps: 50
+  save_steps: 100
+  evaluation_strategy: "steps"
+  save_strategy: "steps"
+  save_total_limit: 2
+  seed: 42
+
+candidate_evaluation_plan:
+  protocol: "AXIS_SPATIAL_BENCHMARK_SUITE"
+  evaluation_tasks:
+    - "EVAL_SPATIAL_CARDINALITY (Room count, Door count)"
+    - "EVAL_SPATIAL_DIRECTION (Left/Right/Above/Below accuracy)"
+    - "EVAL_SPATIAL_CONNECTIVITY (Positive and Negative door link accuracy)"
+    - "EVAL_SPATIAL_COMPARATIVE (Largest room localization)"
+    - "EVAL_SPATIAL_MULTIHOP (Shortest path hops, Circulation hub detection)"
+  visual_ablation_benchmarks:
+    - "CONDITION 1: Original Image"
+    - "CONDITION 2: 100% Solid Black Image"
+    - "CONDITION 3: Wall/Door Masked Image"
+    - "CONDITION 4: Unrelated Uniform Noise"
+    - "CONDITION 5: Text-Only (No Vision Tokens)"
+  scientific_falsification_criteria:
+    - "Visual Dependency Ratio: Accuracy(Original) / Accuracy(Black) must exceed 3.0"
+    - "Text-only accuracy must remain at chance level (< 25% for 4-way direction, < 55% for binary connectivity)"
+    - "Template similarity score must drop from 85.3% to < 15.0%"
