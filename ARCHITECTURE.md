@@ -69,7 +69,7 @@ flowchart TD
 #### B. Multimodal VLM Backbone: `Qwen2-VL-7B-Instruct + LoRA` `[EXPERIMENTAL]`
 - **Architecture:** Vision tower frozen (`model.model.visual.requires_grad = False`), LLM backbone adapted via 4-bit NormalFloat (NF4) double quantization with PEFT LoRA ($r=8, \alpha=16$).
 - **Multimodal Tokenization:** Custom `VisionLanguageDataCollator` aligning `pixel_values`, `image_grid_thw`, and M-RoPE 3D position embeddings (`mm_token_type_ids`).
-- **Status:** Proof-of-concept dry-run and 6-step feasibility run completed. Not validated for production reasoning.
+- **Status:** Beyond the initial proof-of-concept dry-run, a full spatial-grounding training pilot has since completed: `RUN-022` (2,310 optimizer steps / 3 epochs on `AXIS_SPATIAL_SUPERVISION_V1`) and its evaluation `RUN-023` (63.12% topological reasoning accuracy on 1,006 held-out samples, 100% format adherence, 0% ID hallucination). However, the pre-registered Visual Dependency Index came back **VDI = 1.28** against a required **≥ 3.0** threshold (`VDI_PASS: NO`) — visual dependency has **not** been demonstrated. Not validated for production reasoning; see [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) and [`docs/SCIENTIFIC_TIMELINE.md`](docs/SCIENTIFIC_TIMELINE.md) for the full record.
 
 ---
 

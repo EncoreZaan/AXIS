@@ -57,10 +57,15 @@ section) are this page's own public names for three internal components
 documented in `ARCHITECTURE.md` §2.3/2.5 (`SpatialRelationMLP`, the
 `Qwen2-VL-7B-Instruct + LoRA` adapter from `RUN-022`, and the planned
 `Unified Architectural Transformer`) — a presentation layer, not a rename
-of those documents' own identifiers. AXIS Studio is presented as planned
-and not yet started, because no implementation, interface, or mockup for
-it exists anywhere in this repository; do not add feature claims for it
-here until a real component exists to document.
+of those documents' own identifiers. AXIS Studio is a separate, real
+application in its own repository (`EncoreZaan/AXIS-Studio`), not a
+section of this repository or a planned feature — this page only links to
+it. Any feature claim made about Studio here must be verifiable against
+that repository's own source and README (see its V4 "Known limitations"
+section in particular: the in-app AXIS assistant is a deterministic
+rule-based mock engine, not model inference, and no deployed demo or
+automated tests exist there yet). Do not restate a Studio claim here that
+isn't backed by that repository.
 
 ## Accessibility & performance notes
 

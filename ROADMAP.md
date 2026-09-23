@@ -33,13 +33,12 @@ flowchart TD
         M10["Phase 4 Extended: 2D Vision Benchmark on ROOM_TOPOLOGY"]
     end
 
-    subgraph FUTURE ["FUTURE : Model Family, AXIS Studio & Scale"]
+    subgraph FUTURE ["FUTURE : Model Family & Scale"]
         M11["Specialized Pre-Training on Multi-Modal Architectural Signals"]
         M12["Deep Spatial & Regulatory Reasoning (Neufert / PMR / Eurocodes)"]
         M13["Inference Optimization: Quantization (NF4, AWQ, FP8) & Custom Kernels"]
         M14["DSpark Investigation: Acceleration benchmarking"]
         M15["Public Model Weights Release & Community Benchmarks"]
-        M16["AXIS Studio: Planned Workspace Environment (Not Started)"]
         M17["Unified Architectural Transformer: Next Planned AXIS Model"]
     end
 
@@ -98,5 +97,10 @@ flowchart TD
   - Custom geometric distance kernels (Triton/CUDA).
 - [ ] 🔵 **DSpark Acceleration Track:** Prospective investigation into DSpark for inference optimization and execution acceleration (pending physical benchmarks; no claims until verified). Purely planned — no implementation exists yet.
 - [ ] 🔵 **Public Model Checkpoints & Comprehensive Benchmark Suite:** Open release of trained weights with standardized architectural evaluation harness. License for any released checkpoint will be decided and stated at release time.
-- [ ] 🔵 **AXIS Studio:** Planned workspace environment to explore AXIS's outputs (plans, context, reasoning results) in one place. No interface, feature, or mockup exists in this repository yet — a stated direction, not an available product.
 - [ ] 🔵 **Unified Architectural Transformer (AXIS Model Family):** Joint attention across 2D rasters, 3D coordinates, and normative textual rules — the next planned member of the AXIS Models family, alongside the current `SpatialRelationMLP` and the experimental `Qwen2-VL-7B + LoRA` adapter (see [`ARCHITECTURE.md`](ARCHITECTURE.md) §2.5). No implementation exists to date.
+
+---
+
+### 5. Ecosystem: AXIS Studio (separate repository)
+
+AXIS Studio is **not** a roadmap item of this repository — it is a real, already-built workspace application maintained in its own separate repository, [`EncoreZaan/AXIS-Studio`](https://github.com/EncoreZaan/AXIS-Studio). It is currently at V4 (project workspace + contextual AXIS assistant across Overview, Plans, Images, Materials, Inspiration, Documents, and AXIS tabs), with real EN/FR localization. Its in-app AXIS assistant is a deterministic, rule-based mock engine reading real project data — not model inference from the `AXIS Spatial` / `AXIS Clearance` models documented above. See that repository's own README for its current feature set and limitations; this document does not track its progress.
