@@ -9,7 +9,7 @@
 
 ## 1. What is AXIS?
 
-**AXIS** (*Architectural eXtensible Intelligence System*) is an open-source, reproducible artificial intelligence research initiative aimed at developing vision-language models capable of genuine architectural reasoning, metric spatial grounding, and multimodal 2D/3D building plan understanding.
+**AXIS** (*Architectural eXpert Intelligence System*) is an open-source, reproducible artificial intelligence research initiative aimed at developing vision-language models capable of genuine architectural reasoning, metric spatial grounding, and multimodal 2D/3D building plan understanding.
 
 AXIS rejects ungrounded generation, narrative hallucinations, and superficial template memorization. Instead, it enforces strict empirical gates, automated counterfactual visual ablations, and cryptographic data provenance across all architectural domains.
 

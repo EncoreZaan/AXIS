@@ -41,11 +41,11 @@
       },
       studio: {
         eyebrow: "AXIS STUDIO",
-        badge: "PLANIFIÉ — NON DÉMARRÉ",
-        title: "Un espace de travail, encore à l'état de projet.",
-        text: "AXIS Studio désigne l'environnement prévu pour explorer, au même endroit, les sorties d'AXIS — plans, contexte, résultats de raisonnement. Aucune implémentation n'existe aujourd'hui dans ce dépôt : ni interface, ni fonctionnalité, ni maquette ne sont publiées. C'est une direction déclarée sur la feuille de route, pas un produit disponible.",
-        note: "Cette section sera mise à jour dès qu'un premier composant réel existera — pas avant.",
-        cta: "Suivre l'avancement sur GitHub"
+        badge: "V4 — DÉPÔT SÉPARÉ",
+        title: "Un espace de travail réel, dans un dépôt séparé.",
+        text: "AXIS Studio est une application front-end distincte (dépôt EncoreZaan/AXIS-Studio, React/TypeScript) — pas une section de ce dépôt de recherche. Elle propose un espace de projet à sept onglets (Vue d'ensemble, Plans, Images, Matériaux, Inspiration, Documents, AXIS) construit autour d'un système de contexte qui suit projet, phase, plan, étage, pièce, image, matériau, références, documents et sélection courante, partagé avec un assistant AXIS conversationnel dont la langue de réponse se règle indépendamment de la langue de l'interface. Plans, Matériaux, Inspiration et Documents sont réellement implémentés : sélection de pièce et mise en évidence d'itinéraire, calques de plan, palette par rôle, extraction d'intention de design, catégories de documents.",
+        note: "Dans cette version, les réponses d'AXIS au sein de Studio proviennent d'un moteur déterministe à règles qui exploite les données réelles du projet — ce n'est pas une inférence de modèle, et ce n'est pas le modèle de recherche AXIS décrit ci-dessus. Aucun test automatisé ni démonstration déployée n'existe à ce jour ; seul le dépôt source fait foi.",
+        cta: "Voir le dépôt AXIS Studio sur GitHub"
       },
       models: {
         eyebrow: "AXIS MODELS",
@@ -165,7 +165,7 @@
         p1: { title: "Fondation & développement du modèle", text: "Phases 0 à 6B : Master Dataset v2, moteur de supervision, pilote QLoRA réel (RUN-019), falsification scientifique (RUN-020), nouveau jeu de supervision spatiale (RUN-021), entraînement (RUN-022) et évaluation (RUN-023)." },
         p2: { title: "Revue humaine & gouvernance ouverte", text: "Revue humaine des résultats RUN-023 avant la Phase 7 ; dépôt public AXIS v0.1.0, licence MIT, gouvernance ouverte et infrastructure communautaire." },
         p3: { title: "Raffinement du protocole", text: "Retravailler le protocole d'ablation visuelle : supprimer la fuite de coordonnées dans les prompts textuels, introduire une tolérance IoU pour les hubs de circulation." },
-        p4: { title: "Famille de modèles & AXIS Studio", text: "Acquisition de 50 à 100 modèles OpenBIM/IFC, extraction vectorielle millimétrée, benchmark vision 2D, AXIS Studio, AXIS-Unified, raisonnement réglementaire approfondi, optimisation d'inférence." }
+        p4: { title: "Famille de modèles", text: "Acquisition de 50 à 100 modèles OpenBIM/IFC, extraction vectorielle millimétrée, benchmark vision 2D, AXIS-Unified, raisonnement réglementaire approfondi, optimisation d'inférence." }
       },
       oss: {
         eyebrow: "OUVERTURE",
@@ -229,11 +229,11 @@
       },
       studio: {
         eyebrow: "AXIS STUDIO",
-        badge: "PLANNED — NOT STARTED",
-        title: "A workspace, still on the drawing board.",
-        text: "AXIS Studio names the environment planned to explore AXIS's outputs — plans, context, reasoning results — in one place. No implementation exists today in this repository: no interface, no feature, and no mockup has been published. It is a stated roadmap direction, not an available product.",
-        note: "This section will be updated as soon as a first real component exists — not before.",
-        cta: "Follow progress on GitHub"
+        badge: "V4 — SEPARATE REPOSITORY",
+        title: "A real workspace, in a separate repository.",
+        text: "AXIS Studio is a distinct front-end application (EncoreZaan/AXIS-Studio repository, React/TypeScript) — not a section of this research repository. It provides a seven-tab project workspace (Overview, Plans, Images, Materials, Inspiration, Documents, AXIS) built around a context system that tracks project, phase, plan, floor, room, image, material, references, documents, and the current selection, shared with a conversational AXIS assistant whose response language is configurable independently of the interface language. Plans, Materials, Inspiration, and Documents are genuinely implemented: room selection and route highlighting, plan overlays, palette by role, design-intent extraction, and document categories.",
+        note: "In this version, AXIS's responses inside Studio come from a deterministic, rule-based engine that works from real project data — this is not model inference, and it is not the AXIS research model described above. No automated tests or deployed demo exist yet; the source repository is the only authority.",
+        cta: "View the AXIS Studio repository on GitHub"
       },
       models: {
         eyebrow: "AXIS MODELS",
@@ -353,7 +353,7 @@
         p1: { title: "Foundation & model development", text: "Phases 0 through 6B: Master Dataset v2, supervision engine, first real-data QLoRA pilot (RUN-019), scientific falsification (RUN-020), new spatial supervision dataset (RUN-021), training (RUN-022), and evaluation (RUN-023)." },
         p2: { title: "Human validation & open governance", text: "Human review of RUN-023 results before Phase 7; public AXIS v0.1.0 repository, MIT license, open governance, and community infrastructure." },
         p3: { title: "Protocol refinement", text: "Reworking the visual ablation protocol: removing coordinate leakage from textual prompts, introducing IoU tolerance for circulation hubs." },
-        p4: { title: "Model family & AXIS Studio", text: "Acquisition of 50–100 OpenBIM/IFC models, millimeter-scale vector extraction, 2D vision benchmark, AXIS Studio, AXIS-Unified, deeper regulatory reasoning, inference optimization." }
+        p4: { title: "Model family", text: "Acquisition of 50–100 OpenBIM/IFC models, millimeter-scale vector extraction, 2D vision benchmark, AXIS-Unified, deeper regulatory reasoning, inference optimization." }
       },
       oss: {
         eyebrow: "OPENNESS",

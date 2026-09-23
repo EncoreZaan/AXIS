@@ -9,7 +9,7 @@
 
 ## 1. Executive Summary
 
-**AXIS** (*Architectural eXtensible Intelligence System*) is an open-source, reproducible artificial intelligence research initiative developing vision-language foundation models for architectural reasoning, spatial grounding, and multimodal 2D/3D building understanding.
+**AXIS** (*Architectural eXpert Intelligence System*) is an open-source, reproducible artificial intelligence research initiative developing vision-language foundation models for architectural reasoning, spatial grounding, and multimodal 2D/3D building understanding.
 
 As of **September 23, 2026**, AXIS has concluded the **Phase 6B Spatial Grounding Pilot** (`RUN-022`) and its comprehensive evaluation (`RUN-023`), establishing significant measurable gains in discrete spatial reasoning while honestly identifying critical methodological boundaries regarding visual dependency.
 

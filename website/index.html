@@ -249,17 +249,17 @@
   </div>
 </section>
 
-<!-- ============ 03 — AXIS STUDIO (planned) ============ -->
+<!-- ============ 03 — AXIS STUDIO (separate repository) ============ -->
 <section class="section section-dark" id="studio">
   <div class="container studio-body">
     <p class="eyebrow reveal-on-scroll" data-i18n="studio.eyebrow">AXIS STUDIO</p>
-    <span class="studio-badge reveal-on-scroll" data-i18n="studio.badge">PLANIFIÉ — NON DÉMARRÉ</span>
-    <h2 class="section-title reveal-on-scroll" data-i18n="studio.title">Un espace de travail, encore à l'état de projet.</h2>
-    <p class="section-text reveal-on-scroll" data-i18n="studio.text">AXIS Studio désigne l'environnement prévu pour explorer, au même endroit, les sorties d'AXIS — plans, contexte, résultats de raisonnement. Aucune implémentation n'existe aujourd'hui dans ce dépôt : ni interface, ni fonctionnalité, ni maquette ne sont publiées. C'est une direction déclarée sur la feuille de route, pas un produit disponible.</p>
-    <p class="studio-note reveal-on-scroll" data-i18n="studio.note">Cette section sera mise à jour dès qu'un premier composant réel existera — pas avant.</p>
+    <span class="studio-badge reveal-on-scroll" data-i18n="studio.badge">V4 — DÉPÔT SÉPARÉ</span>
+    <h2 class="section-title reveal-on-scroll" data-i18n="studio.title">Un espace de travail réel, dans un dépôt séparé.</h2>
+    <p class="section-text reveal-on-scroll" data-i18n="studio.text">AXIS Studio est une application front-end distincte (dépôt EncoreZaan/AXIS-Studio, React/TypeScript) — pas une section de ce dépôt de recherche. Elle propose un espace de projet à sept onglets (Vue d'ensemble, Plans, Images, Matériaux, Inspiration, Documents, AXIS) construit autour d'un système de contexte qui suit projet, phase, plan, étage, pièce, image, matériau, références, documents et sélection courante, partagé avec un assistant AXIS conversationnel dont la langue de réponse se règle indépendamment de la langue de l'interface. Plans, Matériaux, Inspiration et Documents sont réellement implémentés : sélection de pièce et mise en évidence d'itinéraire, calques de plan, palette par rôle, extraction d'intention de design, catégories de documents.</p>
+    <p class="studio-note reveal-on-scroll" data-i18n="studio.note">Dans cette version, les réponses d'AXIS au sein de Studio proviennent d'un moteur déterministe à règles qui exploite les données réelles du projet — ce n'est pas une inférence de modèle, et ce n'est pas le modèle de recherche AXIS décrit ci-dessus. Aucun test automatisé ni démonstration déployée n'existe à ce jour ; seul le dépôt source fait foi.</p>
     <div class="studio-cta reveal-on-scroll">
-      <a href="https://github.com/EncoreZaan/AXIS/blob/main/ROADMAP.md" target="_blank" rel="noopener" class="link-underline">
-        <span data-i18n="studio.cta">Suivre l'avancement sur GitHub</span>
+      <a href="https://github.com/EncoreZaan/AXIS-Studio" target="_blank" rel="noopener" class="link-underline">
+        <span data-i18n="studio.cta">Voir le dépôt AXIS Studio sur GitHub</span>
         <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M8.72 2.22a.75.75 0 0 1 1.06 0l5 5a.75.75 0 0 1 0 1.06l-5 5a.75.75 0 1 1-1.06-1.06l3.72-3.72H2a.75.75 0 0 1 0-1.5h10.44L8.72 3.28a.75.75 0 0 1 0-1.06Z"/></svg>
       </a>
     </div>
@@ -588,8 +588,8 @@
       </div>
       <div class="roadmap-phase reveal-on-scroll">
         <span class="roadmap-tag roadmap-future" data-i18n="roadmap.future">Planifié</span>
-        <h3 data-i18n="roadmap.p4.title">Famille de modèles & AXIS Studio</h3>
-        <p data-i18n="roadmap.p4.text">Acquisition de 50 à 100 modèles OpenBIM/IFC, extraction vectorielle millimétrée, benchmark vision 2D, AXIS Studio, AXIS-Unified, raisonnement réglementaire approfondi, optimisation d'inférence.</p>
+        <h3 data-i18n="roadmap.p4.title">Famille de modèles</h3>
+        <p data-i18n="roadmap.p4.text">Acquisition de 50 à 100 modèles OpenBIM/IFC, extraction vectorielle millimétrée, benchmark vision 2D, AXIS-Unified, raisonnement réglementaire approfondi, optimisation d'inférence.</p>
       </div>
     </div>
   </div>
